@@ -71,6 +71,7 @@ Espacio = \s+
 		PrintWriter writer = new PrintWriter(File + ".out", "UTF-8");
 		writer.print(ArchivoEscribir);
 		writer.close();
+		System.out.println("El archivo a sido generado con exito");
 	}catch (Exception e){
 		System.err.println("Error: " + e.getMessage());
 	}
@@ -78,94 +79,94 @@ Espacio = \s+
 
 %%
 
-{Reservadas} {ArchivoEscribir = ArchivoEscribir + "Reservada" + yytext();}
+{Reservadas} {ArchivoEscribir = ArchivoEscribir + "Reservada" + " | " + yytext() + " | " + yycolumn + " | " + yyline + "\n";}
 
-{Entero} { ArchivoEscribir = ArchivoEscribir + "Entero" + yytext(); }
+{Entero} { ArchivoEscribir = ArchivoEscribir + "Entero" + " | " + yytext()+ " | " + yycolumn + " | " + yyline + "\n"; }
 
-{Boolean} {ArchivoEscribir = ArchivoEscribir + "Boolean" + yytext();}
+{Boolean} {ArchivoEscribir = ArchivoEscribir + "Boolean" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Float} {ArchivoEscribir = ArchivoEscribir + "Float" + yytext();}
+{Float} {ArchivoEscribir = ArchivoEscribir + "Float" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Cadena} {ArchivoEscribir = ArchivoEscribir + "Cadena" + yytext();}
+{Cadena} {ArchivoEscribir = ArchivoEscribir + "Cadena" + " | "+ yytext().substring(0, yylength() - 1) + " | " + yycolumn + " | " + yyline + "\n";}
 
-{Cadenaerror} {ArchivoEscribir = ArchivoEscribir + "Error" + yytext();}
+{Cadenaerror} {ArchivoEscribir = ArchivoEscribir + "Error en la col: " + yycolumn + " fila: " + yyline + " Cadena sin cerrar"+ "\n";}
 
-{ComentarioLinea} {ArchivoEscribir = ArchivoEscribir + "Comentario" + yytext();}
+{ComentarioLinea} {ArchivoEscribir = ArchivoEscribir + "Comentario" + " | "+ yytext().substring(0, yylength() - 1) + " | " + yycolumn + " | " + yyline + "\n";}
 
-{ComentarioMultiliena} {ArchivoEscribir = ArchivoEscribir + "Comentariomult" + yytext();}
+{ComentarioMultiliena} {ArchivoEscribir = ArchivoEscribir + "Comentariomult" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{ComentarioMultilienaerror} {ArchivoEscribir = ArchivoEscribir + "Errormulti" + yytext();}
+{ComentarioMultilienaerror} {ArchivoEscribir = ArchivoEscribir + "Error en la col: " + yycolumn + " fila: " + yyline + " Comentario multilinea sin cerrar"+ "\n";}
 
-{Signomas} {ArchivoEscribir = ArchivoEscribir + "+" + yytext();}
+{Signomas} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signomenos} {ArchivoEscribir = ArchivoEscribir +"-" + yytext();}
+{Signomenos} {ArchivoEscribir = ArchivoEscribir +"Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signomult} {ArchivoEscribir = ArchivoEscribir + "*" + yytext();}
+{Signomult} {ArchivoEscribir = ArchivoEscribir +"Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signodiv} {ArchivoEscribir = ArchivoEscribir + "/" + yytext();}
+{Signodiv} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signoporcentaje} {ArchivoEscribir = ArchivoEscribir + "%" + yytext();}
+{Signoporcentaje} {ArchivoEscribir = ArchivoEscribir + "Operador"+ " | " + yytext()+ " | " + yycolumn + " | " + yyline+ "\n";}
 
-{Signomayor} {ArchivoEscribir = ArchivoEscribir + ">" + yytext();}
+{Signomayor} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signomayorigual} {ArchivoEscribir = ArchivoEscribir + ">=" + yytext();}
+{Signomayorigual} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signomenor} {ArchivoEscribir = ArchivoEscribir + "<" + yytext();}
+{Signomenor} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signomenorigual} {ArchivoEscribir = ArchivoEscribir + "<=" + yytext();}
+{Signomenorigual} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signoigual} {ArchivoEscribir = ArchivoEscribir + "=" + yytext();}
+{Signoigual} {ArchivoEscribir = ArchivoEscribir + "Operador"+ " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signoigualigual} {ArchivoEscribir = ArchivoEscribir + "==" + yytext();}
+{Signoigualigual} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signonotigual} {ArchivoEscribir = ArchivoEscribir + "!" + yytext();}
+{Signonotigual} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signoyy} {ArchivoEscribir = ArchivoEscribir + "&&" + yytext();}
+{Signoyy} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signoor} {ArchivoEscribir = ArchivoEscribir + "||" + yytext();}
+{Signoor} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Signoadmiracion} {ArchivoEscribir = ArchivoEscribir + "!" + yytext();}
+{Signoadmiracion} {ArchivoEscribir = ArchivoEscribir +"Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Puntoycoma} {ArchivoEscribir = ArchivoEscribir + ";" + yytext();}
+{Puntoycoma} {ArchivoEscribir = ArchivoEscribir + "Simbolo" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Coma} {ArchivoEscribir = ArchivoEscribir + "," + yytext();}
+{Coma} {ArchivoEscribir = ArchivoEscribir + "Simbolo" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Punto} {ArchivoEscribir = ArchivoEscribir + "." + yytext();}
+{Punto} {ArchivoEscribir = ArchivoEscribir + "Simbolo"+ " | " + yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Corcheteapertura} {ArchivoEscribir = ArchivoEscribir + "[" + yytext();}
+{Corcheteapertura} {ArchivoEscribir = ArchivoEscribir + "Operador"+ " | " + yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Corchetecerradura} {ArchivoEscribir = ArchivoEscribir + "]" + yytext();}
+{Corchetecerradura} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Corchetes} {ArchivoEscribir = ArchivoEscribir + "[]" + yytext();}
+{Corchetes} {ArchivoEscribir = ArchivoEscribir +"Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Parentesisapertura} {ArchivoEscribir = ArchivoEscribir + "(" + yytext();}
+{Parentesisapertura} {ArchivoEscribir = ArchivoEscribir +"Operador"+ " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Parentesiscerradura} {ArchivoEscribir = ArchivoEscribir + ")" + yytext();}
+{Parentesiscerradura} {ArchivoEscribir = ArchivoEscribir + "Operador"+ " | " + yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Parentesis} {ArchivoEscribir = ArchivoEscribir + "()" + yytext();}
+{Parentesis} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Llaveapertura} {ArchivoEscribir = ArchivoEscribir + "{" + yytext();}
+{Llaveapertura} {ArchivoEscribir = ArchivoEscribir +"Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Llavecerradura} {ArchivoEscribir = ArchivoEscribir + "}" + yytext();}
+{Llavecerradura} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Llaves} {ArchivoEscribir = ArchivoEscribir + "{}" + yytext();}
+{Llaves} {ArchivoEscribir = ArchivoEscribir + "Operador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Arroba} {ArchivoEscribir = ArchivoEscribir + "@" + yytext();}
+{Arroba} {ArchivoEscribir = ArchivoEscribir + "Simbolo" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Sharp} {ArchivoEscribir = ArchivoEscribir + "#" + yytext();}
+{Sharp} {ArchivoEscribir = ArchivoEscribir + "Simbolo" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
 
-{Sharpsharp} {ArchivoEscribir = ArchivoEscribir + "##" + yytext();}
+{Sharpsharp} {ArchivoEscribir = ArchivoEscribir + "Simbolo" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";}
  
 {Identificador} { 
 	if(yylength() < 31)
 	{
-		ArchivoEscribir = ArchivoEscribir + "Identificador" + yytext();
+		ArchivoEscribir = ArchivoEscribir + "Identificador" + " | "+ yytext()+ " | " + yycolumn + " | " + yyline + "\n";
 	}else{
-	ArchivoEscribir = ArchivoEscribir + "Identificador" + yytext().substring(0,31); }
+	ArchivoEscribir = ArchivoEscribir + "Identificador" + " | "+ yytext().substring(0,31) + " Advertencia: Identificador truncado" + "\n"; }
 }
 
 {Espacio} {/*Hacer nada equisde*/}
 
 [^] {
-	ArchivoEscribir = ArchivoEscribir + "Error" + yytext();
+	ArchivoEscribir = ArchivoEscribir + "Error en la col: " + yycolumn + " fila: " + yyline + " Caracter no Reconocido" + "\n";
 		 }
