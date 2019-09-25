@@ -1295,6 +1295,7 @@ public class MiniSQL {
     //String File = "";
     String ArchivoEscribir = "";
     Scanner scanner = new Scanner(System.in);
+	String File = argv[0];
 
 
   /**
@@ -1529,8 +1530,8 @@ public class MiniSQL {
       zzEOFDone = true;
     	//System.out.println("Inserte nombre de archivo");
 	//File = scanner.nextLine();
-	String File = argv[0];
 	try{
+		File = File.substring(0, File.lenght() - 4);
 		PrintWriter writer = new PrintWriter(File + ".out", "UTF-8");
 		writer.print(ArchivoEscribir);
 		writer.close();
