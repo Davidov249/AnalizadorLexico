@@ -1,1 +1,1 @@
-# AnalizadorLexico
+# Proyecto compiladores - Analizador Sintactico
