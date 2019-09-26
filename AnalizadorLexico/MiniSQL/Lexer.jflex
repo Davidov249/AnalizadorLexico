@@ -375,30 +375,13 @@ Identificador = [a-zA-Z][a-zA-Z_]*
 Espacio = \s+
 
 %{
-
-	public class MyTOKEN {
-			String Token;
-			String tipo;
-			int columna;
-			int fila;
-
-			public MyTOKEN(String Tk, String ti, int col, int fil){
-				Token = Tk;
-				tipo = ti;
-				columna = col;
-				fila = fil;
-			}
-	}
-
 	public int noToken = 0;	
-
-    String File = "";
-    String ArchivoEscribir = "";
-    Scanner scanner = new Scanner(System.in);
 
 	public void nextToken() {
 
 	}
+
+
 
 	public void Advertencia(int col, int fil) {
 			System.out.println("---- Advertencia: identificador en la linea " + fil + " columna " + col + " excede la longitud permitida, sera truncado. ----");
@@ -421,6 +404,7 @@ Espacio = \s+
 %eof}
 
 %%
+//RESERVADAS 
 {resABSOLUTE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
@@ -1668,7 +1652,7 @@ Espacio = \s+
 {resWRITETEXT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
-
+//FIN RESERVADAS
 {Entero} {
 	TOKENS.add(new MyTOKEN(yytext(), "Entero", yycolumn, yyline)); 
 	}
