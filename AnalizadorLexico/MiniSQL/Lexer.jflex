@@ -9,6 +9,7 @@ import java.io.Console;
 import java.io.InputStream;
 import java.util.Scanner;
 import AnalizadorSintactico.AnalizadorSintactico;
+import AnalizadorSintactico.MyTOKEN;
 
 %%
 %class MiniSQL
@@ -399,7 +400,12 @@ Espacio = \s+
 %}
 %eof{
 	
-	AnalizadorSintactico anal = new AnalizadorSintactico();
+	AnalizadorSintactico anal = new AnalizadorSintactico(TOKENS);
+	anal.Analizar();
+	/*if(anal.errores == 0){
+		System.out.println("¡El archivo a sido analizado con exito!");
+	}*/
+	//AnalizadorSintactico(TOKENS);
 	
 %eof}
 
@@ -418,7 +424,7 @@ Espacio = \s+
 	}
 
 {resADD} {
-	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
+	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
 {resALL} {
@@ -466,7 +472,7 @@ Espacio = \s+
 	}
 
 {resAVG} {
-	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
+	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
 {resBACKUP} {
@@ -622,7 +628,7 @@ Espacio = \s+
 	}
 
 {resCOUNT} {
-	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
+	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
 {resCREATE} {
@@ -1062,7 +1068,7 @@ Espacio = \s+
 	}
 
 {resMAX} {
-	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
+	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
 {resNOT} {
@@ -1070,7 +1076,7 @@ Espacio = \s+
 	}
 
 {resMIN} {
-	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
+	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
 {resNULL} {
@@ -1434,7 +1440,7 @@ Espacio = \s+
 	}
 
 {resSUM} {
-	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
+	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
 {resSETUSER} {
