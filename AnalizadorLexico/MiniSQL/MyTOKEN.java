@@ -1,4 +1,6 @@
-package AnalizadorSintactico;
+package MiniSQL;
+
+import java.lang.String;
 
 public class MyTOKEN {
     String Token;

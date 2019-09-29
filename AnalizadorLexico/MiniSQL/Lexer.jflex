@@ -1,3 +1,5 @@
+package MiniSQL;
+
 import java.lang.Object;
 import java.lang.String;
 import java.io.PrintWriter;
@@ -8,8 +10,8 @@ import java.lang.System;
 import java.io.Console;
 import java.io.InputStream;
 import java.util.Scanner;
-import AnalizadorSintactico.AnalizadorSintactico;
-import AnalizadorSintactico.MyTOKEN;
+
+
 
 %%
 %class MiniSQL
@@ -394,9 +396,12 @@ Espacio = \s+
 			}
 	};
 
+	public ArrayList<MyTOKEN> TOKENS = new ArrayList<MyTOKEN>();
+
 	
 
-	public List<MyTOKEN> TOKENS = new ArrayList<MyTOKEN>();
+
+
 %}
 %eof{
 	
