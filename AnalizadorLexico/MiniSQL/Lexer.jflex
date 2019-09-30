@@ -374,7 +374,7 @@ Llaves = \{\}
 Arroba = @
 Sharp = #
 Sharpsharp = ##
-Identificador = [a-zA-Z][a-zA-Z_]*
+Identificador = [a-zA-Z][a-zA-Z0-9_]*
 Espacio = \s+
 
 %{
