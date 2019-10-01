@@ -1900,8 +1900,20 @@ public class AnalizadorSintactico {
     public void CREATET1(){
         devourToken();
         OBJECT();
-        CREATET2();
-        CREATET5();
+        if(tokenActual.Token.equals("(")){
+            consumirToken();
+            nextToken();
+            CREATET2();
+            CREATET5();
+            if(tokenActual.Token.equals(")")){
+                consumirToken();
+                nextToken();
+            }else{
+                printError(")");
+            }
+        }else{
+            printError("(");
+        }
     }
 
     public void CREATET2(){
@@ -4083,7 +4095,246 @@ public class AnalizadorSintactico {
         }
     }
 
-    
+    public void STRFN(){
+        devourToken();
+        if(tokenActual.Token.equals("LOWER")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                STRFN1();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError(")");
+                }
+            }else{
+                printError("(");
+            }
+        }else if(tokenActual.Token.equals("TRANSLATE")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                STRFN1();
+                if(tokenActual.Token.equals(",")){
+                    consumirToken();
+                    nextToken();
+                    STRFN1();
+                    if(tokenActual.Token.equals(",")){
+                        consumirToken();
+                        nextToken();
+                        STRFN1();
+                        if(tokenActual.Token.equals(")")){
+                            consumirToken();
+                            nextToken();
+                        }else{
+                            printError(")");
+                        }
+                    }else{
+                        printError(",");
+                    }
+                }else{
+                    printError(",");
+                }
+            }else{
+                printError("(");
+            }
+        }else if(tokenActual.Token.equals("UPPER")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                STRFN1();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError(")");
+                }
+            }else{
+                printError("(");
+            }
+        }else if(tokenActual.Token.equals("CHAR")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                SEXP();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError(")");
+                }
+            }else{
+                printError("(");
+            }
+        }else if(tokenActual.Token.equals("LEFT")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                STRFN1();
+                if(tokenActual.Token.equals(",")){
+                    consumirToken();
+                    nextToken();
+                    SEXP();
+                    if(tokenActual.Token.equals(")")){
+                        consumirToken();
+                        nextToken();
+                    }else{
+                        printError(")");
+                    }
+                }else{
+                    printError(",");
+                }
+            }else{
+                printError("(");
+            }
+        }else if(tokenActual.Token.equals("TRIM")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                STRFN1();
+                STRFN2();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError(")");
+                }
+            }else{
+                printError("(");
+            }
+        }else if(tokenActual.Token.equals("NCHAR")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                SEXP();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError(")");
+                }
+            }else{
+                printError("(");
+            }
+        }else if(tokenActual.Token.equals("RIGHT")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                STRFN1();
+                if(tokenActual.Token.equals(",")){
+                    consumirToken();
+                    nextToken();
+                    SEXP();
+                    if(tokenActual.Token.equals(")")){
+                        consumirToken();
+                        nextToken();
+                    }else{
+                        printError(")");
+                    }
+                }else{
+                    printError(",");
+                }
+            }else{
+                printError("(");
+            }
+        }else if(tokenActual.Token.equals("SPACE")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                SEXP();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError(")");
+                }
+            }else{
+                printError("(");
+            }
+        }else if(tokenActual.Token.equals("SUBSTRING")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                STRFN1();
+                if(tokenActual.Token.equals(",")){
+                    consumirToken();
+                    nextToken();
+                    SEXP();
+                    if(tokenActual.Token.equals(",")){
+                        consumirToken();
+                        nextToken();
+                        SEXP();
+                        if(tokenActual.Token.equals(")")){
+                            consumirToken();
+                            nextToken();
+                        }else{
+                            printError(")");
+                        }
+                    }else{
+                        printError(",");
+                    }
+                }else{
+                    printError(",");
+                }
+            }else{
+                printError("(");
+            }
+        }else{
+            printError("LOWER, TRANSLATE, UPPER, CHAR, LEFT, TRIM, NCHAR, RIGHT, SPACE o SUBSTRING");
+        }
+    }
+
+    public void STRFN1(){
+        devourToken();
+        if(tokenActual.Token.equals("@")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("Identificador")){
+                consumirToken();
+                nextToken();
+            }else{
+                printError("Identificador");
+            }
+        }else if(tokenActual.tipo.equals("Cadena")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("Identificador")){
+            consumirToken();
+            nextToken();
+        }else{
+            printError("@, Identificador, Cadena");
+        }
+    }
+
+    public void STRFN2(){
+        devourToken();
+        if(tokenActual.Token.equals("FROM")){
+            consumirToken();
+            nextToken();
+            STRFN1();
+        }
+    }
 
     public void DTFN(){
         devourToken();
