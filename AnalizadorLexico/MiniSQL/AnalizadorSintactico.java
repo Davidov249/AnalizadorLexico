@@ -75,8 +75,23 @@ public class AnalizadorSintactico {
             DROP();
         }else if(tokenActual.Token.equals("ALTER")){
             ALTERP();
+        }else if(tokenActual.Token.equals("TRUNCATE")){
+            TRUNC();
         }else if(tokenActual.Token.equals("FINARCHIVO")){
             System.out.println("Se termino de analizar el archivo");
+        }
+    }
+
+    public void TRUNC(){
+        if(tokenActual.Token.equals("TRUNCATE")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("TABLE")){
+                consumirToken();
+                nextToken();
+                OBJECT();
+                FinSentencia();
+            }
         }
     }
 
@@ -102,7 +117,256 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT(){
+        if(tokenActual.Token.equals("TABLE")){
+            consumirToken();
+            nextToken();
+            OBJECT();
+            ALTERT1();
+        }
+    }
 
+    public void ALTER1(){
+        if(tokenActual.Token.equals("ALTER")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("COLUMN")){
+                consumirToken();
+                nextToken();
+                if(tokenActual.tipo.equals("Identificador")){
+                    consumirToken();
+                    nextToken();
+                    ALTERT1();
+                }else{
+                    printError("Identificador");
+                }
+            }else{
+                printError("COLUMN");
+            }
+        }else if(tokenActual.Token.equals("ADD")){
+            consumirToken();
+            nextToken();
+            ALTERT8();
+        }else if(tokenActual.Token.equals("DROP")){
+            consumirToken();
+            nextToken();
+            ALTERT10();
+        }
+    }
+
+    public void ALTERT1(){
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+            ALTERT2();
+        }else{
+            ALTERT6();
+        }
+    }
+
+    public void ALTERT2(){
+        if(tokenActual.Token.equals(".")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                ALTERT3();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            ALTERT2();
+        }
+    }
+
+    public void ENT(){
+        if(tokenActual.Token.equals(",")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Entero")){
+                consumirToken();
+                nextToken();
+            }else{
+                printError("Entero");
+            }
+        }
+    }
+
+    public void ALTERT3(){
+        if(tokenActual.Token.equals("(")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Entero")){
+                consumirToken();
+                nextToken();
+                ENT();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                    ALTERT4();
+                }else{
+                    printError(")");
+                }
+            }else{
+                printError("Entero");
+            }
+        }else{
+            ALTERT4();
+        }
+    }
+
+    public void ALTERT4(){
+        if(tokenActual.Token.equals("COLLATE")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                ALTERT5();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            ALTERT5();
+        }
+    }
+
+    public void ALTERT5(){
+        if(tokenActual.Token.equals("NULL")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("NOT")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("NULL")){
+                consumirToken();
+                nextToken();
+            }else{
+                printError("NULL");
+            }
+        }
+    }
+
+    public void ALTERT6(){
+        if(tokenActual.Token.equals("ADD")){
+            consumirToken();
+            nextToken();
+            ALTERT7();
+        }else if(tokenActual.Token.equals("DROP")){
+            consumirToken();
+            nextToken();
+            ALTERT7();
+        }else{
+            printError("ADD o DROP");
+        }
+    }
+    
+    public void ALTERT7(){
+        if(tokenActual.Token.equals("ROWGUIDCOL")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("NOT")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("FOR")){
+                consumirToken();
+                nextToken();
+                if(tokenActual.Token.equals("REPLICATION")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError("REPLICATION");
+                }
+            }else{
+                printError("FOR");
+            }
+        }else{
+            printError("NOT o ROWGUIDCOL");
+        }
+    }
+
+    public void ALTERT8(){
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("AS")){
+                CCD();
+                ALTERT9();
+            }else if(tokenActual.Token.equals("BIT") || tokenActual.Token.equals("INT") || tokenActual.Token.equals("INTEGER") || tokenActual.Token.equals("FLOAT") || tokenActual.Token.equals("VARCHAR") || tokenActual.Token.equals("DATE") || tokenActual.Token.equals("REAL") || tokenActual.Token.equals("DECIMAL") || tokenActual.Token.equals("NUMERIC") || tokenActual.Token.equals("SMALLINT") || tokenActual.Token.equals("TIME") || tokenActual.Token.equals("CHAR") || tokenActual.Token.equals("NCHAR")){
+                COLUMN_DEF();
+                ALTERT9();
+            }
+        }else if(tokenActual.Token.equals("CONSTRAINT")){
+            consumirToken();
+            nextToken();
+        }else{
+            printError("Identificador o DATATYPE");
+        }
+    }
+
+    public void ALTERT9(){
+        if(tokenActual.Token.equals(",")){ 
+            consumirToken();
+            nextToken();
+            ALTERT8();
+        }
+    }
+
+    public void ALTERT10(){
+        if(tokenActual.Token.equals("COLUMN")){
+            consumirToken();
+            nextToken();
+            ALTERT12();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                ALTERT13();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            ALTERT11();
+            ALTERT12();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                ALTERT13();
+            }
+        }
+    }
+
+    public void ALTERT11(){
+        if(tokenActual.Token.equals("CONSTRAINT")){
+            consumirToken();
+            nextToken();
+        }
+    }
+
+    public void ALTERT12(){
+        if(tokenActual.Token.equals("IF")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("EXISTS")){
+                consumirToken();
+                nextToken();
+            }else{
+                printError("EXISTS");
+            }
+        }
+    }
+
+    public void ALTERT13(){
+        if(tokenActual.Token.equals(",")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                ALTERT13();
+            }else{
+                printError("Identificador");
+            }
+        }
     }
 
     public void ALTERD(){
@@ -1422,7 +1686,91 @@ public class AnalizadorSintactico {
         }
     }
 
-    public void CREATE()
+    public void CREATE(){
+        CREATE();
+        CREATEP();
+        FinSentencia();
+    }
+    
+    public void CREATEP(){
+        if(tokenActual.Token.equals("TABLE")){
+            consumirToken();
+            nextToken();
+        }
+    }
+
+    public void CREATET1(){
+        OBJECT();
+        CREATET2();
+        CREATET5();
+    }
+
+    public void CREATET2(){
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+            CREATET4();
+            COLUMNC4();
+        }else if(tokenActual.Token.equals("INDEX")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                TABLECON2();
+                if(tokenActual.Token.equals("(")){
+                    consumirToken();
+                    nextToken();
+                    TABLECON8();
+                    if(tokenActual.Token.equals(")")){
+                        consumirToken();
+                        nextToken();
+                        COLUMNC4();
+                    }else{
+                        printError(")");
+                    }
+                }else{
+                    printError("(");
+                }
+            }
+        }else if(tokenActual.Token.equals("CONSTRAINT")){
+            consumirToken();
+            nextToken();
+            TABLECON();
+        }else if(tokenActual.Token.equals("PRIMARY") || tokenActual.Token.equals("UNIQUE") || tokenActual.Token.equals("FOREIGN") || tokenActual.Token.equals("CHECK")){
+            consumirToken();
+            nextToken();
+            TABLECON1();
+        }else{
+            printError("Identificador, INDEX, CONSTRAINT, PRIMARY, UNIQUE, FOREIGN o CHECK");
+        }
+    }
+
+    public void CREATET3(){
+        if(tokenActual.Token.equals(",")){
+            consumirToken();
+            nextToken();
+            TABLECON();
+            CREATET3();
+        }
+    }
+
+    public void CREATET4(){
+        if(tokenActual.Token.equals("AS")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("PRIMARY") || tokenActual.Token.equals("UNIQUE") || tokenActual.Token.equals("FOREIGN") || tokenActual.Token.equals("CHECK")){
+
+        }
+    }
+
+    public void CREATET5(){
+        if(tokenActual.Token.equals(",")){
+            consumirToken();
+            nextToken();
+            CREATET2();
+        }
+    }
 
     public void SEED(){
         if(tokenActual.tipo.equals("Entero") || tokenActual.tipo.equals("Float")){
@@ -1434,93 +1782,348 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMN_DEF(){
-
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+            DATATYPE();
+            COLUMN_DEF2();
+        }
     }
 
     public void COLUMN_DEF2(){
-
+        if(tokenActual.Token.equals("COLLATE")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                COLUMNDEF3();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            COLUMNDEF3();
+        }
     }
 
     public void COLUMNDEF3(){
-
+        if(tokenActual.Token.equals("CONSTRAINT")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                COLUMNDEF4();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            COLUMNDEF5();
+        }
     }
 
     public void COLUMNDEF4(){
-
+        if(tokenActual.Token.equals("DEFAULT")){
+            consumirToken();
+            nextToken();
+            Const();
+            COLUMNDEF5();
+        }else{
+            COLUMNDEF5();
+        }
     }
 
     public void COLUMNDEF5(){
-
+        if(tokenActual.Token.equals("IDENTITY")){
+            consumirToken();
+            nextToken();
+            COLUMNDEF6();
+        }else{
+            COLUMNDEF7();
+        }
     }
 
     public void COLUMNDEF6(){
-
+        if(tokenActual.Token.equals("(")){
+            consumirToken();
+            nextToken();
+            SEED();
+            if(tokenActual.Token.equals(",")){
+                consumirToken();
+                nextToken();
+                SEED();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                    COLUMNDEF7();
+                }else{
+                    printError(")");
+                }
+            }else{
+                printError(",");
+            }
+        }else{
+            COLUMNDEF7();
+        }
     }
 
     public void COLUMNDEF7(){
-
+        if(tokenActual.Token.equals("NOT")){
+            consumirToken();
+            nextToken();
+            COLUMNDEF8();
+        }else{
+            COLUMNDEF9();
+        }
     }
 
     public void COLUMNDEF8(){
-
+        if(tokenActual.Token.equals("FOR")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("REPLIACTION")){
+                consumirToken();
+                nextToken();
+                COLUMNDEF9();
+            }else{
+                printError("REPLICATION");
+            }
+        }else if(tokenActual.Token.equals("NULL")){
+            consumirToken();
+            nextToken();
+            COLUMNDEF10();
+        }else{
+            COLUMNDEF10();
+        }
     }
 
     public void COLUMNDEF9(){
-
+        if(tokenActual.Token.equals("NOT")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("NULL")){
+                consumirToken();
+                nextToken();
+            }else{
+                printError("NULL");
+            }
+        }else if(tokenActual.Token.equals("NULL")){
+            consumirToken();
+            nextToken();
+        }else{
+            COLUMNDEF10();
+        }
     }
 
     public void COLUMNDEF10(){
-
+        if(tokenActual.Token.equals("ROWGUIDCONTROL")){
+            consumirToken();
+            nextToken();
+            COLUMNDEF11();
+        }else{
+            COLUMNDEF11();
+        }
     }
 
     public void COLUMNDEF11(){
-
+        if(tokenActual.Token.equals("CONSTRAINT")){
+            consumirToken();
+            nextToken();
+            COLUMNDEF13();
+            COLUMNDEF12();
+        }else{
+            COLUMNDEF12();
+        }
     }
 
     public void COLUMNDEF12(){
-
+        COL_IND();
     }
 
     public void COLUMNDEF13(){
-
+        if(tokenActual.Token.equals(",")){
+            consumirToken();
+            nextToken();
+            COLUMNCONSTRAINT();
+            COLUMNDEF13();
+        }
     }
 
 
 
     public void COLUMNCONSTRAINT(){
-
+        if(tokenActual.Token.equals("CONSTRAINT")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                COLUMNC12();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            COLUMNC12();
+        }
     }
 
     public void COLUMNC2(){
-
+        if(tokenActual.Token.equals("PRIMARY")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("KEY")){
+                consumirToken();
+                nextToken();
+                COLUMNC3();
+            }else{
+                printError("KEY");
+            }
+        }else if(tokenActual.Token.equals("UNIQUE")){
+            consumirToken();
+            nextToken();
+            COLUMNC3();
+        }else if(tokenActual.Token.equals("FOREIGN")){
+            consumirToken();
+            nextToken();
+            COLUMNC5();
+        }else if(tokenActual.Token.equals("REFERENCES")){
+            consumirToken();
+            nextToken();
+            COLUMNC5();
+        }else if(tokenActual.Token.equals("CHECK")){
+            consumirToken();
+            nextToken();
+            COLUMNC16();
+        }
     }
 
     public void COLUMNC3(){
-
-    }
+        if(tokenActual.Token.equals("CLUSTERED")){
+            consumirToken();
+            nextToken();
+            COLUMNC4();
+        }else if(tokenActual.Token.equals("NONCLUSTERED")){
+            consumirToken();
+            nextToken();
+            COLUMNC4();
+        }else{
+            COLUMNC4();
+        }
+    }  
 
     public void COLUMNC4(){
-
+        if(tokenActual.Token.equals("ON")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                if(tokenActual.Token.equals("(")){
+                    consumirToken();
+                    nextToken();
+                    if(tokenActual.Token.equals("Identificador")){
+                        consumirToken();
+                        nextToken();
+                        if(tokenActual.Token.equals(")")){
+                            consumirToken();
+                            nextToken();
+                        }else{
+                            printError(")");
+                        }
+                    }else{
+                        printError("Identificador");
+                    }
+                }else{
+                    printError("(");
+                }
+            }else{
+                printError("Identificador");
+            }
+        }else if(tokenActual.Token.equals("Identificador")){
+            consumirToken();
+            nextToken();
+        }
     }
 
     public void COLUMNC5(){
-
+        if(tokenActual.Token.equals("FOREIGN")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("KEY")){
+                consumirToken();
+                nextToken();
+                COLUMNC6();
+            }else{
+                printError("KEY");
+            }
+        }else{
+            COLUMNC6();
+        }
     }
 
     public void COLUMNC6(){
-
+        if(tokenActual.Token.equals("REFERENCES")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                COLUMNC7();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            printError("REFERENCES");
+        }
     }
 
     public void COLUMNC7(){
-
+        if(tokenActual.Token.equals(".")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                COLUMNC8();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            COLUMNC8();
+        }
     }
 
     public void COLUMNC8(){
-
+        if(tokenActual.Token.equals("(")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                COLUMNC10();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                    COLUMNC9();
+                }else{ 
+                    printError(")");
+                }
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            COLUMNC9();
+        }
     }
 
     public void COLUMNC9(){
-
+        if(tokenActual.Token.equals("ON")){
+            consumirToken();
+            nextToken();
+            COLUMNC11();
+        }else{
+            COLUMNC15();
+        }
     }
 
     public void COLUMNC10(){
@@ -1528,84 +2131,478 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC11(){
-
+        if(tokenActual.Token.equals("DELETE")){
+            consumirToken();
+            nextToken();
+            COLUMNC12();
+            COLUMNC14();
+        }else if(tokenActual.Token.equals("UPDATE")){
+            consumirToken();
+            nextToken();
+            COLUMNC12();
+            COLUMNC14();
+        }else{
+            printError("DELETE o UPDATE");
+        }
     }
 
     public void COLUMNC12(){
-
+        if(tokenActual.Token.equals("NO")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("ACTION")){
+                consumirToken();
+                nextToken();
+            }else{
+                printError("ACTION");
+            }
+        }else if(tokenActual.Token.equals("CASCADE")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("SET")){
+            consumirToken();
+            nextToken();
+            COLUMNC13();
+        }else{
+            printError("NO, CASCADE o SET");
+        }
     }
 
     public void COLUMNC13(){
-
+        if(tokenActual.Token.equals("NULL")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("DEFAULT")){
+            consumirToken();
+            nextToken();
+        }else{
+            printError("NULL o DEFAULT");
+        }
     }
 
     public void COLUMNC14(){
-
+        if(tokenActual.Token.equals("ON")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("UPDATE")){
+                consumirToken();
+                nextToken();
+                COLUMNC12();
+                COLUMNC15();
+            }else{
+                printError("UPDATE");
+            }
+        }else{
+            COLUMNC15();
+        }
     }
     
     public void COLUMNC15(){
-
+        if(tokenActual.Token.equals("NOT")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("FOR")){
+                consumirToken();
+                nextToken();
+                if(tokenActual.Token.equals("REPLICATION")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError("REPLICATION");
+                }
+            }else{
+                printError("FOR");
+            }
+        }
     }
 
     public void COLUMNC16(){
-
+        if(tokenActual.Token.equals("CHECK")){
+            consumirToken();
+            nextToken();
+            COLUMNC17();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                EXPRESION();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError(")");
+                }
+            }else{
+                printError("(");
+            }
+        }else{
+            printError("CHECK");
+        }
     }
 
     public void COLUMNC17(){
-
+        if(tokenActual.Token.equals("NOT")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("FOR")){
+                consumirToken();
+                nextToken();
+                if(tokenActual.Token.equals("REPLICATION")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError("REPLICATION");
+                }
+            }else{
+                printError("FOR");
+            }
+        }
     }
 
     public void COL_IND(){
-
+        if(tokenActual.Token.equals("INDEX")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                COL_IND1();
+                COL_IND2();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            printError("INDEX");
+        }
     }
 
     public void COL_IND1(){
-
+        if(tokenActual.Token.equals("CLUSTERED")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("NONCLUSTERED")){
+            consumirToken();
+            nextToken();
+        }
     }
 
     public void COL_IND2(){
-
+        COLUMNC4();
     }
 
     public void CCD(){
-
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("AS")){
+                consumirToken();
+                nextToken();
+                if(tokenActual.tipo.equals("Identificador")){
+                    consumirToken();
+                    nextToken();
+                    COLUMNC2();
+                }else{
+                    printError("Identificador");
+                }
+            }else{
+                printError("AS");
+            }
+        }else{
+            printError("Identificador");
+        }
     }
 
     public void TABLECON(){
-
+        if(tokenActual.Token.equals("CONSTRAINT")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                TABLECON1();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            TABLECON1();
+        }
     }
 
     public void TABLECON1(){
-
+        if(tokenActual.Token.equals("PRIMARY")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("KEY")){
+                consumirToken();
+                nextToken();
+                TABLECON2();
+                TABLECON3();
+            }else{
+                printError("KEY");
+            }
+        }else if(tokenActual.Token.equals("UNIQUE")){
+            consumirToken();
+            nextToken();
+            TABLECON2();
+            TABLECON3();
+        }else if(tokenActual.Token.equals("FOREIGN")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("KEY")){
+                consumirToken();
+                nextToken();
+                if(tokenActual.Token.equals("(")){
+                    consumirToken();
+                    nextToken();
+                    if(tokenActual.tipo.equals("Identificador")){
+                        consumirToken();
+                        nextToken();
+                        TABLECON7();
+                        if(tokenActual.Token.equals(")")){
+                            consumirToken();
+                            nextToken();
+                            COLUMNC6();
+                        }else{
+                            printError(")");
+                        }
+                    }else{
+                        printError("Identificador");
+                    }
+                }else{
+                    printError("(");
+                }
+            }else{
+                printError("KEY");
+            }
+        }else if(tokenActual.Token.equals("CHECK")){
+            consumirToken();
+            nextToken();
+            COLUMNC16();
+        }else{
+            printError("PRIMARY, UNIQUE, FOREIGN o CHECK");
+        }
     }
 
     public void TABLECON2(){
-
+        if(tokenActual.Token.equals("CLUSTERED")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("NONCLUSTERED")){
+            consumirToken();
+            nextToken();
+        }
     }
 
     public void TABLECON3(){
-
+        if(tokenActual.Token.equals("(")){
+            consumirToken();
+            nextToken();
+            TABLECON8();
+            if(tokenActual.Token.equals(")")){
+                consumirToken();
+                nextToken();
+                COLUMNC4();
+            }else{
+                printError(")");
+            }
+        }else{
+            printError("(");
+        }
     }
 
     public void TABLECON8(){
-
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+            TABLECON4();
+        }else{
+            printError("Identificador");
+        }
     }
 
     public void TABLECON4(){
-
-    }
-
-    public void TABLECON5(){
-
+        if(tokenActual.Token.equals("ASC")){
+            consumirToken();
+            nextToken();
+            TABLECON6();
+        }else if(tokenActual.Token.equals("DESC")){
+            consumirToken();
+            nextToken();
+            TABLECON6();
+        }else{
+            TABLECON6();
+        }
     }
 
     public void TABLECON6(){
-
+        if(tokenActual.Token.equals(",")){
+            consumirToken();
+            nextToken();
+            TABLECON8();
+        }
     }
 
     public void TABLECON7(){
-
+        if(tokenActual.Token.equals(",")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                TABLECON7();
+            }else{
+                printError("Identificador");
+            }
+        }
     }
 
+    public void TABIND(){
+        if(tokenActual.Token.equals("INDEX")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                TABLECON2();
+                if(tokenActual.Token.equals("(")){
+                    consumirToken();
+                    nextToken();
+                    TABLECON8();
+                    if(tokenActual.Token.equals(")")){
+                        consumirToken();
+                        nextToken();
+                        COLUMNC4();
+                    }else{
+                        printError(")");
+                    }
+                }else{
+                    printError("(");
+                }
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            printError("INDEX");
+        }
+    }
 
+    public void DATATYPE(){
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+            DATATYPE2();
+        }else{
+            DATATYPE3();
+        }
+    }
+
+    public void DATATYPE2(){
+        if(tokenActual.Token.equals(".")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            printError(".");
+        }
+    }
+
+    public void DATATYPE3(){
+        if(tokenActual.Token.equals("BIT")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("INT")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("INTEGER")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("FLOAT")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("VARCHAR")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("DATE")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("REAL")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("DECIMAL")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("NUMERIC")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("SMALLINT")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("TIME")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("CHAR")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else if(tokenActual.Token.equals("NCHAR")){
+            consumirToken();
+            nextToken();
+            DATATYPE4();
+        }else{
+            printError("BIT, INT, INTEGER, FLOAT, VARCHAR, DATE, REAL, DECIMAL, NUMERIC, SMALLINT, TIME, CHAR, NCHAR");
+        }
+    }
+
+    public void DATATYPE4(){
+        if(tokenActual.Token.equals("(")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Entero")){
+                consumirToken();
+                nextToken();
+                DATATYPE5();
+            }else{
+                printError("Entero");
+            }
+        }
+    }
+
+    public void DATATYPE5(){
+        if(tokenActual.Token.equals(",")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Entero")){
+                consumirToken();
+                nextToken();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError(")");
+                }
+            }else{
+                printError("Entero");
+            }
+        }else if(tokenActual.Token.equals(")")){
+            consumirToken();
+            nextToken();
+        }else{
+            printError(", o )");
+        }
+    }
 }

@@ -8,17 +8,32 @@ OBJ2 ::= "." ID  OBJ3
 
 OBJ3 ::= "." ID
         | VACIO
-        
-CREATE ::= CREATE TABLE OBJECT CREATE2 FIN
 
-CREATE2 ::= COLUMN_DEF COLUMNC4
-                |COMPUTED_DEF COLUMNC4
-                |COLUMN_SET COLUMNC4
-                |TABLE_CONSTR CREATE3 COLUMNC4
-                |TABLE_INDEX COLUMNC4
+DATATYPE ::= IDENTIFICADOR DATATYPE2
+                |DATATYPE3
 
-CREATE3 ::= , TABLE_CONSTR CREATE3
+DATATYPE2 ::= "." IDENTIFICADOR
+
+DATATYPE3 ::= BIT DATATYPE4
+                |INT DATATYPE4
+                |INTEGER DATATYPE4
+                |FLOAT DATATYPE4
+                |VARCHAR DATATYPE4
+                |DATE DATATYPE4
+                |REAL DATATYPE4
+                |DECIMAL DATATYPE4
+                |NUMERIC DATATYPE4
+                |SMALLINT DATATYPE4
+                |TIME DATATYPE4
+                |CHAR DATATYPE4
+                |NCHAR DATATYPE4
+
+DATATYPE4 ::= "(" ENTERO DATATYPE5
+                | 
                 |VACIO
+
+DATATYPE5 ::= "," ENTERO ")"
+                | ")"
 
 SEED ::= ENTERO
         |DOUBLENUM
