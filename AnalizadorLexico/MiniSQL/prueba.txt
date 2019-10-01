@@ -1,9 +1,1 @@
-ALTER USER Mary5
-
-
-
-
-
-
-
-GO
+CREATE VIEW HOLA (ID) GO

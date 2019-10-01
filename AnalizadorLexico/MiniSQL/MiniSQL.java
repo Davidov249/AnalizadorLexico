@@ -1578,7 +1578,8 @@ public class MiniSQL {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { //ArchivoEscribir = ArchivoEscribir + "Error en la col: " + yycolumn + " fila: " + yyline + " Caracter no Reconocido" + "\n";
+            { TOKENS.add(new MyTOKEN(yytext(), "ERROR", yycolumn, yyline));
+	//ArchivoEscribir = ArchivoEscribir + "Error en la col: " + yycolumn + " fila: " + yyline + " Caracter no Reconocido" + "\n";
             } 
             // fall through
           case 15: break;
@@ -1615,6 +1616,7 @@ public class MiniSQL {
           case 20: break;
           case 7: 
             { //ArchivoEscribir = ArchivoEscribir + "Error en la col: " + yycolumn + " fila: " + yyline + " Cadena sin cerrar"+ "\n";
+	TOKENS.add(new MyTOKEN(yytext(), "ERROR", yycolumn, yyline));
             } 
             // fall through
           case 21: break;

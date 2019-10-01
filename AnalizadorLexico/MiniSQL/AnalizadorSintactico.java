@@ -54,6 +54,23 @@ public class AnalizadorSintactico {
         tokenActual = TOKENS.get(0);
     }
 
+    public void manejoErrores(){
+        errorSentenciaAcutal = true;
+    }
+
+    public void devourToken(){
+        if(errorSentenciaAcutal){
+            if(tokenActual.Token.equals(";") || tokenActual.Token.equals("GO")){
+                consumirToken();
+                nextToken();
+                errorSentenciaAcutal = false;
+                Inicio();
+            }else{
+                consumirToken();
+            }
+        }
+    }
+
     /*
     public void SearchC(){
         SearchCWMatch();
@@ -69,6 +86,7 @@ public class AnalizadorSintactico {
     }
     */
     public void Inicio(){
+        devourToken();
         if(tokenActual.Token.equals("DELETE")){
             DELETE1();
         }else if(tokenActual.Token.equals("DROP")){
@@ -77,12 +95,21 @@ public class AnalizadorSintactico {
             ALTERP();
         }else if(tokenActual.Token.equals("TRUNCATE")){
             TRUNC();
+        }else if(tokenActual.Token.equals("SELECT")){
+            SELECT();
+        }else if(tokenActual.Token.equals("UPDATE")){
+            UPDATE();
+        }else if(tokenActual.Token.equals("INSERT")){
+            INSERT();
+        }else if(tokenActual.Token.equals("CREATE")){
+            CREATE();
         }else if(tokenActual.Token.equals("FINARCHIVO")){
             System.out.println("Se termino de analizar el archivo");
         }
     }
 
     public void TRUNC(){
+        devourToken();
         if(tokenActual.Token.equals("TRUNCATE")){
             consumirToken();
             nextToken();
@@ -96,6 +123,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERP(){
+        devourToken();
         if(tokenActual.Token.equals("ALTER")){
             consumirToken();
             nextToken();
@@ -105,6 +133,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERP1(){
+        devourToken();
         if(tokenActual.Token.equals("VIEW")){
             ALTERV();
         }else if(tokenActual.Token.equals("USER")){
@@ -117,6 +146,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT(){
+        devourToken();
         if(tokenActual.Token.equals("TABLE")){
             consumirToken();
             nextToken();
@@ -126,6 +156,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTER1(){
+        devourToken();
         if(tokenActual.Token.equals("ALTER")){
             consumirToken();
             nextToken();
@@ -154,6 +185,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT1(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -164,6 +196,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT2(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -180,6 +213,7 @@ public class AnalizadorSintactico {
     }
 
     public void ENT(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -193,6 +227,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT3(){
+        devourToken();
         if(tokenActual.Token.equals("(")){
             consumirToken();
             nextToken();
@@ -216,6 +251,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT4(){
+        devourToken();
         if(tokenActual.Token.equals("COLLATE")){
             consumirToken();
             nextToken();
@@ -232,6 +268,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT5(){
+        devourToken();
         if(tokenActual.Token.equals("NULL")){
             consumirToken();
             nextToken();
@@ -248,6 +285,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT6(){
+        devourToken();
         if(tokenActual.Token.equals("ADD")){
             consumirToken();
             nextToken();
@@ -262,6 +300,7 @@ public class AnalizadorSintactico {
     }
     
     public void ALTERT7(){
+        devourToken();
         if(tokenActual.Token.equals("ROWGUIDCOL")){
             consumirToken();
             nextToken();
@@ -286,6 +325,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT8(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -305,6 +345,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT9(){
+        devourToken();
         if(tokenActual.Token.equals(",")){ 
             consumirToken();
             nextToken();
@@ -313,6 +354,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT10(){
+        devourToken();
         if(tokenActual.Token.equals("COLUMN")){
             consumirToken();
             nextToken();
@@ -336,6 +378,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT11(){
+        devourToken();
         if(tokenActual.Token.equals("CONSTRAINT")){
             consumirToken();
             nextToken();
@@ -343,6 +386,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT12(){
+        devourToken();
         if(tokenActual.Token.equals("IF")){
             consumirToken();
             nextToken();
@@ -356,6 +400,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERT13(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -370,6 +415,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERD(){
+        devourToken();
         if(tokenActual.Token.equals("DATABASE")){
             consumirToken();
             nextToken();
@@ -378,6 +424,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERD1(){
+        devourToken();
         if(tokenActual.Token.equals("CURRENT")){
             consumirToken();
             nextToken();
@@ -390,6 +437,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERD2(){
+        devourToken();
         if(tokenActual.Token.equals("COLLATE")){
             consumirToken();
             nextToken();
@@ -405,6 +453,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERU(){
+        devourToken();
         if(tokenActual.Token.equals("USER")){
             consumirToken();
             nextToken();
@@ -420,6 +469,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERV(){
+        devourToken();
         if(tokenActual.Token.equals("VIEW")){
             consumirToken();
             nextToken();
@@ -439,6 +489,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERV1(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -449,6 +500,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERV2(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -462,6 +514,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERV3(){
+        devourToken();
         if(tokenActual.Token.equals("(")){
             consumirToken();
             nextToken();
@@ -476,6 +529,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERV4(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -501,6 +555,7 @@ public class AnalizadorSintactico {
     }
 
     public void ALTERV5(){
+        devourToken();
         if(tokenActual.Token.equals("WITH")){
             consumirToken();
             nextToken();
@@ -520,6 +575,7 @@ public class AnalizadorSintactico {
     }
 
     public void DELETE1(){
+        devourToken();
         if (tokenActual.Token.equals("DELETE")){
             consumirToken();
             nextToken();
@@ -530,6 +586,7 @@ public class AnalizadorSintactico {
     }
 
     public void DROP(){
+        devourToken();
         if(tokenActual.Token.equals("DROP")){
             consumirToken();
             nextToken();
@@ -539,6 +596,7 @@ public class AnalizadorSintactico {
     }
 
     public void DROPP(){
+        devourToken();
         if(tokenActual.Token.equals("TABLE")){
             DROPT();
         }else if(tokenActual.Token.equals("DATABASE")){
@@ -555,6 +613,7 @@ public class AnalizadorSintactico {
     }
 
     public void DROPI(){
+        devourToken();
         if(tokenActual.Token.equals("INDEX")){
             consumirToken();
             nextToken();
@@ -565,6 +624,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXI(){
+        devourToken();
         if(tokenActual.Token.equals("IF")){
             consumirToken();
             nextToken();
@@ -581,6 +641,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXI1(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -591,6 +652,7 @@ public class AnalizadorSintactico {
     }
 
     public void DROPI1(){
+        devourToken();
         if(tokenActual.Token.equals("ON")){
             consumirToken();
             nextToken();
@@ -612,6 +674,7 @@ public class AnalizadorSintactico {
     }
 
     public void DROPI2(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -628,6 +691,7 @@ public class AnalizadorSintactico {
     }
 
     public void DROPI3(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -636,6 +700,7 @@ public class AnalizadorSintactico {
     }
 
     public void DROPV(){
+        devourToken();
         if(tokenActual.Token.equals("VIEW")){
             consumirToken();
             nextToken();
@@ -646,6 +711,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXV(){
+        devourToken();
         if(tokenActual.Token.equals("IF")){
             consumirToken();
             nextToken();
@@ -662,6 +728,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXV1(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -672,6 +739,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXV2(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -686,6 +754,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXV3(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -694,6 +763,7 @@ public class AnalizadorSintactico {
     }
 
     public void DROPU(){
+        devourToken();
         if(tokenActual.Token.equals("USER")){
             consumirToken();
             nextToken();
@@ -704,6 +774,7 @@ public class AnalizadorSintactico {
     }
     
     public void IFEXU(){
+        devourToken();
         if(tokenActual.Token.equals("IF")){
             consumirToken();
             nextToken();
@@ -720,6 +791,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXU1(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -729,6 +801,7 @@ public class AnalizadorSintactico {
     }
 
     public void DROPD(){
+        devourToken();
         if(tokenActual.Token.equals("DATABASE")){
             consumirToken();
             nextToken();
@@ -737,6 +810,7 @@ public class AnalizadorSintactico {
     }
 
     public void DROPT(){
+        devourToken();
         if(tokenActual.Token.equals("TABLE")){
             consumirToken();
             nextToken();
@@ -747,6 +821,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXD(){
+        devourToken();
         if(tokenActual.Token.equals("IF")){
             consumirToken();
             nextToken();
@@ -763,6 +838,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXD1(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -771,6 +847,7 @@ public class AnalizadorSintactico {
     }
     
     public void IFEXD2(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -779,6 +856,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXT(){
+        devourToken();
         if(tokenActual.Token.equals("IF")){
             consumirToken();
             nextToken();
@@ -795,6 +873,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXT1(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -805,6 +884,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXT2(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -821,6 +901,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXT3(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -837,6 +918,7 @@ public class AnalizadorSintactico {
     }
 
     public void IFEXT4(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -845,6 +927,7 @@ public class AnalizadorSintactico {
     }
 
     public void OBJECT(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -853,6 +936,7 @@ public class AnalizadorSintactico {
     }
 
     public void OBJ1(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -869,6 +953,7 @@ public class AnalizadorSintactico {
     }
 
     public void OBJ2(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -885,6 +970,7 @@ public class AnalizadorSintactico {
     }
 
     public void OBJ3(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -898,6 +984,7 @@ public class AnalizadorSintactico {
     }
 
     public void DROPT2(){
+        devourToken();
         if(tokenActual.Token.equals("IF")){
             consumirToken();
             nextToken();
@@ -914,11 +1001,13 @@ public class AnalizadorSintactico {
     }
 
     public void DROPT3(){
+        devourToken();
         OBJECT();
         DROPT4();
     }
 
     public void DROPT4(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -929,6 +1018,7 @@ public class AnalizadorSintactico {
     }
 
     public void DEL2(){
+        devourToken();
         if(tokenActual.Token.equals("TOP")){
             consumirToken();
             nextToken();
@@ -952,6 +1042,7 @@ public class AnalizadorSintactico {
     }
 
     public void DEL3(){
+        devourToken();
         if(tokenActual.Token.equals("PERCENT")){
             consumirToken();
             nextToken();
@@ -962,6 +1053,7 @@ public class AnalizadorSintactico {
     }
 
     public void DEL4(){
+        devourToken();
         if(tokenActual.Token.equals("FROM")){
             consumirToken();
             nextToken();
@@ -972,6 +1064,7 @@ public class AnalizadorSintactico {
     }
 
     public void DEL5(){
+        devourToken();
         if(tokenActual.Token.equals("@")){
             consumirToken();
             nextToken();
@@ -990,6 +1083,7 @@ public class AnalizadorSintactico {
     }
 
     public void DEL6(){
+        devourToken();
         if(tokenActual.Token.equals("OUTPUT")){
             OutputC(); //no se consume token porque en OutputC se consumira
         }else{
@@ -998,6 +1092,7 @@ public class AnalizadorSintactico {
     }
 
     public void DEL9(){
+        devourToken();
         if(tokenActual.Token.equals("WHERE")){
             consumirToken();
             nextToken();
@@ -1009,6 +1104,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLNAME(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -1025,6 +1121,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLNAME1(){
+        devourToken();
         if(tokenActual.Token.equals("*")){
             consumirToken();
             nextToken();
@@ -1037,11 +1134,13 @@ public class AnalizadorSintactico {
     }
 
     public void DML1(){
+        devourToken();
         DML2();
         DML3();
     }
 
     public void DML2(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             COLNAME();
         }else{
@@ -1050,6 +1149,7 @@ public class AnalizadorSintactico {
     }
 
     public void DML3(){
+        devourToken();
         if(tokenActual.Token.equals("AS")){
             consumirToken();
             nextToken();
@@ -1064,6 +1164,7 @@ public class AnalizadorSintactico {
     }
 
     public void DML4(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -1072,6 +1173,7 @@ public class AnalizadorSintactico {
     }
 
     public void OutputC(){
+        devourToken();
         if(tokenActual.Token.equals("OUTPUT")){
             consumirToken();
             nextToken();
@@ -1081,6 +1183,7 @@ public class AnalizadorSintactico {
     }
 
     public void OUTCL1(){
+        devourToken();
         if(tokenActual.Token.equals("INTO")){
             consumirToken();
             nextToken();
@@ -1089,6 +1192,7 @@ public class AnalizadorSintactico {
     }
 
     public void OUTCL2(){
+        devourToken();
         if(tokenActual.Token.equals("@")){
             consumirToken();
             nextToken();
@@ -1109,12 +1213,14 @@ public class AnalizadorSintactico {
     }
 
     public void OUTCL3(){
+        devourToken();
         if(tokenActual.Token.equals("(")){
             COLST(); //No se consume token por que en COLST se consumira
         }
     }
 
     public void COLST(){
+        devourToken();
         if(tokenActual.Token.equals("(")){
             consumirToken();
             nextToken();
@@ -1125,6 +1231,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLST1(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -1135,6 +1242,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLST2(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -1148,6 +1256,7 @@ public class AnalizadorSintactico {
     }
 
     public void FinSentencia(){
+        devourToken();
         if(tokenActual.Token.equals(";") || tokenActual.Token.equals("GO")){
                 consumirToken();
                 nextToken();
@@ -1158,6 +1267,7 @@ public class AnalizadorSintactico {
     }
 
     public void SearchCWMatch(){
+        devourToken();
         if(tokenActual.Token.equals("NOT")){
             consumirToken();
             nextToken();
@@ -1181,6 +1291,7 @@ public class AnalizadorSintactico {
     }
 
     public void SCWM2(){
+        devourToken();
         if(tokenActual.Token.equals("AND")){
             consumirToken();
             nextToken();
@@ -1195,6 +1306,7 @@ public class AnalizadorSintactico {
     }
 
     public void SCWM3(){
+        devourToken();
         if(tokenActual.Token.equals("NOT")){
             consumirToken();
             nextToken();
@@ -1205,6 +1317,7 @@ public class AnalizadorSintactico {
     }
 
     public void SCWM4(){
+        devourToken();
         if(tokenActual.Token.equals("(")){
             consumirToken();
             nextToken();
@@ -1223,6 +1336,7 @@ public class AnalizadorSintactico {
     }
 
     public void SCWM5(){
+        devourToken();
         /*if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -1232,6 +1346,7 @@ public class AnalizadorSintactico {
     }
 
     public void Predicado(){
+        devourToken();
         if(tokenActual.Token.equals("CONTAINS")){
             consumirToken();
             nextToken();
@@ -1286,6 +1401,7 @@ public class AnalizadorSintactico {
     }
 
     public void CSC1(){
+        devourToken();
         if(tokenActual.tipo.equals("Cadena")){
             consumirToken();
             nextToken();
@@ -1306,6 +1422,7 @@ public class AnalizadorSintactico {
     }
 
     public void CSC2(){
+        devourToken();
         if(tokenActual.Token.equals("AND")){
 
         }else if(tokenActual.Token.equals("OR") || tokenActual.Token.equals("||") || tokenActual.Token.equals("&&")){
@@ -1314,6 +1431,7 @@ public class AnalizadorSintactico {
     }
 
     public void CSC3(){
+        devourToken();
         if(tokenActual.Token.equals("NOT")){
             consumirToken();
             nextToken();
@@ -1324,6 +1442,7 @@ public class AnalizadorSintactico {
     }
 
     public void PRED1(){
+        devourToken();
         if(tokenActual.Token.equals("IS")){
             consumirToken();
             nextToken();
@@ -1349,6 +1468,7 @@ public class AnalizadorSintactico {
     }
 
     public void NOT1(){
+        devourToken();
         if(tokenActual.Token.equals("NOT")){
             consumirToken();
             nextToken();
@@ -1356,6 +1476,7 @@ public class AnalizadorSintactico {
     }
 
     public void FT1(){
+        devourToken();
         if(tokenActual.Token.equals("*") || tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -1365,6 +1486,7 @@ public class AnalizadorSintactico {
     }
 
     public void PRED2(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -1374,6 +1496,7 @@ public class AnalizadorSintactico {
     }
 
     public void PRED3(){
+        devourToken();
         if(tokenActual.Token.equals("BETWEEN")){
             consumirToken();
             nextToken();
@@ -1404,6 +1527,7 @@ public class AnalizadorSintactico {
     }
 
     public void Comparadores(){
+        devourToken();
         if(tokenActual.Token.equals(">") || tokenActual.Token.equals("<") || tokenActual.Token.equals(">=") || tokenActual.Token.equals("<=") || tokenActual.Token.equals("!=") || tokenActual.Token.equals("=")){
             consumirToken();
             nextToken();
@@ -1413,16 +1537,19 @@ public class AnalizadorSintactico {
     }
 
     public void ESC(){
+        devourToken();
         TSC();
         ESCP();
     }
 
     public void TSC(){
+        devourToken();
         GSC();
         TSCP();
     }
 
     public void ESCP(){
+        devourToken();
         if(tokenActual.Token.equals("+") || tokenActual.Token.equals("-")){
             consumirToken();
             nextToken();
@@ -1432,6 +1559,7 @@ public class AnalizadorSintactico {
     }
 
     public void TSCP(){
+        devourToken();
         if(tokenActual.Token.equals("*") || tokenActual.Token.equals("/")){
             consumirToken();
             nextToken();
@@ -1442,6 +1570,7 @@ public class AnalizadorSintactico {
 
 
     public void GSC(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador") || tokenActual.tipo.equals("Entero") || tokenActual.tipo.equals("Float")){
             consumirToken();
             nextToken();
@@ -1454,6 +1583,7 @@ public class AnalizadorSintactico {
     }
     /*
     public void EXPI(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador") || tokenActual.tipo.equals("Entero") || tokenActual.tipo.equals("Float")){
             consumirToken();
             nextToken();
@@ -1466,6 +1596,7 @@ public class AnalizadorSintactico {
     }
     */
     public void Const(){
+        devourToken();
         if(tokenActual.Token.equals("NULL") || tokenActual.tipo.equals("Entero") || tokenActual.tipo.equals("Float") || tokenActual.tipo.equals("Cadena")){
             consumirToken();
             nextToken();
@@ -1477,11 +1608,13 @@ public class AnalizadorSintactico {
     }
 
     public void SEXP(){
+        devourToken();
         SEXP3();
         SEXP2();
     }
 
     public void SEXP2(){
+        devourToken();
         if(tokenActual.Token.equals("+") || tokenActual.Token.equals("-")){
             consumirToken();
             nextToken();
@@ -1491,11 +1624,13 @@ public class AnalizadorSintactico {
     }
 
     public void SEXP3(){
+        devourToken();
         SEXP5();
         SEXP4();
     }
 
     public void SEXP4(){
+        devourToken();
         if(tokenActual.Token.equals("*") || tokenActual.Token.equals("/")){
             consumirToken();
             nextToken();
@@ -1505,6 +1640,7 @@ public class AnalizadorSintactico {
     }
 
     public void SEXP5(){
+        devourToken();
         if(tokenActual.Token.equals("(")){
             consumirToken();
             nextToken();
@@ -1527,6 +1663,7 @@ public class AnalizadorSintactico {
     }
 
     public void AGG_FN(){
+        devourToken();
         if(tokenActual.Token.equals("AVG")){
             consumirToken();
             nextToken();
@@ -1580,11 +1717,13 @@ public class AnalizadorSintactico {
     }
 
     public void SEL_AVG(){
+        devourToken();
         SEL_AVG1();
         SEL_AVG2();
     }
 
     public void SEL_AVG1(){
+        devourToken();
         if(tokenActual.Token.equals("ALL") || tokenActual.Token.equals("DISTINC")){
             consumirToken();
             nextToken();
@@ -1592,6 +1731,7 @@ public class AnalizadorSintactico {
     }
 
     public void SEL_AVG2(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -1602,6 +1742,7 @@ public class AnalizadorSintactico {
     }
 
     public void SEL_AVG3(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -1615,11 +1756,13 @@ public class AnalizadorSintactico {
     }
 
     public void SEL_COUNT(){
+        devourToken();
         SEL_COUNT1();
         SEL_COUNT2();
     }
 
     public void SEL_COUNT1(){
+        devourToken();
         if(tokenActual.Token.equals("ALL") || tokenActual.Token.equals("DISTINCT")){
             consumirToken();
             nextToken();
@@ -1627,6 +1770,7 @@ public class AnalizadorSintactico {
     }
 
     public void SEL_COUNT2(){
+        devourToken();
         if(tokenActual.Token.equals("*")){
             consumirToken();
             nextToken();
@@ -1640,6 +1784,7 @@ public class AnalizadorSintactico {
     }
 
     public void SEL_COUNT3(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -1653,11 +1798,13 @@ public class AnalizadorSintactico {
     }
 
     public void SEL_AGR(){
+        devourToken();
         SEL_AGR1();
         SEL_AGR2();
     }
 
     public void SEL_AGR1(){
+        devourToken();
         if(tokenActual.Token.equals("ALL") || tokenActual.Token.equals("DISTINCT")){
             consumirToken();
             nextToken();
@@ -1665,6 +1812,7 @@ public class AnalizadorSintactico {
     }
 
     public void SEL_AGR2(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -1675,6 +1823,7 @@ public class AnalizadorSintactico {
     }
 
     public void SEL_AGR3(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -1687,25 +1836,72 @@ public class AnalizadorSintactico {
     }
 
     public void CREATE(){
-        CREATE();
-        CREATEP();
-        FinSentencia();
+        devourToken();
+        if(tokenActual.Token.equals("CREATE")){
+            consumirToken();
+            nextToken();
+            CREATEP();
+            FinSentencia();
+        }else{
+            printError("CREATE");
+        }
     }
     
     public void CREATEP(){
+        devourToken();
         if(tokenActual.Token.equals("TABLE")){
             consumirToken();
             nextToken();
+            CREATET1();
+        }else if(tokenActual.Token.equals("USER")){
+            consumirToken();
+            nextToken();
+            CREATEU1();
+        }else if(tokenActual.Token.equals("VIEW")){
+            consumirToken();
+            nextToken();
+            CREATEV1();
+        }else if(tokenActual.Token.equals("DATABASE")){
+            consumirToken();
+            nextToken();
+            CREATED1();
+        }else if(tokenActual.Token.equals("UNIQUE")){
+            PREINDEXU();
+            PREINDEXC();
+            if(tokenActual.Token.equals("INDEX")){
+                consumirToken();
+                nextToken();
+                CREATEI1();
+            }else{
+                printError("INDEX");
+            }
+        }else if(tokenActual.Token.equals("CLUSTERED") || tokenActual.Token.equals("NONCLUSTERED")){
+            PREINDEXC();
+            if(tokenActual.Token.equals("INDEX")){
+                consumirToken();
+                nextToken();
+                CREATEI1();
+            }else{
+                printError("INDEX");
+            }
+        }else if(tokenActual.Token.equals("INDEX")){
+            consumirToken();
+            nextToken();
+            CREATEI1();
+        }else{
+            printError("TABLE, USER, VIEW, DATABASE, INDEX, UNIQUE, CLUSTERED, NONCLUSTERED");
         }
     }
 
     public void CREATET1(){
+        devourToken();
         OBJECT();
         CREATET2();
         CREATET5();
     }
 
     public void CREATET2(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -1747,6 +1943,7 @@ public class AnalizadorSintactico {
     }
 
     public void CREATET3(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -1756,6 +1953,7 @@ public class AnalizadorSintactico {
     }
 
     public void CREATET4(){
+        devourToken();
         if(tokenActual.Token.equals("AS")){
             consumirToken();
             nextToken();
@@ -1765,6 +1963,7 @@ public class AnalizadorSintactico {
     }
 
     public void CREATET5(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -1773,6 +1972,7 @@ public class AnalizadorSintactico {
     }
 
     public void SEED(){
+        devourToken();
         if(tokenActual.tipo.equals("Entero") || tokenActual.tipo.equals("Float")){
             consumirToken();
             nextToken();
@@ -1782,6 +1982,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMN_DEF(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -1791,6 +1992,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMN_DEF2(){
+        devourToken();
         if(tokenActual.Token.equals("COLLATE")){
             consumirToken();
             nextToken();
@@ -1807,6 +2009,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNDEF3(){
+        devourToken();
         if(tokenActual.Token.equals("CONSTRAINT")){
             consumirToken();
             nextToken();
@@ -1823,6 +2026,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNDEF4(){
+        devourToken();
         if(tokenActual.Token.equals("DEFAULT")){
             consumirToken();
             nextToken();
@@ -1834,6 +2038,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNDEF5(){
+        devourToken();
         if(tokenActual.Token.equals("IDENTITY")){
             consumirToken();
             nextToken();
@@ -1844,6 +2049,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNDEF6(){
+        devourToken();
         if(tokenActual.Token.equals("(")){
             consumirToken();
             nextToken();
@@ -1868,6 +2074,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNDEF7(){
+        devourToken();
         if(tokenActual.Token.equals("NOT")){
             consumirToken();
             nextToken();
@@ -1878,6 +2085,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNDEF8(){
+        devourToken();
         if(tokenActual.Token.equals("FOR")){
             consumirToken();
             nextToken();
@@ -1898,6 +2106,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNDEF9(){
+        devourToken();
         if(tokenActual.Token.equals("NOT")){
             consumirToken();
             nextToken();
@@ -1916,6 +2125,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNDEF10(){
+        devourToken();
         if(tokenActual.Token.equals("ROWGUIDCONTROL")){
             consumirToken();
             nextToken();
@@ -1926,6 +2136,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNDEF11(){
+        devourToken();
         if(tokenActual.Token.equals("CONSTRAINT")){
             consumirToken();
             nextToken();
@@ -1937,10 +2148,12 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNDEF12(){
+        devourToken();
         COL_IND();
     }
 
     public void COLUMNDEF13(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -1952,6 +2165,7 @@ public class AnalizadorSintactico {
 
 
     public void COLUMNCONSTRAINT(){
+        devourToken();
         if(tokenActual.Token.equals("CONSTRAINT")){
             consumirToken();
             nextToken();
@@ -1968,6 +2182,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC2(){
+        devourToken();
         if(tokenActual.Token.equals("PRIMARY")){
             consumirToken();
             nextToken();
@@ -1998,6 +2213,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC3(){
+        devourToken();
         if(tokenActual.Token.equals("CLUSTERED")){
             consumirToken();
             nextToken();
@@ -2012,6 +2228,7 @@ public class AnalizadorSintactico {
     }  
 
     public void COLUMNC4(){
+        devourToken();
         if(tokenActual.Token.equals("ON")){
             consumirToken();
             nextToken();
@@ -2046,6 +2263,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC5(){
+        devourToken();
         if(tokenActual.Token.equals("FOREIGN")){
             consumirToken();
             nextToken();
@@ -2062,6 +2280,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC6(){
+        devourToken();
         if(tokenActual.Token.equals("REFERENCES")){
             consumirToken();
             nextToken();
@@ -2078,6 +2297,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC7(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -2094,6 +2314,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC8(){
+        devourToken();
         if(tokenActual.Token.equals("(")){
             consumirToken();
             nextToken();
@@ -2117,6 +2338,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC9(){
+        devourToken();
         if(tokenActual.Token.equals("ON")){
             consumirToken();
             nextToken();
@@ -2127,10 +2349,24 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC10(){
-
+        devourToken();
+        if(tokenActual.Token.equals(",")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                COLUMNC10();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            COLUMNC10();
+        }
     }
 
     public void COLUMNC11(){
+        devourToken();
         if(tokenActual.Token.equals("DELETE")){
             consumirToken();
             nextToken();
@@ -2147,6 +2383,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC12(){
+        devourToken();
         if(tokenActual.Token.equals("NO")){
             consumirToken();
             nextToken();
@@ -2169,6 +2406,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC13(){
+        devourToken();
         if(tokenActual.Token.equals("NULL")){
             consumirToken();
             nextToken();
@@ -2181,6 +2419,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC14(){
+        devourToken();
         if(tokenActual.Token.equals("ON")){
             consumirToken();
             nextToken();
@@ -2198,6 +2437,7 @@ public class AnalizadorSintactico {
     }
     
     public void COLUMNC15(){
+        devourToken();
         if(tokenActual.Token.equals("NOT")){
             consumirToken();
             nextToken();
@@ -2217,6 +2457,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC16(){
+        devourToken();
         if(tokenActual.Token.equals("CHECK")){
             consumirToken();
             nextToken();
@@ -2240,6 +2481,7 @@ public class AnalizadorSintactico {
     }
 
     public void COLUMNC17(){
+        devourToken();
         if(tokenActual.Token.equals("NOT")){
             consumirToken();
             nextToken();
@@ -2259,6 +2501,7 @@ public class AnalizadorSintactico {
     }
 
     public void COL_IND(){
+        devourToken();
         if(tokenActual.Token.equals("INDEX")){
             consumirToken();
             nextToken();
@@ -2276,6 +2519,7 @@ public class AnalizadorSintactico {
     }
 
     public void COL_IND1(){
+        devourToken();
         if(tokenActual.Token.equals("CLUSTERED")){
             consumirToken();
             nextToken();
@@ -2286,10 +2530,12 @@ public class AnalizadorSintactico {
     }
 
     public void COL_IND2(){
+        devourToken();
         COLUMNC4();
     }
 
     public void CCD(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -2312,6 +2558,7 @@ public class AnalizadorSintactico {
     }
 
     public void TABLECON(){
+        devourToken();
         if(tokenActual.Token.equals("CONSTRAINT")){
             consumirToken();
             nextToken();
@@ -2328,6 +2575,7 @@ public class AnalizadorSintactico {
     }
 
     public void TABLECON1(){
+        devourToken();
         if(tokenActual.Token.equals("PRIMARY")){
             consumirToken();
             nextToken();
@@ -2383,6 +2631,7 @@ public class AnalizadorSintactico {
     }
 
     public void TABLECON2(){
+        devourToken();
         if(tokenActual.Token.equals("CLUSTERED")){
             consumirToken();
             nextToken();
@@ -2393,6 +2642,7 @@ public class AnalizadorSintactico {
     }
 
     public void TABLECON3(){
+        devourToken();
         if(tokenActual.Token.equals("(")){
             consumirToken();
             nextToken();
@@ -2410,6 +2660,7 @@ public class AnalizadorSintactico {
     }
 
     public void TABLECON8(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -2420,6 +2671,7 @@ public class AnalizadorSintactico {
     }
 
     public void TABLECON4(){
+        devourToken();
         if(tokenActual.Token.equals("ASC")){
             consumirToken();
             nextToken();
@@ -2434,6 +2686,7 @@ public class AnalizadorSintactico {
     }
 
     public void TABLECON6(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -2442,6 +2695,7 @@ public class AnalizadorSintactico {
     }
 
     public void TABLECON7(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -2456,6 +2710,7 @@ public class AnalizadorSintactico {
     }
 
     public void TABIND(){
+        devourToken();
         if(tokenActual.Token.equals("INDEX")){
             consumirToken();
             nextToken();
@@ -2486,6 +2741,7 @@ public class AnalizadorSintactico {
     }
 
     public void DATATYPE(){
+        devourToken();
         if(tokenActual.tipo.equals("Identificador")){
             consumirToken();
             nextToken();
@@ -2496,6 +2752,7 @@ public class AnalizadorSintactico {
     }
 
     public void DATATYPE2(){
+        devourToken();
         if(tokenActual.Token.equals(".")){
             consumirToken();
             nextToken();
@@ -2511,6 +2768,7 @@ public class AnalizadorSintactico {
     }
 
     public void DATATYPE3(){
+        devourToken();
         if(tokenActual.Token.equals("BIT")){
             consumirToken();
             nextToken();
@@ -2569,6 +2827,7 @@ public class AnalizadorSintactico {
     }
 
     public void DATATYPE4(){
+        devourToken();
         if(tokenActual.Token.equals("(")){
             consumirToken();
             nextToken();
@@ -2583,6 +2842,7 @@ public class AnalizadorSintactico {
     }
 
     public void DATATYPE5(){
+        devourToken();
         if(tokenActual.Token.equals(",")){
             consumirToken();
             nextToken();
@@ -2605,4 +2865,182 @@ public class AnalizadorSintactico {
             printError(", o )");
         }
     }
+
+    public void EXPRESION(){
+        devourToken();
+    }
+
+    public void SELECT(){
+        devourToken();
+    }
+
+    public void INSERT(){
+        devourToken();
+    }
+
+    public void UPDATE(){
+        devourToken();
+    }
+
+    public void PREINDEXU(){
+        devourToken();
+        if(tokenActual.Token.equals("UNIQUE")){
+            consumirToken();
+            nextToken();
+        }
+    }
+
+    public void PREINDEXC(){
+        devourToken();
+        if(tokenActual.Token.equals("CLUSTERED")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("NUNCLUSTERED")){
+            consumirToken();
+            nextToken();
+        }
+    }
+    
+    public void CREATEI1(){
+        devourToken();
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("ON")){
+                consumirToken();
+                nextToken();
+                OBJECT();
+                if(tokenActual.Token.equals("(")){
+                    consumirToken();
+                    nextToken();
+                    TABLECON8();
+                    if(tokenActual.Token.equals(")")){
+                        consumirToken();
+                        nextToken();
+                        CREATEI2();
+                    }else{
+                        printError(")");
+                    }
+                }else{
+                    printError("(");
+                }
+            }else{
+                printError("ON");
+            }
+        }else{
+            printError("Identificador");
+        }
+    }
+
+    public void CREATEI2(){
+        devourToken();
+        if(tokenActual.Token.equals("INCLUDE")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.Token.equals("(")){
+                consumirToken();
+                nextToken();
+                if(tokenActual.tipo.equals("Identificador")){
+                    consumirToken();
+                    nextToken();
+                    TABLECON7();
+                    if(tokenActual.Token.equals(")")){
+                        consumirToken();
+                        nextToken();
+                    }else{
+                        printError(")");
+                    }
+                }else{
+                    printError("Identificador");
+                }
+            }else{
+                printError("(");
+            }
+        }
+    }
+
+    public void CREATED1(){
+        devourToken();
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+            CREATED2();
+        }else{
+            printError("Identificador");
+        }
+    }
+
+    public void CREATED2(){
+        devourToken();
+        if(tokenActual.Token.equals("COLLATE")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+            }else{
+                printError("Identificador");
+            }
+        }
+    }
+
+    public void CREATEU1(){
+        devourToken();
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+        }else{
+            printError("Identificador");
+        }
+    }
+
+    public void CREATEV1(){
+        devourToken();
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+            CREATEV2();
+        }else{
+            printError("Identificador");
+        }
+    }
+
+    public void CREATEV2(){
+        devourToken();
+        if(tokenActual.Token.equals(".")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                CREATEV3();
+            }else{
+                printError("Identificador");
+            }
+        }else{
+            CREATEV3();
+        }
+    }
+
+    public void CREATEV3(){
+        //System.out.println(tokenActual.Token);
+        devourToken();
+        if(tokenActual.Token.equals("(")){
+            consumirToken();
+            nextToken();
+            if(tokenActual.tipo.equals("Identificador")){
+                consumirToken();
+                nextToken();
+                TABLECON7();
+                if(tokenActual.Token.equals(")")){
+                    consumirToken();
+                    nextToken();
+                }else{
+                    printError(")");
+                }
+            }
+        }
+    }
+
+
 }

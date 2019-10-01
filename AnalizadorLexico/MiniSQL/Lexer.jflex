@@ -1681,6 +1681,7 @@ Espacio = \s+
 	}
 
 {Cadenaerror} {//ArchivoEscribir = ArchivoEscribir + "Error en la col: " + yycolumn + " fila: " + yyline + " Cadena sin cerrar"+ "\n";
+	TOKENS.add(new MyTOKEN(yytext(), "ERROR", yycolumn, yyline));
 }
 
 {ComentarioLinea} {
@@ -1827,5 +1828,6 @@ Espacio = \s+
 {Espacio} {/*Hacer nada equisde*/}
 
 [^] {
+	TOKENS.add(new MyTOKEN(yytext(), "ERROR", yycolumn, yyline));
 	//ArchivoEscribir = ArchivoEscribir + "Error en la col: " + yycolumn + " fila: " + yyline + " Caracter no Reconocido" + "\n";
 }
