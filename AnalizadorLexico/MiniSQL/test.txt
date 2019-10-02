@@ -1,4 +1,4 @@
-CREATE DATABASE Botanik;
+CREATE DATABASE Botanik
 GO
 CREATE TABLE Empleado(
     dpi VARCHAR(13) NOT NULL PRIMARY KEY,
@@ -13,7 +13,8 @@ CREATE TABLE Tienda(
     direccion VARCHAR(MAX) NOT NULL,
     responsable VARCHAR(13) NOT NULL REFERENCES Empleado(dpi),
     activo BIT NOT NULL DEFAULT 1
-);
+)
+GO
 
 CREATE TABLE EmpleadoTienda(
     dpi_empleado VARCHAR(13) NOT NULL REFERENCES Empleado(dpi)
@@ -39,7 +40,7 @@ CREATE TABLE Proveedores(
     codigo INT NOT NULL PRIMARY KEY IDENTITY,
     nombre VARCHAR(50) NOT NULL,
     activo BIT NOT NULL DEFAULT 1
-);
+)GO
 
 CREATE TABLE HistorialResponsable(
     codigo_tienda INT NOT NULL REFERENCES Tienda(codigo)

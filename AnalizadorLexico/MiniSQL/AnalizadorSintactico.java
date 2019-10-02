@@ -2887,23 +2887,51 @@ public class AnalizadorSintactico {
 
     public void EXPRESION(){
         devourToken();
-
+        if(tokenActual.Token.equals("")){
+            SEXP();
+            EXPRESION1();
+            EXPRESION3();
+        }else if(tokenActual.tipo.equals("Cadena")){
+            
+        }
     }
 
     public void EXPRESION1(){
         devourToken();
+        AROPR();
+        Comparadores();
+        SUMOPR();
     }
 
     public void EXPRESION2(){
         devourToken();
+        if(tokenActual.tipo.equals("Cadena")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+        }else{
+            printError("Identificador, Cadena");
+        }
     }
 
     public void EXPRESION3(){
         devourToken();
+        SEXP();
+        if(tokenActual.tipo.equals("Identificador")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.tipo.equals("Cadena")){
+            consumirToken();
+            nextToken();
+        }
     }
 
     public void EXPRESION4(){
         devourToken();
+        Comparadores();
+        LOGOPR();
     }
 
     public void SELECT1(){
@@ -3113,27 +3141,81 @@ public class AnalizadorSintactico {
 
     public void BINOPR(){
         devourToken();
+        if(tokenActual.Token.equals("-") || tokenActual.Token.equals("*") || tokenActual.Token.equals("/") || tokenActual.Token.equals("%")){
+            AROPR();
+        }else if(tokenActual.Token.equals("=")){
+            ASIGOPR();
+        }else if(tokenActual.Token.equals("+")){
+            SUMOPR();
+        }else if(tokenActual.Token.equals("AND") || tokenActual.Token.equals("OR")){
+            BITOPR();
+        }else if(tokenActual.Token.equals(">") || tokenActual.Token.equals("<") || tokenActual.Token.equals(">=") || tokenActual.Token.equals("<=") || tokenActual.Token.equals("!=")){
+            Comparadores();
+        }else if(tokenActual.Token.equals("BETWEEN") || tokenActual.Token.equals("IN") || tokenActual.Token.equals("LIKE")){
+            LOGOPR();
+        }
     }
 
     public void AROPR(){
         devourToken();
+        if(tokenActual.Token.equals("-")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("*")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("/")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("%")){
+            consumirToken();
+            nextToken();
+        }else{
+            printError("-, /, *, %");
+        }
     }
 
     public void SUMOPR(){
         devourToken();
+        if(tokenActual.Token.equals("+")){
+            consumirToken();
+            nextToken();
+        }else{
+            printError("+");
+        }
     }
 
     public void ASIGOPR(){
         devourToken();
+        if(tokenActual.Token.equals("=")){
+            consumirToken();
+            nextToken();
+        }else{
+            printError("=");
+        }
     }
 
     public void BITOPR(){
         devourToken();
+        if(tokenActual.Token.equals("AND")){
+            consumirToken();
+            nextToken();
+        }else if(tokenActual.Token.equals("OR")){
+            consumirToken();
+            nextToken();
+        }else{
+            printError("AND u OR");
+        }
     }
 
     public void NOTOPR(){
         devourToken();
-
+        if(tokenActual.Token.equals("NOT")){
+            consumirToken();
+            nextToken();
+        }else{
+            printError("NOT");
+        }
     }
 /*
     public void COMPOPR(){
