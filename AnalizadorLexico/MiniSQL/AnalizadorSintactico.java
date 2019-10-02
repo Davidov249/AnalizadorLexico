@@ -65,8 +65,7 @@ public class AnalizadorSintactico {
     public void devourToken(){
         if(tokenActual.Token.equals("ERROR")){
             errorSentenciaAcutal = true;
-        }
-        if(errorSentenciaAcutal){
+        }else if(errorSentenciaAcutal){
             if(tokenActual.Token.equals(";") || tokenActual.Token.equals("GO")){
                 consumirToken();
                 nextToken();
