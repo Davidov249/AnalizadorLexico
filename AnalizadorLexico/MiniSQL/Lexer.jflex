@@ -342,7 +342,7 @@ Float = ([0-9]+\.[0-9]*)|([0-9]+\.[0-9]*[eE][0-9]*)|([0-9]+\.[0-9]*[eE][\+-][0-9
 Cadena = \'[^\'\n]*\'
 Cadenaerror = (\'[^\'\n]*[\n])|(\'[^\'\n]*)
 ComentarioLinea = --[^\n]*
-ComentarioMultiliena = \/\*[^(\*\/)]*\*\/
+ComentarioMultiliena = ([/][*]+)([^*]|\*+[^/*])*([*]+[/])
 //ComentarioMultilienaerror = (\/\*[^\n\*\/]*\n)|(\/\*[^\n\*\/]*)
 Signomas = \+
 Signomenos = -
@@ -416,1251 +416,1251 @@ Espacio = \s+
 
 %%
 //RESERVADAS 
-{resABSOLUTE} {
+<YYINITIAL> {resABSOLUTE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resACTION} {
+<YYINITIAL> {resACTION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resADA} {
+<YYINITIAL> {resADA} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resADD} {
+<YYINITIAL> {resADD} {
 	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
-{resALL} {
+<YYINITIAL> {resALL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resALLOCATE} {
+<YYINITIAL> {resALLOCATE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resALTER} {
+<YYINITIAL> {resALTER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resAND} {
+<YYINITIAL> {resAND} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resANY} {
+<YYINITIAL> {resANY} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resARE} {
+<YYINITIAL> {resARE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resAS} {
+<YYINITIAL> {resAS} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resASC} {
+<YYINITIAL> {resASC} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resASSERTION} {
+<YYINITIAL> {resASSERTION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resAT} {
+<YYINITIAL> {resAT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resAUTHORIZATION} {
+<YYINITIAL> {resAUTHORIZATION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resAVG} {
+<YYINITIAL> {resAVG} {
 	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
-{resBACKUP} {
+<YYINITIAL> {resBACKUP} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resBEGIN} {
+<YYINITIAL> {resBEGIN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resBETWEEN} {
+<YYINITIAL> {resBETWEEN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resBIT} {
+<YYINITIAL> {resBIT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resBIT_LENGTH} {
+<YYINITIAL> {resBIT_LENGTH} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resBOTH} {
+<YYINITIAL> {resBOTH} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resBREAK} {
+<YYINITIAL> {resBREAK} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resBROWSE} {
+<YYINITIAL> {resBROWSE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resBULK} {
+<YYINITIAL> {resBULK} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resBY} {
+<YYINITIAL> {resBY} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCASCADE} {
+<YYINITIAL> {resCASCADE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCASCADED} {
+<YYINITIAL> {resCASCADED} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCASE} {
+<YYINITIAL> {resCASE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCAST} {
+<YYINITIAL> {resCAST} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCATALOG} {
+<YYINITIAL> {resCATALOG} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCHAR} {
+<YYINITIAL> {resCHAR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCHAR_LENGTH} {
+<YYINITIAL> {resCHAR_LENGTH} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCHARACTER} {
+<YYINITIAL> {resCHARACTER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCHARACHTER_LENGTH} {
+<YYINITIAL> {resCHARACHTER_LENGTH} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCHECK} {
+<YYINITIAL> {resCHECK} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCHECKPOINT} {
+<YYINITIAL> {resCHECKPOINT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCLOSE} {
+<YYINITIAL> {resCLOSE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCLUSTERED} {
+<YYINITIAL> {resCLUSTERED} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCOALESCE} {
+<YYINITIAL> {resCOALESCE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCOLLATE} {
+<YYINITIAL> {resCOLLATE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCOALLITION} {
+<YYINITIAL> {resCOALLITION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCOLUMN} {
+<YYINITIAL> {resCOLUMN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCOMMIT} {
+<YYINITIAL> {resCOMMIT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCOMPUTE} {
+<YYINITIAL> {resCOMPUTE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCONNECT} {
+<YYINITIAL> {resCONNECT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCONNECTION} {
+<YYINITIAL> {resCONNECTION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCONSTRAINT} {
+<YYINITIAL> {resCONSTRAINT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCONSTRAINTS} {
+<YYINITIAL> {resCONSTRAINTS} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCONTAINS} {
+<YYINITIAL> {resCONTAINS} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCONTAINSTABLE} {
+<YYINITIAL> {resCONTAINSTABLE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCONTINUE} {
+<YYINITIAL> {resCONTINUE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCONVERT} {
+<YYINITIAL> {resCONVERT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCORRESPONDING} {
+<YYINITIAL> {resCORRESPONDING} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCOUNT} {
+<YYINITIAL> {resCOUNT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
-{resCREATE} {
+<YYINITIAL> {resCREATE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCROSS} {
+<YYINITIAL> {resCROSS} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCURRENT} {
+<YYINITIAL> {resCURRENT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCURRENT_DATE} {
+<YYINITIAL> {resCURRENT_DATE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCURRENT_TIME} {
+<YYINITIAL> {resCURRENT_TIME} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCURRENT_TIMES} {
+<YYINITIAL> {resCURRENT_TIMES} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCURRENT_USER} {
+<YYINITIAL> {resCURRENT_USER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resCURSOR} {
+<YYINITIAL> {resCURSOR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDATABASE} {
+<YYINITIAL> {resDATABASE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDATE} {
+<YYINITIAL> {resDATE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDAY} {
+<YYINITIAL> {resDAY} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDBCC} {
+<YYINITIAL> {resDBCC} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDEALLOCATE} {
+<YYINITIAL> {resDEALLOCATE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDEC} {
+<YYINITIAL> {resDEC} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDECIMAL} {
+<YYINITIAL> {resDECIMAL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDECLARE} {
+<YYINITIAL> {resDECLARE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDEFAULT} {
+<YYINITIAL> {resDEFAULT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDEFERRABLE} {
+<YYINITIAL> {resDEFERRABLE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDEFERRED} {
+<YYINITIAL> {resDEFERRED} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDELETE} {
+<YYINITIAL> {resDELETE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDENY} {
+<YYINITIAL> {resDENY} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDESC} {
+<YYINITIAL> {resDESC} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDESCRIBE} {
+<YYINITIAL> {resDESCRIBE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDESCRIPTOR} {
+<YYINITIAL> {resDESCRIPTOR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDIAGNOSTICS} {
+<YYINITIAL> {resDIAGNOSTICS} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDISCONNECT} {
+<YYINITIAL> {resDISCONNECT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDISK} {
+<YYINITIAL> {resDISK} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDISTINCT} {
+<YYINITIAL> {resDISTINCT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDISTURBED} {
+<YYINITIAL> {resDISTURBED} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDOMAIN} {
+<YYINITIAL> {resDOMAIN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDOUBLE} {
+<YYINITIAL> {resDOUBLE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDROP} {
+<YYINITIAL> {resDROP} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resDUMP} {
+<YYINITIAL> {resDUMP} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resELSE} {
+<YYINITIAL> {resELSE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resEND} {
+<YYINITIAL> {resEND} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resENDEXEC} {
+<YYINITIAL> {resENDEXEC} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resERRLVL} {
+<YYINITIAL> {resERRLVL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resESCAPE} {
+<YYINITIAL> {resESCAPE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resEXCEPT} {
+<YYINITIAL> {resEXCEPT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resEXCEPTION} {
+<YYINITIAL> {resEXCEPTION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resEXEC} {
+<YYINITIAL> {resEXEC} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resEXECUTE} {
+<YYINITIAL> {resEXECUTE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resEXISTS} {
+<YYINITIAL> {resEXISTS} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resEXIT} {
+<YYINITIAL> {resEXIT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resEXTERNAL} {
+<YYINITIAL> {resEXTERNAL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFETCH} {
+<YYINITIAL> {resFETCH} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resEXTRACT} {
+<YYINITIAL> {resEXTRACT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFALSE} {
+<YYINITIAL> {resFALSE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFILE} {
+<YYINITIAL> {resFILE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFILLFACTOR} {
+<YYINITIAL> {resFILLFACTOR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFIRST} {
+<YYINITIAL> {resFIRST} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFOR} {
+<YYINITIAL> {resFOR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFLOAT} {
+<YYINITIAL> {resFLOAT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFOREIGN} {
+<YYINITIAL> {resFOREIGN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFREETEXT} {
+<YYINITIAL> {resFREETEXT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFORTRAN} {
+<YYINITIAL> {resFORTRAN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFOUND} {
+<YYINITIAL> {resFOUND} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFROM} {
+<YYINITIAL> {resFROM} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFREETEXTTABLE} {
+<YYINITIAL> {resFREETEXTTABLE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFULL} {
+<YYINITIAL> {resFULL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resGET} {
+<YYINITIAL> {resGET} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resGLOBAL} {
+<YYINITIAL> {resGLOBAL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resFUNCTION} {
+<YYINITIAL> {resFUNCTION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resGO} {
+<YYINITIAL> {resGO} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resGOTO} {
+<YYINITIAL> {resGOTO} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resGRANT} {
+<YYINITIAL> {resGRANT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resGROUP} {
+<YYINITIAL> {resGROUP} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resHAVING} {
+<YYINITIAL> {resHAVING} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resHOLDLOCK} {
+<YYINITIAL> {resHOLDLOCK} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resHOUR} {
+<YYINITIAL> {resHOUR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resIDENTITY} {
+<YYINITIAL> {resIDENTITY} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resIMMEDIATE} {
+<YYINITIAL> {resIMMEDIATE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resIN} {
+<YYINITIAL> {resIN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINCLUDE} {
+<YYINITIAL> {resINCLUDE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINDEX} {
+<YYINITIAL> {resINDEX} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINDICATOR} {
+<YYINITIAL> {resINDICATOR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINITIALLY} {
+<YYINITIAL> {resINITIALLY} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINNER} {
+<YYINITIAL> {resINNER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resIDENTITY_INSERT} {
+<YYINITIAL> {resIDENTITY_INSERT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINPUT} {
+<YYINITIAL> {resINPUT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resIDENTITYCOL} {
+<YYINITIAL> {resIDENTITYCOL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resIF} {
+<YYINITIAL> {resIF} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINSENSITIVE} {
+<YYINITIAL> {resINSENSITIVE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINSERT} {
+<YYINITIAL> {resINSERT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINT} {
+<YYINITIAL> {resINT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINTEGER} {
+<YYINITIAL> {resINTEGER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINTERSECT} {
+<YYINITIAL> {resINTERSECT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINTERVAL} {
+<YYINITIAL> {resINTERVAL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resINTO} {
+<YYINITIAL> {resINTO} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resIS} {
+<YYINITIAL> {resIS} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resISOLATION} {
+<YYINITIAL> {resISOLATION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resJOIN} {
+<YYINITIAL> {resJOIN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resKEY} {
+<YYINITIAL> {resKEY} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resKILL} {
+<YYINITIAL> {resKILL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resLEFT} {
+<YYINITIAL> {resLEFT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resLANGUAGE} {
+<YYINITIAL> {resLANGUAGE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resLAST} {
+<YYINITIAL> {resLAST} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resLEADING} {
+<YYINITIAL> {resLEADING} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resLIKE} {
+<YYINITIAL> {resLIKE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resLINENO} {
+<YYINITIAL> {resLINENO} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resLEVEL} {
+<YYINITIAL> {resLEVEL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resLOAD} {
+<YYINITIAL> {resLOAD} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resMERGE} {
+<YYINITIAL> {resMERGE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resLOCAL} {
+<YYINITIAL> {resLOCAL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resNATIONAL} {
+<YYINITIAL> {resNATIONAL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resLOWER} {
+<YYINITIAL> {resLOWER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resNOCHECK} {
+<YYINITIAL> {resNOCHECK} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resMATCH} {
+<YYINITIAL> {resMATCH} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resNONCLUSTERED} {
+<YYINITIAL> {resNONCLUSTERED} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resMAX} {
+<YYINITIAL> {resMAX} {
 	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
-{resNOT} {
+<YYINITIAL> {resNOT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resMIN} {
+<YYINITIAL> {resMIN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
-{resNULL} {
+<YYINITIAL> {resNULL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resMINUTE} {
+<YYINITIAL> {resMINUTE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resMODULE} {
+<YYINITIAL> {resMODULE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resNULLIF} {
+<YYINITIAL> {resNULLIF} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOF} {
+<YYINITIAL> {resOF} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resMONTH} {
+<YYINITIAL> {resMONTH} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resNAMES} {
+<YYINITIAL> {resNAMES} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOFF} {
+<YYINITIAL> {resOFF} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resNATURAL} {
+<YYINITIAL> {resNATURAL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOFFSES} {
+<YYINITIAL> {resOFFSES} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resNCHAR} {
+<YYINITIAL> {resNCHAR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resNEXT} {
+<YYINITIAL> {resNEXT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resNO} {
+<YYINITIAL> {resNO} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resON} {
+<YYINITIAL> {resON} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resNONE} {
+<YYINITIAL> {resNONE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOPEN} {
+<YYINITIAL> {resOPEN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOPENDATASOURCE} {
+<YYINITIAL> {resOPENDATASOURCE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resNUMERIC} {
+<YYINITIAL> {resNUMERIC} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOCTET_LENGTH} {
+<YYINITIAL> {resOCTET_LENGTH} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOPENQUERY} {
+<YYINITIAL> {resOPENQUERY} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOPENROWSET} {
+<YYINITIAL> {resOPENROWSET} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOPENXML} {
+<YYINITIAL> {resOPENXML} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOPTION} {
+<YYINITIAL> {resOPTION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resONLY} {
+<YYINITIAL> {resONLY} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOR} {
+<YYINITIAL> {resOR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resORDER} {
+<YYINITIAL> {resORDER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOUTER} {
+<YYINITIAL> {resOUTER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOVER} {
+<YYINITIAL> {resOVER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPERCENT} {
+<YYINITIAL> {resPERCENT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPIVOT} {
+<YYINITIAL> {resPIVOT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPLAN} {
+<YYINITIAL> {resPLAN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOUTPUT} {
+<YYINITIAL> {resOUTPUT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPRECISION} {
+<YYINITIAL> {resPRECISION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPRIMARY} {
+<YYINITIAL> {resPRIMARY} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPRINT} {
+<YYINITIAL> {resPRINT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPROC} {
+<YYINITIAL> {resPROC} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resOVERLAPS} {
+<YYINITIAL> {resOVERLAPS} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPAD} {
+<YYINITIAL> {resPAD} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPARTIAL} {
+<YYINITIAL> {resPARTIAL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPROCEDURE} {
+<YYINITIAL> {resPROCEDURE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPASCAL} {
+<YYINITIAL> {resPASCAL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPUBLIC} {
+<YYINITIAL> {resPUBLIC} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPOSITION} {
+<YYINITIAL> {resPOSITION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resRAISERROR} {
+<YYINITIAL> {resRAISERROR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPREPARE} {
+<YYINITIAL> {resPREPARE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resREAD} {
+<YYINITIAL> {resREAD} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPRESERVE} {
+<YYINITIAL> {resPRESERVE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resREADTEXT} {
+<YYINITIAL> {resREADTEXT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPRIOR} {
+<YYINITIAL> {resPRIOR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resRECONFIGURE} {
+<YYINITIAL> {resRECONFIGURE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resPRIVILEGES} {
+<YYINITIAL> {resPRIVILEGES} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resREFERENCES} {
+<YYINITIAL> {resREFERENCES} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resREPLICATION} {
+<YYINITIAL> {resREPLICATION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resREAL} {
+<YYINITIAL> {resREAL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resRESTORE} {
+<YYINITIAL> {resRESTORE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resRESTRICT} {
+<YYINITIAL> {resRESTRICT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resRELATIVE} {
+<YYINITIAL> {resRELATIVE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resRETURN} {
+<YYINITIAL> {resRETURN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resREVOKE} {
+<YYINITIAL> {resREVOKE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resRIGHT} {
+<YYINITIAL> {resRIGHT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resROLLBACK} {
+<YYINITIAL> {resROLLBACK} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resREVERT} {
+<YYINITIAL> {resREVERT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resROWS} {
+<YYINITIAL> {resROWS} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resROWCOUNT} {
+<YYINITIAL> {resROWCOUNT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSCHEMA} {
+<YYINITIAL> {resSCHEMA} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSCROLL} {
+<YYINITIAL> {resSCROLL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resROWGUIDCOL} {
+<YYINITIAL> {resROWGUIDCOL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSECOND} {
+<YYINITIAL> {resSECOND} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSECTION} {
+<YYINITIAL> {resSECTION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSELECT} {
+<YYINITIAL> {resSELECT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSESSION} {
+<YYINITIAL> {resSESSION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSESSION_USER} {
+<YYINITIAL> {resSESSION_USER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSET} {
+<YYINITIAL> {resSET} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSIZE} {
+<YYINITIAL> {resSIZE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resRULE} {
+<YYINITIAL> {resRULE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSMALLINT} {
+<YYINITIAL> {resSMALLINT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSAVE} {
+<YYINITIAL> {resSAVE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSOME} {
+<YYINITIAL> {resSOME} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSECURITYAUDIT} {
+<YYINITIAL> {resSECURITYAUDIT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSPACE} {
+<YYINITIAL> {resSPACE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSEMANTICKEYPHRASETABLE} {
+<YYINITIAL> {resSEMANTICKEYPHRASETABLE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSQL} {
+<YYINITIAL> {resSQL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSQLCA} {
+<YYINITIAL> {resSQLCA} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSEMANTICSIMILARITYDETAILSTABLE} {
+<YYINITIAL> {resSEMANTICSIMILARITYDETAILSTABLE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSQLCODE} {
+<YYINITIAL> {resSQLCODE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSEMANTICSIMILARITYTABLE} {
+<YYINITIAL> {resSEMANTICSIMILARITYTABLE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSQLERROR} {
+<YYINITIAL> {resSQLERROR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSQLSTATE} {
+<YYINITIAL> {resSQLSTATE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSQLWARNING} {
+<YYINITIAL> {resSQLWARNING} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSUBSTRING} {
+<YYINITIAL> {resSUBSTRING} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSUM} {
+<YYINITIAL> {resSUM} {
 	TOKENS.add(new MyTOKEN(yytext(), "Funcion Agregacion", yycolumn, yyline));
 	}
 
-{resSETUSER} {
+<YYINITIAL> {resSETUSER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSHUTDOWN} {
+<YYINITIAL> {resSHUTDOWN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSYSTEM_USER} {
+<YYINITIAL> {resSYSTEM_USER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resSTATISTICS} {
+<YYINITIAL> {resSTATISTICS} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTABLE} {
+<YYINITIAL> {resTABLE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTEMPORARY} {
+<YYINITIAL> {resTEMPORARY} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTHEN} {
+<YYINITIAL> {resTHEN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTIME} {
+<YYINITIAL> {resTIME} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTIMESTAMP} {
+<YYINITIAL> {resTIMESTAMP} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTABLESAMPLE} {
+<YYINITIAL> {resTABLESAMPLE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTIMEZONE_HOUR} {
+<YYINITIAL> {resTIMEZONE_HOUR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTEXTSIZE} {
+<YYINITIAL> {resTEXTSIZE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTIMEZONE_MINUTE} {
+<YYINITIAL> {resTIMEZONE_MINUTE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTO} {
+<YYINITIAL> {resTO} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTRAILING} {
+<YYINITIAL> {resTRAILING} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTOP} {
+<YYINITIAL> {resTOP} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTRANSACTION} {
+<YYINITIAL> {resTRANSACTION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTRAN} {
+<YYINITIAL> {resTRAN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTRANSLATE} {
+<YYINITIAL> {resTRANSLATE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTRANSLATION} {
+<YYINITIAL> {resTRANSLATION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTRIM} {
+<YYINITIAL> {resTRIM} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTRIGGER} {
+<YYINITIAL> {resTRIGGER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTRUNCATE} {
+<YYINITIAL> {resTRUNCATE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTRUE} {
+<YYINITIAL> {resTRUE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resUNION} {
+<YYINITIAL> {resUNION} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resUNIQUE} {
+<YYINITIAL> {resUNIQUE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTRY_CONVERT} {
+<YYINITIAL> {resTRY_CONVERT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resUNKNOWN} {
+<YYINITIAL> {resUNKNOWN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resTSEQUAL} {
+<YYINITIAL> {resTSEQUAL} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resUPDATE} {
+<YYINITIAL> {resUPDATE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resUPPER} {
+<YYINITIAL> {resUPPER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resUSAGE} {
+<YYINITIAL> {resUSAGE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resUSER} {
+<YYINITIAL> {resUSER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resUNPIVOT} {
+<YYINITIAL> {resUNPIVOT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resUSING} {
+<YYINITIAL> {resUSING} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resVALUE} {
+<YYINITIAL> {resVALUE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resVALUES} {
+<YYINITIAL> {resVALUES} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resVARCHAR} {
+<YYINITIAL> {resVARCHAR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resVARYING} {
+<YYINITIAL> {resVARYING} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resUPDATETEXT} {
+<YYINITIAL> {resUPDATETEXT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resVIEW} {
+<YYINITIAL> {resVIEW} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resUSE} {
+<YYINITIAL> {resUSE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resWHEN} {
+<YYINITIAL> {resWHEN} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resWHENEVER} {
+<YYINITIAL> {resWHENEVER} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resWHERE} {
+<YYINITIAL> {resWHERE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resWITH} {
+<YYINITIAL> {resWITH} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resWAITFOR} {
+<YYINITIAL> {resWAITFOR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resWORK} {
+<YYINITIAL> {resWORK} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resWRITE} {
+<YYINITIAL> {resWRITE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resYEAR} {
+<YYINITIAL> {resYEAR} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resWHILE} {
+<YYINITIAL> {resWHILE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resZONE} {
+<YYINITIAL> {resZONE} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resWITHINGROUP} {
+<YYINITIAL> {resWITHINGROUP} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 
-{resWRITETEXT} {
+<YYINITIAL> {resWRITETEXT} {
 	TOKENS.add(new MyTOKEN(yytext(), "Reservada", yycolumn, yyline));
 	}
 //FIN RESERVADAS
@@ -1685,12 +1685,13 @@ Espacio = \s+
 }
 
 {ComentarioLinea} {
-	TOKENS.add(new MyTOKEN(yytext(), "Comentario.Linea", yycolumn, yyline));
+	//TOKENS.add(new MyTOKEN(yytext(), "Comentario.Linea", yycolumn, yyline));
 	}
 
 {ComentarioMultiliena} {
 	
-	TOKENS.add(new MyTOKEN(yytext(), "Comentario.Multilinea", yycolumn, yyline));
+	//TOKENS.add(new MyTOKEN(yytext(), "Comentario.Multilinea", yycolumn, yyline));
+	//System.out.println(yytext());
 	
 	}
 //{ComentarioMultilienaerror} {ArchivoEscribir = ArchivoEscribir + "Error en la col: " + yycolumn + " fila: " + yyline + " Comentario multilinea sin cerrar"+ "\n";}

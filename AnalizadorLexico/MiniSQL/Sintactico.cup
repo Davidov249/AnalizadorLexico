@@ -1,0 +1,11 @@
+import java_cup.runtime.*;
+
+init with 
+{:
+
+:};
+
+scan with 
+{:
+
+:};
