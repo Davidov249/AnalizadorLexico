@@ -1073,13 +1073,13 @@ Espacio = \s+
 
 {ComentarioLinea} {
 	////TOKENS.add(new MyTOKEN(yytext(), "Comentario.Linea", yycolumn, yyline));
-    return new Symbol(Simbolos.ComentarioLinea, yycolumn, yyline, yytext();)
+    //return new Symbol(Simbolos.ComentarioLinea, yycolumn, yyline, yytext();)
 	}
 
 {ComentarioMultiliena} {
 	
 	////TOKENS.add(new MyTOKEN(yytext(), "Comentario.Multilinea", yycolumn, yyline));
-    return new Symbol(Simbolos.ComentarioMultiliena, yycolumn, yyline, yytext();)
+    //return new Symbol(Simbolos.ComentarioMultiliena, yycolumn, yyline, yytext();)
 	//System.out.println(yytext());
 	
 	}

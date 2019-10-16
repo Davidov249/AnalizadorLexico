@@ -1,11 +1,83 @@
 import java_cup.runtime.*;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+
 
 init with 
 {:
 
 :};
 
+/*
 scan with 
 {:
 
 :};
+*/
+
+parser code 
+{:
+    /* Reporte de error encontrado. */
+    public void report_error(String message, Object info) {
+        StringBuilder m = new StringBuilder("Error");
+        if (info instanceof java_cup.runtime.Symbol) {
+            java_cup.runtime.Symbol s = ((java_cup.runtime.Symbol) info);
+            m.append(" " + s.value.toString());
+            if (s.left >= 0) {                
+                m.append(" in line "+(s.left));
+                if (s.right >= 0)
+                    m.append(", column "+(s.right));
+            }
+        }
+        m.append(" : "+message);
+        System.err.println(m);
+    }
+   
+    /* Cuando se encuentra un error de donde el sistema no puede
+        recuperarse, se lanza un error fatal. Se despliega el mensaje
+        de error y se finaliza la ejecucion. */
+    public void report_fatal_error(String message, Object info) {
+        report_error(message, info);
+        System.exit(1);
+    }
+
+    /* Metodo main para garantizar la ejecucion del analizador
+       lexico y sintactico, ademas que se pase como parametro la tabla
+       de simbolos correspondiente. */
+    public static void main(String[] args){
+        try {
+             parser asin = new parser(
+                    new Lexer( new FileReader(args[0])));
+            Object result = asin.parse().value;
+            System.out.println("\n*** Resultados finales ***");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+:}
+
+terminal TRUNCATE, TABLE, Identificador, Coma, Puntoycoma, GO, Punto
+
+non terminal TRUNCATEP, OBJECT, TRUNCATE1, TRUNCATE2, OBJECT1, OBJECT2, OBJECT3
+
+    TRUNCATEP ::= TRUNCATE TABLE OBJECT TRUNCATE1 TRUNCATE2
+                ;
+    TRUNCATE1 ::= Coma OBJECT
+                |
+                ;
+    TRUNCATE2 ::= Puntoycoma
+                | GO
+                ;
+
+    OBJECT ::= Identificador OBJECT1
+                ;
+    OBJECT1 ::= Punto Identificador OBJECT2
+                |
+                ;
+    OBJECT2 ::= Punto Identificador OBJECT3
+                | 
+                ;
+    OBJECT3 ::= Punto Identificador
+                | 
+                ;
