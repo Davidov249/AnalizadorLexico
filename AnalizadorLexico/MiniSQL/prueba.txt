@@ -1,3 +1,1 @@
-CREATE DATABASE Botanik
-GO
-/*** plia ***/
+TRUNCATE TABLE hola.xd, identificador.identificador GO
