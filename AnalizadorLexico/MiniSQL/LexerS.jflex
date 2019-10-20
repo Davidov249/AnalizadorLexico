@@ -420,325 +420,325 @@ Espacio = \s+
 
 %%
 //RESERVADAS 
-<YYINITIAL> {resABSOLUTE} { return new dddd(Simbolos.ABSOLUTE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resABSOLUTE} { return new Symbol(Simbolos.ABSOLUTE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resACTION} { return new dddd(Simbolos.ACTION, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resACTION} { return new Symbol(Simbolos.ACTION, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resADA} { return new dddd(Simbolos.ADA, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resADA} { return new Symbol(Simbolos.ADA, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resADD} { return new dddd(Simbolos.ADD, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resADD} { return new Symbol(Simbolos.ADD, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resALL} { return new dddd(Simbolos.ALL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resALL} { return new Symbol(Simbolos.ALL, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resALLOCATE} { return new dddd(Simbolos.ALLOCATE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resALLOCATE} { return new Symbol(Simbolos.ALLOCATE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resALTER} { return new dddd(Simbolos.ALTER, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resALTER} { return new Symbol(Simbolos.ALTER, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resAND} { return new dddd(Simbolos.AND, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resAND} { return new Symbol(Simbolos.AND, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resANY} { return new dddd(Simbolos.ANY, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resANY} { return new Symbol(Simbolos.ANY, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resARE} { return new dddd(Simbolos.ARE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resARE} { return new Symbol(Simbolos.ARE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resAS} { return new dddd(Simbolos.AS, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resAS} { return new Symbol(Simbolos.AS, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resASC} { return new dddd(Simbolos.ASC, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resASC} { return new Symbol(Simbolos.ASC, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resASSERTION} { return new dddd(Simbolos.ASSERTION, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resASSERTION} { return new Symbol(Simbolos.ASSERTION, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resAT} { return new dddd(Simbolos.AT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resAT} { return new Symbol(Simbolos.AT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resAUTHORIZATION} { return new dddd(Simbolos.AUTHORIZATION, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resAUTHORIZATION} { return new Symbol(Simbolos.AUTHORIZATION, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resAVG} { return new dddd(Simbolos.AVG, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resAVG} { return new Symbol(Simbolos.AVG, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resBACKUP} { return new dddd(Simbolos.BACKUP, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resBACKUP} { return new Symbol(Simbolos.BACKUP, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resBEGIN} { return new dddd(Simbolos.BEGIN, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resBEGIN} { return new Symbol(Simbolos.BEGIN, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resBETWEEN} { return new dddd(Simbolos.BETWEEN, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resBETWEEN} { return new Symbol(Simbolos.BETWEEN, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resBIT} { return new dddd(Simbolos.BIT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resBIT} { return new Symbol(Simbolos.BIT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resBIT_LENGTH} { return new dddd(Simbolos.BIT_LENGTH, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resBIT_LENGTH} { return new Symbol(Simbolos.BIT_LENGTH, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resBOTH} { return new dddd(Simbolos.BOTH, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resBOTH} { return new Symbol(Simbolos.BOTH, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resBREAK} { return new dddd(Simbolos.BREAK, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resBREAK} { return new Symbol(Simbolos.BREAK, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resBROWSE} { return new dddd(Simbolos.BROWSE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resBROWSE} { return new Symbol(Simbolos.BROWSE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resBULK} { return new dddd(Simbolos.BULK, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resBULK} { return new Symbol(Simbolos.BULK, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resBY} { return new dddd(Simbolos.BY, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resBY} { return new Symbol(Simbolos.BY, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCASCADE} { return new dddd(Simbolos.CASCADE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCASCADE} { return new Symbol(Simbolos.CASCADE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCASCADED} { return new dddd(Simbolos.CASCADED, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCASCADED} { return new Symbol(Simbolos.CASCADED, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCASE} { return new dddd(Simbolos.CASE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCASE} { return new Symbol(Simbolos.CASE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCAST} { return new dddd(Simbolos.CAST, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCAST} { return new Symbol(Simbolos.CAST, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCATALOG} { return new dddd(Simbolos.CATALOG, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCATALOG} { return new Symbol(Simbolos.CATALOG, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCHAR} { return new dddd(Simbolos.CHAR, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCHAR} { return new Symbol(Simbolos.CHAR, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCHAR_LENGTH} { return new dddd(Simbolos.CHAR_LENGTH, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCHAR_LENGTH} { return new Symbol(Simbolos.CHAR_LENGTH, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCHARACTER} { return new dddd(Simbolos.CHARACTER, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCHARACTER} { return new Symbol(Simbolos.CHARACTER, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCHARACHTER_LENGTH} { return new dddd(Simbolos.CHARACHTER_LENGTH, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCHARACHTER_LENGTH} { return new Symbol(Simbolos.CHARACHTER_LENGTH, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCHECK} { return new dddd(Simbolos.CHECK, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCHECK} { return new Symbol(Simbolos.CHECK, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCHECKPOINT} { return new dddd(Simbolos.CHECKPOINT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCHECKPOINT} { return new Symbol(Simbolos.CHECKPOINT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCLOSE} { return new dddd(Simbolos.CLOSE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCLOSE} { return new Symbol(Simbolos.CLOSE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCLUSTERED} { return new dddd(Simbolos.CLUSTERED, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCLUSTERED} { return new Symbol(Simbolos.CLUSTERED, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCOALESCE} { return new dddd(Simbolos.COALESCE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCOALESCE} { return new Symbol(Simbolos.COALESCE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCOLLATE} { return new dddd(Simbolos.COLLATE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCOLLATE} { return new Symbol(Simbolos.COLLATE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCOALLITION} { return new dddd(Simbolos.COALLITION, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCOALLITION} { return new Symbol(Simbolos.COALLITION, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCOLUMN} { return new dddd(Simbolos.COLUMN, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCOLUMN} { return new Symbol(Simbolos.COLUMN, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCOMMIT} { return new dddd(Simbolos.COMMIT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCOMMIT} { return new Symbol(Simbolos.COMMIT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCOMPUTE} { return new dddd(Simbolos.COMPUTE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCOMPUTE} { return new Symbol(Simbolos.COMPUTE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCONNECT} { return new dddd(Simbolos.CONNECT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCONNECT} { return new Symbol(Simbolos.CONNECT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCONNECTION} { return new dddd(Simbolos.CONNECTION, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCONNECTION} { return new Symbol(Simbolos.CONNECTION, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCONSTRAINT} { return new dddd(Simbolos.CONSTRAINT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCONSTRAINT} { return new Symbol(Simbolos.CONSTRAINT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCONSTRAINTS} { return new dddd(Simbolos.CONSTRAINTS, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCONSTRAINTS} { return new Symbol(Simbolos.CONSTRAINTS, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCONTAINS} { return new dddd(Simbolos.CONTAINS, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCONTAINS} { return new Symbol(Simbolos.CONTAINS, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCONTAINSTABLE} { return new dddd(Simbolos.CONTAINSTABLE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCONTAINSTABLE} { return new Symbol(Simbolos.CONTAINSTABLE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCONTINUE} { return new dddd(Simbolos.CONTINUE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCONTINUE} { return new Symbol(Simbolos.CONTINUE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCONVERT} { return new dddd(Simbolos.CONVERT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCONVERT} { return new Symbol(Simbolos.CONVERT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCORRESPONDING} { return new dddd(Simbolos.CORRESPONDING, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCORRESPONDING} { return new Symbol(Simbolos.CORRESPONDING, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCOUNT} { return new dddd(Simbolos.COUNT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCOUNT} { return new Symbol(Simbolos.COUNT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCREATE} { return new dddd(Simbolos.CREATE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCREATE} { return new Symbol(Simbolos.CREATE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCROSS} { return new dddd(Simbolos.CROSS, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCROSS} { return new Symbol(Simbolos.CROSS, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCURRENT} { return new dddd(Simbolos.CURRENT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCURRENT} { return new Symbol(Simbolos.CURRENT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCURRENT_DATE} { return new dddd(Simbolos.CURRENT_DATE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCURRENT_DATE} { return new Symbol(Simbolos.CURRENT_DATE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCURRENT_TIME} { return new dddd(Simbolos.CURRENT_TIME, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCURRENT_TIME} { return new Symbol(Simbolos.CURRENT_TIME, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCURRENT_TIMES} { return new dddd(Simbolos.CURRENT_TIMESTAMP, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCURRENT_TIMES} { return new Symbol(Simbolos.CURRENT_TIMESTAMP, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCURRENT_USER} { return new dddd(Simbolos.CURRENT_USER, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCURRENT_USER} { return new Symbol(Simbolos.CURRENT_USER, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resCURSOR} { return new dddd(Simbolos.CURSOR, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resCURSOR} { return new Symbol(Simbolos.CURSOR, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDATABASE} { return new dddd(Simbolos.DATABASE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDATABASE} { return new Symbol(Simbolos.DATABASE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDATE} { return new dddd(Simbolos.DATE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDATE} { return new Symbol(Simbolos.DATE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDAY} { return new dddd(Simbolos.DAY, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDAY} { return new Symbol(Simbolos.DAY, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDBCC} { return new dddd(Simbolos.DBCC, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDBCC} { return new Symbol(Simbolos.DBCC, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDEALLOCATE} { return new dddd(Simbolos.DEALLOCATE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDEALLOCATE} { return new Symbol(Simbolos.DEALLOCATE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDEC} { return new dddd(Simbolos.DEC, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDEC} { return new Symbol(Simbolos.DEC, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDECIMAL} { return new dddd(Simbolos.DECIMAL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDECIMAL} { return new Symbol(Simbolos.DECIMAL, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDECLARE} { return new dddd(Simbolos.DECLARE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDECLARE} { return new Symbol(Simbolos.DECLARE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDEFAULT} { return new dddd(Simbolos.DEFAULT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDEFAULT} { return new Symbol(Simbolos.DEFAULT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDEFERRABLE} { return new dddd(Simbolos.DEFERRABLE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDEFERRABLE} { return new Symbol(Simbolos.DEFERRABLE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDEFERRED} { return new dddd(Simbolos.DEFERRED, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDEFERRED} { return new Symbol(Simbolos.DEFERRED, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDELETE} { return new dddd(Simbolos.DELETE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDELETE} { return new Symbol(Simbolos.DELETE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDENY} { return new dddd(Simbolos.DENY, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDENY} { return new Symbol(Simbolos.DENY, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDESC} { return new dddd(Simbolos.DESC, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDESC} { return new Symbol(Simbolos.DESC, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDESCRIBE} { return new dddd(Simbolos.DESCRIBE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDESCRIBE} { return new Symbol(Simbolos.DESCRIBE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDESCRIPTOR} { return new dddd(Simbolos.DESCRIPTOR, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDESCRIPTOR} { return new Symbol(Simbolos.DESCRIPTOR, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDIAGNOSTICS} { return new dddd(Simbolos.DIAGNOSTICS, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDIAGNOSTICS} { return new Symbol(Simbolos.DIAGNOSTICS, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDISCONNECT} { return new dddd(Simbolos.DISCONNECT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDISCONNECT} { return new Symbol(Simbolos.DISCONNECT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDISK} { return new dddd(Simbolos.DISK, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDISK} { return new Symbol(Simbolos.DISK, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDISTINCT} { return new dddd(Simbolos.DISTINCT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDISTINCT} { return new Symbol(Simbolos.DISTINCT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDISTURBED} { return new dddd(Simbolos.DISTURBED, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDISTURBED} { return new Symbol(Simbolos.DISTURBED, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDOMAIN} { return new dddd(Simbolos.DOMAIN, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDOMAIN} { return new Symbol(Simbolos.DOMAIN, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDOUBLE} { return new dddd(Simbolos.DOUBLE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDOUBLE} { return new Symbol(Simbolos.DOUBLE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDROP} { return new dddd(Simbolos.DROP, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDROP} { return new Symbol(Simbolos.DROP, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resDUMP} { return new dddd(Simbolos.DUMP, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resDUMP} { return new Symbol(Simbolos.DUMP, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resELSE} { return new dddd(Simbolos.ELSE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resELSE} { return new Symbol(Simbolos.ELSE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resEND} { return new dddd(Simbolos.END, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resEND} { return new Symbol(Simbolos.END, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resENDEXEC} { return new dddd(Simbolos.END-EXEC, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resENDEXEC} { return new Symbol(Simbolos.END-EXEC, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resERRLVL} { return new dddd(Simbolos.ERRLVL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resERRLVL} { return new Symbol(Simbolos.ERRLVL, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resESCAPE} { return new dddd(Simbolos.ESCAPE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resESCAPE} { return new Symbol(Simbolos.ESCAPE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resEXCEPT} { return new dddd(Simbolos.EXCEPT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resEXCEPT} { return new Symbol(Simbolos.EXCEPT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resEXCEPTION} { return new dddd(Simbolos.EXCEPTION, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resEXCEPTION} { return new Symbol(Simbolos.EXCEPTION, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resEXEC} { return new dddd(Simbolos.EXEC, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resEXEC} { return new Symbol(Simbolos.EXEC, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resEXECUTE} { return new dddd(Simbolos.EXECUTE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resEXECUTE} { return new Symbol(Simbolos.EXECUTE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resEXISTS} { return new dddd(Simbolos.EXISTS, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resEXISTS} { return new Symbol(Simbolos.EXISTS, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resEXIT} { return new dddd(Simbolos.EXIT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resEXIT} { return new Symbol(Simbolos.EXIT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resEXTERNAL} { return new dddd(Simbolos.EXTERNAL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resEXTERNAL} { return new Symbol(Simbolos.EXTERNAL, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFETCH} { return new dddd(Simbolos.FETCH, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFETCH} { return new Symbol(Simbolos.FETCH, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resEXTRACT} { return new dddd(Simbolos.EXTRACT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resEXTRACT} { return new Symbol(Simbolos.EXTRACT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFALSE} { return new dddd(Simbolos.FALSE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFALSE} { return new Symbol(Simbolos.FALSE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFILE} { return new dddd(Simbolos.FILE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFILE} { return new Symbol(Simbolos.FILE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFILLFACTOR} { return new dddd(Simbolos.FILLFACTOR, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFILLFACTOR} { return new Symbol(Simbolos.FILLFACTOR, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFIRST} { return new dddd(Simbolos.FIRST, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFIRST} { return new Symbol(Simbolos.FIRST, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFOR} { return new dddd(Simbolos.FOR, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFOR} { return new Symbol(Simbolos.FOR, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFLOAT} { return new dddd(Simbolos.FLOAT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFLOAT} { return new Symbol(Simbolos.FLOAT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFOREIGN} { return new dddd(Simbolos.FOREIGN, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFOREIGN} { return new Symbol(Simbolos.FOREIGN, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFREETEXT} { return new dddd(Simbolos.FREETEXT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFREETEXT} { return new Symbol(Simbolos.FREETEXT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFORTRAN} { return new dddd(Simbolos.FORTRAN, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFORTRAN} { return new Symbol(Simbolos.FORTRAN, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFOUND} { return new dddd(Simbolos.FOUND, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFOUND} { return new Symbol(Simbolos.FOUND, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFROM} { return new dddd(Simbolos.FROM, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFROM} { return new Symbol(Simbolos.FROM, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFREETEXTTABLE} { return new dddd(Simbolos.FREETEXTTABLE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFREETEXTTABLE} { return new Symbol(Simbolos.FREETEXTTABLE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFULL} { return new dddd(Simbolos.FULL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFULL} { return new Symbol(Simbolos.FULL, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resGET} { return new dddd(Simbolos.GET, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resGET} { return new Symbol(Simbolos.GET, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resGLOBAL} { return new dddd(Simbolos.GLOBAL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resGLOBAL} { return new Symbol(Simbolos.GLOBAL, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resFUNCTION} { return new dddd(Simbolos.FUNCTION, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resFUNCTION} { return new Symbol(Simbolos.FUNCTION, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resGO} { return new dddd(Simbolos.GO, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resGO} { return new Symbol(Simbolos.GO, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resGOTO} { return new dddd(Simbolos.GOTO, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resGOTO} { return new Symbol(Simbolos.GOTO, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resGRANT} { return new dddd(Simbolos.GRANT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resGRANT} { return new Symbol(Simbolos.GRANT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resGROUP} { return new dddd(Simbolos.GROUP, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resGROUP} { return new Symbol(Simbolos.GROUP, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resHAVING} { return new dddd(Simbolos.HAVING, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resHAVING} { return new Symbol(Simbolos.HAVING, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resHOLDLOCK} { return new dddd(Simbolos.HOLDLOCK, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resHOLDLOCK} { return new Symbol(Simbolos.HOLDLOCK, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resHOUR} { return new dddd(Simbolos.HOUR, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resHOUR} { return new Symbol(Simbolos.HOUR, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resIDENTITY} { return new dddd(Simbolos.IDENTITY, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resIDENTITY} { return new Symbol(Simbolos.IDENTITY, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resIMMEDIATE} { return new dddd(Simbolos.IMMEDIATE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resIMMEDIATE} { return new Symbol(Simbolos.IMMEDIATE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resIN} { return new dddd(Simbolos.IN, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resIN} { return new Symbol(Simbolos.IN, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINCLUDE} { return new dddd(Simbolos.INCLUDE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINCLUDE} { return new Symbol(Simbolos.INCLUDE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINDEX} { return new dddd(Simbolos.INDEX, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINDEX} { return new Symbol(Simbolos.INDEX, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINDICATOR} { return new dddd(Simbolos.INDICATOR, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINDICATOR} { return new Symbol(Simbolos.INDICATOR, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINITIALLY} { return new dddd(Simbolos.INITIALLY, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINITIALLY} { return new Symbol(Simbolos.INITIALLY, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINNER} { return new dddd(Simbolos.INNER, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINNER} { return new Symbol(Simbolos.INNER, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resIDENTITY_INSERT} { return new dddd(Simbolos.IDENTITY_INSERT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resIDENTITY_INSERT} { return new Symbol(Simbolos.IDENTITY_INSERT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINPUT} { return new dddd(Simbolos.INPUT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINPUT} { return new Symbol(Simbolos.INPUT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resIDENTITYCOL} { return new dddd(Simbolos.IDENTITYCOL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resIDENTITYCOL} { return new Symbol(Simbolos.IDENTITYCOL, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resIF} { return new dddd(Simbolos.IF, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resIF} { return new Symbol(Simbolos.IF, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINSENSITIVE} { return new dddd(Simbolos.INSENSITIVE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINSENSITIVE} { return new Symbol(Simbolos.INSENSITIVE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINSERT} { return new dddd(Simbolos.INSERT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINSERT} { return new Symbol(Simbolos.INSERT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINT} { return new dddd(Simbolos.INT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINT} { return new Symbol(Simbolos.INT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINTEGER} { return new dddd(Simbolos.INTEGER, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINTEGER} { return new Symbol(Simbolos.INTEGER, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINTERSECT} { return new dddd(Simbolos.INTERSECT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINTERSECT} { return new Symbol(Simbolos.INTERSECT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINTERVAL} { return new dddd(Simbolos.INTERVAL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINTERVAL} { return new Symbol(Simbolos.INTERVAL, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resINTO} { return new dddd(Simbolos.INTO, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resINTO} { return new Symbol(Simbolos.INTO, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resIS} { return new dddd(Simbolos.IS, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resIS} { return new Symbol(Simbolos.IS, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resISOLATION} { return new dddd(Simbolos.ISOLATION, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resISOLATION} { return new Symbol(Simbolos.ISOLATION, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resJOIN} { return new dddd(Simbolos.JOIN, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resJOIN} { return new Symbol(Simbolos.JOIN, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resKEY} { return new dddd(Simbolos.KEY, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resKEY} { return new Symbol(Simbolos.KEY, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resKILL} { return new dddd(Simbolos.KILL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resKILL} { return new Symbol(Simbolos.KILL, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resLEFT} { return new dddd(Simbolos.LEFT, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resLEFT} { return new Symbol(Simbolos.LEFT, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resLANGUAGE} { return new dddd(Simbolos.LANGUAGE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resLANGUAGE} { return new Symbol(Simbolos.LANGUAGE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resLAST} { return new dddd(Simbolos.LAST, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resLAST} { return new Symbol(Simbolos.LAST, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resLEADING} { return new dddd(Simbolos.LEADING, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resLEADING} { return new Symbol(Simbolos.LEADING, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resLIKE} { return new dddd(Simbolos.LIKE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resLIKE} { return new Symbol(Simbolos.LIKE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resLINENO} { return new dddd(Simbolos.LINENO, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resLINENO} { return new Symbol(Simbolos.LINENO, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resLEVEL} { return new dddd(Simbolos.LEVEL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resLEVEL} { return new Symbol(Simbolos.LEVEL, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resLOAD} { return new dddd(Simbolos.LOAD, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resLOAD} { return new Symbol(Simbolos.LOAD, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resMERGE} { return new dddd(Simbolos.MERGE, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resMERGE} { return new Symbol(Simbolos.MERGE, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resLOCAL} { return new dddd(Simbolos.LOCAL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resLOCAL} { return new Symbol(Simbolos.LOCAL, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resNATIONAL} { return new dddd(Simbolos.NATIONAL, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resNATIONAL} { return new Symbol(Simbolos.NATIONAL, yycolumn, yyline, yytext() );}
 
 <YYINITIAL> {resLOWER} { return new Symbol(Simbolos.LOWER, yycolumn, yyline, yytext() );}
 

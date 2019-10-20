@@ -22,7 +22,7 @@ import java_cup.runtime.*;
  * <a href="http://www.jflex.de/">JFlex</a> 1.7.0
  * from the specification file <tt>D:/Proyectos/AnalizadorLexico/Analizador/src/main/jflex/LexerS.jflex</tt>
  */
-public class Yylex implements java_cup.runtime.Scanner {
+public class Lexer implements java_cup.runtime.Scanner {
 
   /** This character denotes the end of file */
   public static final int YYEOF = -1;
@@ -1919,7 +1919,7 @@ public class Yylex implements java_cup.runtime.Scanner {
 			}
 	;}
 
-	public ArrayList<MyTOKEN> TOKENS = new ArrayList<MyTOKEN>();
+	//public ArrayList<MyTOKEN> TOKENS = new ArrayList<MyTOKEN>();
 
 	
 
@@ -1932,7 +1932,7 @@ public class Yylex implements java_cup.runtime.Scanner {
    *
    * @param   in  the java.io.Reader to read input from.
    */
-  public Yylex(java.io.Reader in) {
+  public Lexer(java.io.Reader in) {
     this.zzReader = in;
   }
 
@@ -2158,8 +2158,8 @@ public class Yylex implements java_cup.runtime.Scanner {
     if (!zzEOFDone) {
       zzEOFDone = true;
     	
-	AnalizadorSintactico anal = new AnalizadorSintactico(TOKENS);
-	anal.Analizar();
+	//AnalizadorSintactico anal = new AnalizadorSintactico(TOKENS);
+	//anal.Analizar();
 	/*if(anal.errores == 0){
 		System.out.println("¡El archivo a sido analizado con exito!");
 	}*/

@@ -15,7 +15,7 @@ import java_cup.runtime.*;
 
 
 %%
-//%class MSQLjflex
+%class Lexer
 %unicode
 %public
 //%standalone
@@ -400,7 +400,7 @@ Espacio = \s+
 			}
 	;}
 
-	public ArrayList<MyTOKEN> TOKENS = new ArrayList<MyTOKEN>();
+	//public ArrayList<MyTOKEN> TOKENS = new ArrayList<MyTOKEN>();
 
 	
 
@@ -409,8 +409,8 @@ Espacio = \s+
 %}
 %eof{
 	
-	AnalizadorSintactico anal = new AnalizadorSintactico(TOKENS);
-	anal.Analizar();
+	//AnalizadorSintactico anal = new AnalizadorSintactico(TOKENS);
+	//anal.Analizar();
 	/*if(anal.errores == 0){
 		System.out.println("¡El archivo a sido analizado con exito!");
 	}*/
