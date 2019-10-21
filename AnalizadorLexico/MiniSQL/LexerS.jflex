@@ -10,7 +10,7 @@ import java.lang.System;
 import java.io.Console;
 import java.io.InputStream;
 import java.util.Scanner;
-import java_cup.runtime.*;
+import com.company.java_cup.runtime.*;
 
 
 

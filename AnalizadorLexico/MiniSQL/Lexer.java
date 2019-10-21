@@ -12,7 +12,7 @@ import java.lang.System;
 import java.io.Console;
 import java.io.InputStream;
 import java.util.Scanner;
-import java_cup.runtime.*;
+import com.company.java_cup.runtime.*;
 
 
 
@@ -2485,17 +2485,17 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 378: break;
           case 27: 
-            { return new dddd(Simbolos.AS, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.AS, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 379: break;
           case 28: 
-            { return new dddd(Simbolos.AT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.AT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 380: break;
           case 29: 
-            { return new dddd(Simbolos.BY, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.BY, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 381: break;
@@ -2520,17 +2520,17 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 385: break;
           case 34: 
-            { return new dddd(Simbolos.IS, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.IS, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 386: break;
           case 35: 
-            { return new dddd(Simbolos.IN, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.IN, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 387: break;
           case 36: 
-            { return new dddd(Simbolos.IF, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.IF, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 388: break;
@@ -2540,7 +2540,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 389: break;
           case 38: 
-            { return new dddd(Simbolos.GO, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.GO, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 390: break;
@@ -2623,47 +2623,47 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 403: break;
           case 52: 
-            { return new dddd(Simbolos.ASC, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ASC, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 404: break;
           case 53: 
-            { return new dddd(Simbolos.ALL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ALL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 405: break;
           case 54: 
-            { return new dddd(Simbolos.AND, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.AND, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 406: break;
           case 55: 
-            { return new dddd(Simbolos.ANY, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ANY, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 407: break;
           case 56: 
-            { return new dddd(Simbolos.ADA, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ADA, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 408: break;
           case 57: 
-            { return new dddd(Simbolos.ADD, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ADD, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 409: break;
           case 58: 
-            { return new dddd(Simbolos.ARE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ARE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 410: break;
           case 59: 
-            { return new dddd(Simbolos.AVG, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.AVG, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 411: break;
           case 60: 
-            { return new dddd(Simbolos.BIT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.BIT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 412: break;
@@ -2698,12 +2698,12 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 418: break;
           case 67: 
-            { return new dddd(Simbolos.END, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.END, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 419: break;
           case 68: 
-            { return new dddd(Simbolos.INT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 420: break;
@@ -2713,22 +2713,22 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 421: break;
           case 70: 
-            { return new dddd(Simbolos.DAY, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DAY, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 422: break;
           case 71: 
-            { return new dddd(Simbolos.DEC, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DEC, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 423: break;
           case 72: 
-            { return new dddd(Simbolos.GET, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.GET, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 424: break;
           case 73: 
-            { return new dddd(Simbolos.KEY, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.KEY, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 425: break;
@@ -2748,17 +2748,17 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 428: break;
           case 77: 
-            { return new dddd(Simbolos.FOR, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FOR, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 429: break;
           case 78: 
-            { return new dddd(Simbolos.BOTH, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.BOTH, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 430: break;
           case 79: 
-            { return new dddd(Simbolos.BULK, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.BULK, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 431: break;
@@ -2793,22 +2793,22 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 437: break;
           case 86: 
-            { return new dddd(Simbolos.LAST, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.LAST, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 438: break;
           case 87: 
-            { return new dddd(Simbolos.LOAD, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.LOAD, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 439: break;
           case 88: 
-            { return new dddd(Simbolos.LEFT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.LEFT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 440: break;
           case 89: 
-            { return new dddd(Simbolos.LIKE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.LIKE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 441: break;
@@ -2843,37 +2843,37 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 447: break;
           case 96: 
-            { return new dddd(Simbolos.ELSE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ELSE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 448: break;
           case 97: 
-            { return new dddd(Simbolos.EXEC, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.EXEC, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 449: break;
           case 98: 
-            { return new dddd(Simbolos.EXIT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.EXIT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 450: break;
           case 99: 
-            { return new dddd(Simbolos.CAST, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CAST, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 451: break;
           case 100: 
-            { return new dddd(Simbolos.CASE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CASE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 452: break;
           case 101: 
-            { return new dddd(Simbolos.CHAR, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CHAR, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 453: break;
           case 102: 
-            { return new dddd(Simbolos.INTO, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INTO, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 454: break;
@@ -2893,37 +2893,37 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 457: break;
           case 106: 
-            { return new dddd(Simbolos.DATE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DATE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 458: break;
           case 107: 
-            { return new dddd(Simbolos.DBCC, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DBCC, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 459: break;
           case 108: 
-            { return new dddd(Simbolos.DUMP, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DUMP, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 460: break;
           case 109: 
-            { return new dddd(Simbolos.DESC, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DESC, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 461: break;
           case 110: 
-            { return new dddd(Simbolos.DENY, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DENY, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 462: break;
           case 111: 
-            { return new dddd(Simbolos.DISK, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DISK, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 463: break;
           case 112: 
-            { return new dddd(Simbolos.DROP, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DROP, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 464: break;
@@ -2953,7 +2953,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 469: break;
           case 118: 
-            { return new dddd(Simbolos.HOUR, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.HOUR, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 470: break;
@@ -2968,12 +2968,12 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 472: break;
           case 121: 
-            { return new dddd(Simbolos.GOTO, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.GOTO, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 473: break;
           case 122: 
-            { return new dddd(Simbolos.KILL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.KILL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 474: break;
@@ -3003,22 +3003,22 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 479: break;
           case 128: 
-            { return new dddd(Simbolos.FULL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FULL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 480: break;
           case 129: 
-            { return new dddd(Simbolos.FILE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FILE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 481: break;
           case 130: 
-            { return new dddd(Simbolos.FROM, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FROM, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 482: break;
           case 131: 
-            { return new dddd(Simbolos.JOIN, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.JOIN, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 483: break;
@@ -3030,17 +3030,17 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 484: break;
           case 133: 
-            { return new dddd(Simbolos.ALTER, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ALTER, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 485: break;
           case 134: 
-            { return new dddd(Simbolos.BEGIN, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.BEGIN, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 486: break;
           case 135: 
-            { return new dddd(Simbolos.BREAK, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.BREAK, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 487: break;
@@ -3065,7 +3065,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 491: break;
           case 140: 
-            { return new dddd(Simbolos.LOCAL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.LOCAL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 492: break;
@@ -3075,7 +3075,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 493: break;
           case 142: 
-            { return new dddd(Simbolos.LEVEL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.LEVEL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 494: break;
@@ -3105,37 +3105,37 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 499: break;
           case 148: 
-            { return new dddd(Simbolos.COUNT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.COUNT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 500: break;
           case 149: 
-            { return new dddd(Simbolos.CLOSE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CLOSE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 501: break;
           case 150: 
-            { return new dddd(Simbolos.CROSS, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CROSS, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 502: break;
           case 151: 
-            { return new dddd(Simbolos.CHECK, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CHECK, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 503: break;
           case 152: 
-            { return new dddd(Simbolos.INNER, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INNER, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 504: break;
           case 153: 
-            { return new dddd(Simbolos.INDEX, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INDEX, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 505: break;
           case 154: 
-            { return new dddd(Simbolos.INPUT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INPUT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 506: break;
@@ -3160,12 +3160,12 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 510: break;
           case 159: 
-            { return new dddd(Simbolos.GRANT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.GRANT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 511: break;
           case 160: 
-            { return new dddd(Simbolos.GROUP, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.GROUP, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 512: break;
@@ -3210,47 +3210,47 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 520: break;
           case 169: 
-            { return new dddd(Simbolos.MERGE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.MERGE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 521: break;
           case 170: 
-            { return new dddd(Simbolos.FALSE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FALSE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 522: break;
           case 171: 
-            { return new dddd(Simbolos.FOUND, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FOUND, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 523: break;
           case 172: 
-            { return new dddd(Simbolos.FLOAT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FLOAT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 524: break;
           case 173: 
-            { return new dddd(Simbolos.FETCH, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FETCH, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 525: break;
           case 174: 
-            { return new dddd(Simbolos.FIRST, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FIRST, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 526: break;
           case 175: 
-            { return new dddd(Simbolos.ACTION, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ACTION, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 527: break;
           case 176: 
-            { return new dddd(Simbolos.BACKUP, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.BACKUP, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 528: break;
           case 177: 
-            { return new dddd(Simbolos.BROWSE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.BROWSE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 529: break;
@@ -3290,7 +3290,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 536: break;
           case 185: 
-            { return new dddd(Simbolos.LINENO, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.LINENO, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 537: break;
@@ -3305,47 +3305,47 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 539: break;
           case 188: 
-            { return new dddd(Simbolos.ESCAPE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ESCAPE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 540: break;
           case 189: 
-            { return new dddd(Simbolos.ERRLVL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ERRLVL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 541: break;
           case 190: 
-            { return new dddd(Simbolos.EXCEPT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.EXCEPT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 542: break;
           case 191: 
-            { return new dddd(Simbolos.EXISTS, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.EXISTS, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 543: break;
           case 192: 
-            { return new dddd(Simbolos.COLUMN, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.COLUMN, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 544: break;
           case 193: 
-            { return new dddd(Simbolos.COMMIT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.COMMIT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 545: break;
           case 194: 
-            { return new dddd(Simbolos.CURSOR, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CURSOR, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 546: break;
           case 195: 
-            { return new dddd(Simbolos.CREATE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CREATE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 547: break;
           case 196: 
-            { return new dddd(Simbolos.INSERT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INSERT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 548: break;
@@ -3355,17 +3355,17 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 549: break;
           case 198: 
-            { return new dddd(Simbolos.DOUBLE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DOUBLE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 550: break;
           case 199: 
-            { return new dddd(Simbolos.DOMAIN, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DOMAIN, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 551: break;
           case 200: 
-            { return new dddd(Simbolos.DELETE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DELETE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 552: break;
@@ -3385,7 +3385,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 555: break;
           case 204: 
-            { return new dddd(Simbolos.HAVING, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.HAVING, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 556: break;
@@ -3395,7 +3395,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 557: break;
           case 206: 
-            { return new dddd(Simbolos.GLOBAL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.GLOBAL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 558: break;
@@ -3420,7 +3420,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 562: break;
           case 211: 
-            { return new dddd(Simbolos.BETWEEN, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.BETWEEN, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 563: break;
@@ -3450,7 +3450,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 568: break;
           case 217: 
-            { return new dddd(Simbolos.LEADING, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.LEADING, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 569: break;
@@ -3475,57 +3475,57 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 573: break;
           case 222: 
-            { return new dddd(Simbolos.EXTRACT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.EXTRACT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 574: break;
           case 223: 
-            { return new dddd(Simbolos.EXECUTE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.EXECUTE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 575: break;
           case 224: 
-            { return new dddd(Simbolos.CASCADE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CASCADE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 576: break;
           case 225: 
-            { return new dddd(Simbolos.CATALOG, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CATALOG, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 577: break;
           case 226: 
-            { return new dddd(Simbolos.COLLATE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.COLLATE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 578: break;
           case 227: 
-            { return new dddd(Simbolos.CONNECT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CONNECT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 579: break;
           case 228: 
-            { return new dddd(Simbolos.CONVERT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CONVERT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 580: break;
           case 229: 
-            { return new dddd(Simbolos.COMPUTE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.COMPUTE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 581: break;
           case 230: 
-            { return new dddd(Simbolos.CURRENT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CURRENT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 582: break;
           case 231: 
-            { return new dddd(Simbolos.INTEGER, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INTEGER, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 583: break;
           case 232: 
-            { return new dddd(Simbolos.INCLUDE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INCLUDE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 584: break;
@@ -3545,17 +3545,17 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 587: break;
           case 236: 
-            { return new dddd(Simbolos.DECLARE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DECLARE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 588: break;
           case 237: 
-            { return new dddd(Simbolos.DECIMAL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DECIMAL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 589: break;
           case 238: 
-            { return new dddd(Simbolos.DEFAULT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DEFAULT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 590: break;
@@ -3600,22 +3600,22 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 598: break;
           case 247: 
-            { return new dddd(Simbolos.FORTRAN, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FORTRAN, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 599: break;
           case 248: 
-            { return new dddd(Simbolos.FOREIGN, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FOREIGN, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 600: break;
           case 249: 
-            { return new dddd(Simbolos.ABSOLUTE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ABSOLUTE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 601: break;
           case 250: 
-            { return new dddd(Simbolos.ALLOCATE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ALLOCATE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 602: break;
@@ -3645,7 +3645,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 607: break;
           case 256: 
-            { return new dddd(Simbolos.LANGUAGE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.LANGUAGE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 608: break;
@@ -3665,67 +3665,67 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 611: break;
           case 260: 
-            { return new dddd(Simbolos.END-EXEC, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.END-EXEC, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 612: break;
           case 261: 
-            { return new dddd(Simbolos.EXTERNAL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.EXTERNAL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 613: break;
           case 262: 
-            { return new dddd(Simbolos.CASCADED, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CASCADED, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 614: break;
           case 263: 
-            { return new dddd(Simbolos.COALESCE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.COALESCE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 615: break;
           case 264: 
-            { return new dddd(Simbolos.CONTAINS, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CONTAINS, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 616: break;
           case 265: 
-            { return new dddd(Simbolos.CONTINUE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CONTINUE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 617: break;
           case 266: 
-            { return new dddd(Simbolos.INTERVAL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INTERVAL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 618: break;
           case 267: 
-            { return new dddd(Simbolos.IDENTITY, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.IDENTITY, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 619: break;
           case 268: 
-            { return new dddd(Simbolos.NATIONAL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.NATIONAL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 620: break;
           case 269: 
-            { return new dddd(Simbolos.DATABASE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DATABASE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 621: break;
           case 270: 
-            { return new dddd(Simbolos.DESCRIBE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DESCRIBE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 622: break;
           case 271: 
-            { return new dddd(Simbolos.DEFERRED, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DEFERRED, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 623: break;
           case 272: 
-            { return new dddd(Simbolos.DISTINCT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DISTINCT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 624: break;
@@ -3755,7 +3755,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 629: break;
           case 278: 
-            { return new dddd(Simbolos.HOLDLOCK, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.HOLDLOCK, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 630: break;
@@ -3775,17 +3775,17 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 633: break;
           case 282: 
-            { return new dddd(Simbolos.FUNCTION, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FUNCTION, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 634: break;
           case 283: 
-            { return new dddd(Simbolos.FREETEXT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FREETEXT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 635: break;
           case 284: 
-            { return new dddd(Simbolos.ASSERTION, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ASSERTION, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 636: break;
@@ -3815,47 +3815,47 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 641: break;
           case 290: 
-            { return new dddd(Simbolos.EXCEPTION, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.EXCEPTION, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 642: break;
           case 291: 
-            { return new dddd(Simbolos.CLUSTERED, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CLUSTERED, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 643: break;
           case 292: 
-            { return new dddd(Simbolos.CHARACTER, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CHARACTER, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 644: break;
           case 293: 
-            { return new dddd(Simbolos.ISOLATION, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.ISOLATION, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 645: break;
           case 294: 
-            { return new dddd(Simbolos.INTERSECT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INTERSECT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 646: break;
           case 295: 
-            { return new dddd(Simbolos.INITIALLY, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INITIALLY, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 647: break;
           case 296: 
-            { return new dddd(Simbolos.INDICATOR, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INDICATOR, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 648: break;
           case 297: 
-            { return new dddd(Simbolos.IMMEDIATE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.IMMEDIATE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 649: break;
           case 298: 
-            { return new dddd(Simbolos.DISTURBED, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DISTURBED, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 650: break;
@@ -3880,7 +3880,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 654: break;
           case 303: 
-            { return new dddd(Simbolos.BIT_LENGTH, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.BIT_LENGTH, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 655: break;
@@ -3905,42 +3905,42 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 659: break;
           case 308: 
-            { return new dddd(Simbolos.COALLITION, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.COALLITION, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 660: break;
           case 309: 
-            { return new dddd(Simbolos.CONSTRAINT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CONSTRAINT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 661: break;
           case 310: 
-            { return new dddd(Simbolos.CONNECTION, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CONNECTION, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 662: break;
           case 311: 
-            { return new dddd(Simbolos.CHECKPOINT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CHECKPOINT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 663: break;
           case 312: 
-            { return new dddd(Simbolos.DEALLOCATE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DEALLOCATE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 664: break;
           case 313: 
-            { return new dddd(Simbolos.DESCRIPTOR, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DESCRIPTOR, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 665: break;
           case 314: 
-            { return new dddd(Simbolos.DEFERRABLE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DEFERRABLE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 666: break;
           case 315: 
-            { return new dddd(Simbolos.DISCONNECT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DISCONNECT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 667: break;
@@ -3960,7 +3960,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 670: break;
           case 319: 
-            { return new dddd(Simbolos.FILLFACTOR, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FILLFACTOR, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 671: break;
@@ -3990,27 +3990,27 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 676: break;
           case 325: 
-            { return new dddd(Simbolos.CONSTRAINTS, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CONSTRAINTS, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 677: break;
           case 326: 
-            { return new dddd(Simbolos.CHAR_LENGTH, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CHAR_LENGTH, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 678: break;
           case 327: 
-            { return new dddd(Simbolos.INSENSITIVE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.INSENSITIVE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 679: break;
           case 328: 
-            { return new dddd(Simbolos.IDENTITYCOL, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.IDENTITYCOL, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 680: break;
           case 329: 
-            { return new dddd(Simbolos.DIAGNOSTICS, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.DIAGNOSTICS, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 681: break;
@@ -4040,17 +4040,17 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 686: break;
           case 335: 
-            { return new dddd(Simbolos.CURRENT_USER, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CURRENT_USER, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 687: break;
           case 336: 
-            { return new dddd(Simbolos.CURRENT_TIME, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CURRENT_TIME, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 688: break;
           case 337: 
-            { return new dddd(Simbolos.CURRENT_DATE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CURRENT_DATE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 689: break;
@@ -4060,7 +4060,7 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 690: break;
           case 339: 
-            { return new dddd(Simbolos.AUTHORIZATION, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.AUTHORIZATION, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 691: break;
@@ -4075,17 +4075,17 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 693: break;
           case 342: 
-            { return new dddd(Simbolos.CONTAINSTABLE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CONTAINSTABLE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 694: break;
           case 343: 
-            { return new dddd(Simbolos.CORRESPONDING, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CORRESPONDING, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 695: break;
           case 344: 
-            { return new dddd(Simbolos.FREETEXTTABLE, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.FREETEXTTABLE, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 696: break;
@@ -4100,17 +4100,17 @@ public class Lexer implements java_cup.runtime.Scanner {
             // fall through
           case 698: break;
           case 347: 
-            { return new dddd(Simbolos.IDENTITY_INSERT, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.IDENTITY_INSERT, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 699: break;
           case 348: 
-            { return new dddd(Simbolos.CURRENT_TIMESTAMP, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CURRENT_TIMESTAMP, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 700: break;
           case 349: 
-            { return new dddd(Simbolos.CHARACHTER_LENGTH, yycolumn, yyline, yytext() );
+            { return new Symbol(Simbolos.CHARACHTER_LENGTH, yycolumn, yyline, yytext() );
             } 
             // fall through
           case 701: break;
