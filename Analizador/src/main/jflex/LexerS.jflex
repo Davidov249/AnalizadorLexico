@@ -11,6 +11,7 @@ import java.io.Console;
 import java.io.InputStream;
 import java.util.Scanner;
 import java_cup.runtime.*;
+import MiniSQL;
 
 
 
@@ -19,8 +20,8 @@ import java_cup.runtime.*;
 %unicode
 %public
 //%standalone
-%cupsym Simbolos
 %cup
+%cupsym Simbolos
 %line
 %column
 %char

@@ -1,8 +1,10 @@
-//import java_cup.runtime.*;
+package MiniSQL;
+
 import java_cup.runtime.*;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+import Lexer;
 
 
 init with 
@@ -48,7 +50,7 @@ parser code
        de simbolos correspondiente. */
     public static void main(String[] args){
         try {
-             parser asin = new parser(
+             MiniSQL asin = new MiniSQL(
                     new Lexer( new FileReader(args[0])));
             Object result = asin.parse().value;
             System.out.println("\n*** Resultados finales ***");

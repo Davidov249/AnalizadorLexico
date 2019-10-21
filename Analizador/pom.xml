@@ -25,6 +25,12 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+      <!-- https://mvnrepository.com/artifact/com.github.vbmacher/java-cup-runtime -->
+    <dependency>
+        <groupId>com.github.vbmacher</groupId>
+        <artifactId>java-cup-runtime</artifactId>
+        <version>11b</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -34,6 +40,20 @@
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <!-- Build an executable JAR -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>com.company.MiniSQL</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
         </plugin>
         <!--Plugin Jflex-->
         <plugin>
@@ -61,10 +81,10 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
         </plugin>
-        <plugin>
+        <!--<plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
-        </plugin>
+        </plugin>-->
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>

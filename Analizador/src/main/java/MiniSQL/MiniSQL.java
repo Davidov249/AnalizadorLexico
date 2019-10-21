@@ -9,6 +9,7 @@ import java_cup.runtime.*;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+import Lexer;
 import java_cup.runtime.XMLElement;
 
 /** CUP v0.11b 20160615 (GIT 4ac7450) generated parser.
@@ -151,7 +152,7 @@ public class MiniSQL extends java_cup.runtime.lr_parser {
        de simbolos correspondiente. */
     public static void main(String[] args){
         try {
-             parser asin = new parser(
+             MiniSQL asin = new MiniSQL(
                     new Lexer( new FileReader(args[0])));
             Object result = asin.parse().value;
             System.out.println("\n*** Resultados finales ***");
