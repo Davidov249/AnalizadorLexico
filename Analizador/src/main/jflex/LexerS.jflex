@@ -601,7 +601,7 @@ Espacio = \s+
 
 <YYINITIAL> {resEND} { return new Symbol(Simbolos.END, yycolumn, yyline, yytext() );}
 
-<YYINITIAL> {resENDEXEC} { return new Symbol(Simbolos.END-EXEC, yycolumn, yyline, yytext() );}
+<YYINITIAL> {resENDEXEC} { return new Symbol(Simbolos.END_EXEC, yycolumn, yyline, yytext() );}
 
 <YYINITIAL> {resERRLVL} { return new Symbol(Simbolos.ERRLVL, yycolumn, yyline, yytext() );}
 

@@ -1,1 +1,0 @@
-TRUNCATE TABLE hola.xd, identificador.identificador GO

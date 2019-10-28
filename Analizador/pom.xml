@@ -41,20 +41,6 @@
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
-        <plugin>
-          <!-- Build an executable JAR -->
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
-          <configuration>
-            <archive>
-              <manifest>
-                <addClasspath>true</addClasspath>
-                <mainClass>com.company.MiniSQL</mainClass>
-              </manifest>
-            </archive>
-          </configuration>
-        </plugin>
         <!--Plugin Jflex-->
         <plugin>
         <groupId>de.jflex</groupId>
@@ -80,6 +66,20 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <!-- Build an executable JAR -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>com.company.MiniSQL.Main</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
         </plugin>
         <!--<plugin>
           <artifactId>maven-jar-plugin</artifactId>
