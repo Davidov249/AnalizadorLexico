@@ -34,11 +34,17 @@ public class MiniSQL extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\015\000\002\002\004\000\002\002\007\000\002\004" +
-    "\004\000\002\004\002\000\002\005\003\000\002\005\003" +
-    "\000\002\003\004\000\002\006\005\000\002\006\002\000" +
+    "\000\042\000\002\002\004\000\002\002\007\000\002\003" +
+    "\004\000\002\003\002\000\002\004\003\000\002\004\003" +
+    "\000\002\005\004\000\002\006\005\000\002\006\002\000" +
     "\002\007\005\000\002\007\002\000\002\010\004\000\002" +
-    "\010\002" });
+    "\010\002\000\002\354\005\000\002\355\004\000\002\355" +
+    "\004\000\002\355\004\000\002\355\004\000\002\355\004" +
+    "\000\002\356\004\000\002\356\002\000\002\357\004\000" +
+    "\002\360\004\000\002\360\003\000\002\361\004\000\002" +
+    "\362\004\000\002\362\003\000\002\363\004\000\002\364" +
+    "\005\000\002\364\003\000\002\366\003\000\002\366\003" +
+    "\000\002\367\004\000\002\367\003" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -46,20 +52,36 @@ public class MiniSQL extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\026\000\004\u011c\004\001\002\000\004\u010a\007\001" +
-    "\002\000\004\002\006\001\002\000\004\002\001\001\002" +
-    "\000\004\u0160\011\001\002\000\010\172\ufffe\u0151\ufffe\u0152" +
-    "\024\001\002\000\012\172\ufff9\u0151\ufff9\u0152\ufff9\u0153\013" +
-    "\001\002\000\010\172\ufffb\u0151\ufffb\u0152\ufffb\001\002\000" +
-    "\004\u0160\014\001\002\000\012\172\ufff7\u0151\ufff7\u0152\ufff7" +
-    "\u0153\016\001\002\000\010\172\ufffa\u0151\ufffa\u0152\ufffa\001" +
-    "\002\000\004\u0160\017\001\002\000\012\172\ufff5\u0151\ufff5" +
-    "\u0152\ufff5\u0153\021\001\002\000\010\172\ufff8\u0151\ufff8\u0152" +
-    "\ufff8\001\002\000\004\u0160\022\001\002\000\010\172\ufff6" +
-    "\u0151\ufff6\u0152\ufff6\001\002\000\006\172\030\u0151\027\001" +
-    "\002\000\004\u0160\011\001\002\000\006\172\uffff\u0151\uffff" +
-    "\001\002\000\004\002\000\001\002\000\004\002\ufffd\001" +
-    "\002\000\004\002\ufffc\001\002" });
+    "\000\061\000\004\132\005\001\002\000\004\002\063\001" +
+    "\002\000\016\103\uffed\205\uffed\214\007\u010b\uffed\u0127\uffed" +
+    "\u012f\uffed\001\002\000\014\103\012\205\011\u010b\013\u0127" +
+    "\015\u012f\014\001\002\000\004\145\010\001\002\000\014" +
+    "\103\uffee\205\uffee\u010b\uffee\u0127\uffee\u012f\uffee\001\002\000" +
+    "\004\u0161\021\001\002\000\004\u0161\044\001\002\000\004" +
+    "\u0161\021\001\002\000\004\u0161\021\001\002\000\004\u0161" +
+    "\017\001\002\000\004\002\ufff4\001\002\000\004\002\ufff1" +
+    "\001\002\000\010\172\037\u0152\036\u0153\034\001\002\000" +
+    "\014\172\ufff9\270\ufff9\u0152\ufff9\u0153\ufff9\u0154\024\001\002" +
+    "\000\004\002\ufff0\001\002\000\012\172\ufffb\270\ufffb\u0152" +
+    "\ufffb\u0153\ufffb\001\002\000\004\u0161\025\001\002\000\014" +
+    "\172\ufff7\270\ufff7\u0152\ufff7\u0153\ufff7\u0154\027\001\002\000" +
+    "\012\172\ufffa\270\ufffa\u0152\ufffa\u0153\ufffa\001\002\000\004" +
+    "\u0161\030\001\002\000\014\172\ufff5\270\ufff5\u0152\ufff5\u0153" +
+    "\ufff5\u0154\032\001\002\000\012\172\ufff8\270\ufff8\u0152\ufff8" +
+    "\u0153\ufff8\001\002\000\004\u0161\033\001\002\000\012\172" +
+    "\ufff6\270\ufff6\u0152\ufff6\u0153\ufff6\001\002\000\004\u0161\021" +
+    "\001\002\000\004\002\uffea\001\002\000\004\002\uffe3\001" +
+    "\002\000\004\002\uffe2\001\002\000\004\002\uffec\001\002" +
+    "\000\004\002\uffeb\001\002\000\004\002\ufff3\001\002\000" +
+    "\004\002\ufff2\001\002\000\010\172\037\u0152\036\u0153\045" +
+    "\001\002\000\004\u0161\044\001\002\000\004\002\uffe7\001" +
+    "\002\000\004\002\uffe9\001\002\000\004\002\uffe8\001\002" +
+    "\000\012\172\037\270\053\u0152\036\u0153\056\001\002\000" +
+    "\004\002\uffef\001\002\000\004\u0161\021\001\002\000\004" +
+    "\002\uffe4\001\002\000\004\002\uffe0\001\002\000\004\u0161" +
+    "\021\001\002\000\004\002\uffe6\001\002\000\004\002\uffe1" +
+    "\001\002\000\010\172\037\u0152\036\u0153\056\001\002\000" +
+    "\004\002\uffe5\001\002\000\004\002\001\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -67,15 +89,26 @@ public class MiniSQL extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\026\000\004\002\004\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\004\003\007\001\001" +
-    "\000\004\004\022\001\001\000\004\006\011\001\001\000" +
-    "\002\001\001\000\002\001\001\000\004\007\014\001\001" +
-    "\000\002\001\001\000\002\001\001\000\004\010\017\001" +
+    "\000\061\000\004\354\003\001\001\000\002\001\001\000" +
+    "\004\356\005\001\001\000\004\355\015\001\001\000\002" +
+    "\001\001\000\002\001\001\000\006\005\050\363\051\001" +
+    "\001\000\004\361\042\001\001\000\006\005\017\357\041" +
+    "\001\001\000\006\005\017\357\021\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\006\360\037" +
+    "\366\034\001\001\000\004\006\022\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\004\007\025" +
+    "\001\001\000\002\001\001\000\002\001\001\000\004\010" +
+    "\030\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\006\005\017\357\040\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
-    "\000\004\005\025\001\001\000\004\003\024\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
-    "\001\001" });
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\006\362\046\366\045\001\001\000\004\361\047\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\010\364\056\366\054\367\053\001\001\000\002\001\001" +
+    "\000\004\005\060\001\001\000\002\001\001\000\002\001" +
+    "\001\000\006\005\050\363\057\001\001\000\002\001\001" +
+    "\000\002\001\001\000\006\366\054\367\061\001\001\000" +
+    "\002\001\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -178,12 +211,12 @@ class CUP$MiniSQL$actions {
       switch (CUP$MiniSQL$act_num)
         {
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 0: // $START ::= TRUNCATEP EOF 
+          case 0: // $START ::= DROP1 EOF 
             {
               Object RESULT =null;
 		int start_valleft = ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)).left;
 		int start_valright = ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)).right;
-		String start_val = (String)((java_cup.runtime.Symbol) CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)).value;
+		Object start_val = (Object)((java_cup.runtime.Symbol) CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)).value;
 		RESULT = start_val;
               CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("$START",0, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
@@ -194,7 +227,7 @@ class CUP$MiniSQL$actions {
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 1: // TRUNCATEP ::= TRUNCATE TABLE OBJECT TRUNCATE1 TRUNCATE2 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
               CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("TRUNCATEP",0, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-4)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
@@ -203,52 +236,52 @@ class CUP$MiniSQL$actions {
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 2: // TRUNCATE1 ::= Coma OBJECT 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
-              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("TRUNCATE1",2, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("TRUNCATE1",1, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
           return CUP$MiniSQL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 3: // TRUNCATE1 ::= 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
-              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("TRUNCATE1",2, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("TRUNCATE1",1, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
           return CUP$MiniSQL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 4: // TRUNCATE2 ::= Puntoycoma 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
-              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("TRUNCATE2",3, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("TRUNCATE2",2, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
           return CUP$MiniSQL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 5: // TRUNCATE2 ::= GO 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
-              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("TRUNCATE2",3, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("TRUNCATE2",2, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
           return CUP$MiniSQL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 6: // OBJECT ::= Identificador OBJECT1 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
-              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("OBJECT",1, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("OBJECT",3, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
           return CUP$MiniSQL$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 7: // OBJECT1 ::= Punto Identificador OBJECT2 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
               CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("OBJECT1",4, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-2)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
@@ -257,7 +290,7 @@ class CUP$MiniSQL$actions {
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 8: // OBJECT1 ::= 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
               CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("OBJECT1",4, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
@@ -266,7 +299,7 @@ class CUP$MiniSQL$actions {
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 9: // OBJECT2 ::= Punto Identificador OBJECT3 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
               CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("OBJECT2",5, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-2)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
@@ -275,7 +308,7 @@ class CUP$MiniSQL$actions {
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 10: // OBJECT2 ::= 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
               CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("OBJECT2",5, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
@@ -284,7 +317,7 @@ class CUP$MiniSQL$actions {
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 11: // OBJECT3 ::= Punto Identificador 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
               CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("OBJECT3",6, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
@@ -293,9 +326,198 @@ class CUP$MiniSQL$actions {
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 12: // OBJECT3 ::= 
             {
-              String RESULT =null;
+              Object RESULT =null;
 
               CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("OBJECT3",6, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 13: // DROP1 ::= DROP DROP3 DROP2 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP1",234, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-2)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 14: // DROP2 ::= TABLE DROP4 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP2",235, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 15: // DROP2 ::= DATABASE DROP6 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP2",235, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 16: // DROP2 ::= USER Identificador 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP2",235, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 17: // DROP2 ::= VIEW DROP4 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP2",235, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 18: // DROP2 ::= INDEX DROP8 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP2",235, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 19: // DROP3 ::= IF EXISTS 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP3",236, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 20: // DROP3 ::= 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP3",236, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 21: // DROP4 ::= OBJECT DROP5 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP4",237, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 22: // DROP5 ::= Coma DROP4 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP5",238, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 23: // DROP5 ::= DROP11 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP5",238, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 24: // DROP6 ::= Identificador DROP7 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP6",239, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 25: // DROP7 ::= Coma DROP6 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP7",240, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 26: // DROP7 ::= DROP11 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP7",240, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 27: // DROP8 ::= OBJECT DROP9 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP8",241, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 28: // DROP9 ::= ON OBJECT DROP12 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP9",242, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-2)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 29: // DROP9 ::= DROP12 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP9",242, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 30: // DROP11 ::= Puntoycoma 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP11",244, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 31: // DROP11 ::= GO 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP11",244, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 32: // DROP12 ::= Coma DROP8 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP12",245, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.elementAt(CUP$MiniSQL$top-1)), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
+            }
+          return CUP$MiniSQL$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 33: // DROP12 ::= DROP11 
+            {
+              Object RESULT =null;
+
+              CUP$MiniSQL$result = parser.getSymbolFactory().newSymbol("DROP12",245, ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), ((java_cup.runtime.Symbol)CUP$MiniSQL$stack.peek()), RESULT);
             }
           return CUP$MiniSQL$result;
 

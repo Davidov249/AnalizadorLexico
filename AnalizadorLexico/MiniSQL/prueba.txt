@@ -1,1 +1,4 @@
-TRUNCATE TABLE hola.xd, identificador.identificador GO
+DROP INDEX  
+    IX_PurchaseOrderHeader ON Purchasing.PurchaseOrderHeader,  
+    IX_Address_StateProvinceID ON Person.Address
+GO
