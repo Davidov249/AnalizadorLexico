@@ -15,57 +15,67 @@ init with
 /*
 scan with 
 {:
-        return Lexer.next_token();
+        return Lexer.next_token ();
 :};
 */
 
 parser code 
 {:
     /* Reporte de error encontrado. */
-    public void report_error(String message, Object info) {
-        StringBuilder m = new StringBuilder("Error");
-        if (info instanceof java_cup.runtime.Symbol) {
-            java_cup.runtime.Symbol s = ((java_cup.runtime.Symbol) info);
-            m.append(" " + s.value.toString());
-            if (s.left >= 0) {                
-                m.append(" in line "+(s.left));
-                if (s.right >= 0)
-                    m.append(", column "+(s.right));
+    public void report_error (String message, Object info) {
+        StringBuilder m = new StringBuilder ("Error");
+        if  (info instanceof java_cup.runtime.Symbol) {
+            java_cup.runtime.Symbol s =  ( (java_cup.runtime.Symbol) info);
+            m.append (" " + s.value.toString ());
+            if  (s.left >= 0) {                
+                m.append (" in line "+ (s.left));
+                if  (s.right >= 0)
+                    m.append (", column "+ (s.right));
             }
         }
-        m.append(" : "+message);
-        System.err.println(m);
+        m.append (" : "+message);
+        System.err.println (m);
     }
    
     /* Cuando se encuentra un error de donde el sistema no puede
         recuperarse, se lanza un error fatal. Se despliega el mensaje
         de error y se finaliza la ejecucion. */
-    public void report_fatal_error(String message, Object info) {
-        report_error(message, info);
-        System.exit(1);
+    public void report_fatal_error (String message, Object info) {
+        report_error (message, info);
+        System.exit (1);
     }
 
     /* Metodo main para garantizar la ejecucion del analizador
        lexico y sintactico, ademas que se pase como parametro la tabla
        de simbolos correspondiente. */
-    public static void main(String[] args){
+    public static void main (String[] args){
         try {
-             MiniSQL asin = new MiniSQL(
-                    new Lexer( new FileReader(args[0])));
-            Object result = asin.parse().value;
-            System.out.println("\n*** Resultados finales ***");
-        } catch (Exception ex) {
-            ex.printStackTrace();
+             MiniSQL asin = new MiniSQL (
+                    new Lexer ( new FileReader (args[0])));
+            Object result = asin.parse ().value;
+            System.out.println ("\n*** Resultados finales ***");
+        } catch  (Exception ex) {
+            ex.printStackTrace ();
         }
     }
 :};
 
-terminal ABSOLUTE, ACTION, ADA, ADD, ALL, ALLOCATE, ALTER, AND, ANY, ARE, AS, ASC, ASSERTION, AT, AUTHORIZATION, AVG, BACKUP, BEGIN, BETWEEN, BIT, BIT_LENGTH, BOTH, BREAK, BROWSE, BULK, BY, CASCADE, CASCADED, CASE, CAST, CATALOG, CHAR, CHAR_LENGTH, CHARACTER, CHARACHTER_LENGTH, CHECK, CHECKPOINT, CLOSE, CLUSTERED, COALESCE, COLLATE, COALLITION, COLUMN, COMMIT, COMPUTE, CONNECT, CONNECTION, CONSTRAINT, CONSTRAINTS, CONTAINS, CONTAINSTABLE, CONTINUE, CONVERT, CORRESPONDING, COUNT, CREATE, CROSS, CURRENT, CURRENT_DATE, CURRENT_TIME, CURRENT_TIMESTAMP, CURRENT_USER, CURSOR, DATABASE, DATE, DAY, DBCC, DEALLOCATE, DEC, DECIMAL, DECLARE, DEFAULT, DEFERRABLE, DEFERRED, DELETE, DENY, DESC, DESCRIBE, DESCRIPTOR, DIAGNOSTICS, DISCONNECT, DISK, DISTINCT, DISTURBED, DOMAIN, DOUBLE, DROP, DUMP, ELSE, END, END_EXEC, ERRLVL, ESCAPE, EXCEPT, EXCEPTION, EXEC, EXECUTE, EXISTS, EXIT, EXTERNAL, FETCH, EXTRACT, FALSE, FILE, FILLFACTOR, FIRST, FOR, FLOAT, FOREIGN, FREETEXT, FORTRAN, FOUND, FROM, FREETEXTTABLE, FULL, GET, GLOBAL, FUNCTION, GO, GOTO, GRANT, GROUP, HAVING, HOLDLOCK, HOUR, IDENTITY, IMMEDIATE, IN, INCLUDE, INDEX, INDICATOR, INITIALLY, INNER, IDENTITY_INSERT, INPUT, IDENTITYCOL, IF, INSENSITIVE, INSERT, INT, INTEGER, INTERSECT, INTERVAL, INTO, IS, ISOLATION, JOIN, KEY, KILL, LEFT, LANGUAGE, LAST, LEADING, LIKE, LINENO, LEVEL, LOAD, MERGE, LOCAL, NATIONAL, LOWER, NOCHECK, MATCH, NONCLUSTERED, MAX, NOT, MIN, NULL, MINUTE, MODULE, NULLIF, OF, MONTH, NAMES, OFF, NATURAL, OFFSES, NCHAR, NEXT, NO, ON, NONE, OPEN, OPENDATASOURCE, NUMERIC, OCTET_LENGTH, OPENQUERY, OPENROWSET, OPENXML, OPTION, ONLY, OR, ORDER, OUTER, OVER, PERCENT, PIVOT, PLAN, OUTPUT, PRECISION, PRIMARY, PRINT, PROC, OVERLAPS, PAD, PARTIAL, PROCEDURE, PASCAL, PUBLIC, POSITION, RAISERROR, PREPARE, READ, PRESERVE, READTEXT, PRIOR, RECONFIGURE, PRIVILEGES, REFERENCES, REPLICATION, REAL, RESTORE, RESTRICT, RELATIVE, RETURN, RETURNS, REVOKE, RIGHT, ROLLBACK, REVERT, ROWS, ROWCOUNT, SCHEMA, SCROLL, ROWGUIDCOL, SECOND, SECTION, SELECT, SESSION, SESSION_USER, SET, SIZE, RULE, SMALLINT, SAVE, SOME, SECURITYAUDIT, SPACE, SEMANTICKEYPHRASETABLE, SQL, SQLCA, SEMANTICSIMILARITYDETAILSTABLE, SQLCODE, SEMANTICSIMILARITYTABLE, SQLERROR, SQLSTATE, SQLWARNING, SUBSTRING, SUM, SETUSER, SHUTDOWN, SYSTEM_USER, STATISTICS, TABLE, TEMPORARY, THEN, TIME, TIMESTAMP, TABLESAMPLE, TIMEZONE_HOUR, TEXTSIZE, TIMEZONE_MINUTE, TO, TRAILING, TOP, TRANSACTION, TRAN, TRANSLATE, TRANSLATION, TRIM, TRIGGER, TRUNCATE, TRUE, UNION, UNIQUE, TRY_CONVERT, UNKNOWN, TSEQUAL, UPDATE, UPPER, USAGE, USER, UNPIVOT, USING, VALUE, VALUES, VARCHAR, VARYING, UPDATETEXT, VIEW, USE, WHEN, WHENEVER, WHERE, WITH, WAITFOR, WORK, WRITE, YEAR, WHILE, ZONE, WITHINGROUP, WRITETEXT, Entero, Boolean, Float, Cadena, ComentarioLinea, ComentarioMultiliena, Signomas, Signomenos, Signomult, Signodiv, Signoporcentaje, Signomayor, Signomayorigual, Signomenor, Signomenorigual, Signoigual, Signoigualigual, Signonotigual, Signoyy, Signoor, Signoadmiracion, Puntoycoma, Coma, Punto, Corcheteapertura, Corchetecerradura, Corchetes, Parentesisapertura, Parentesiscerradura, Parentesis, Llaveapertura, Llavecerradura, Llaves, Arroba, Sharp, Sharpsharp, Identificador, ERROR;
+terminal ABSOLUTE, ACTION, ADA, ADD, ALL, ALLOCATE, ALTER, AND, ANY, ARE, AS, ASC, ASSERTION, AT, AUTHORIZATION, AVG, BACKUP, BEGIN, BETWEEN, BIT, BIT_LENGTH, BOTH, BREAK, BROWSE, BULK, BY, CASCADE, CASCADED, CASE, CAST, CATALOG, CHAR, CHAR_LENGTH, CHARACTER, CHARACHTER_LENGTH, CHECK, CHECKPOINT, CLOSE, CLUSTERED, COALESCE, COLLATE, COALLITION, COLUMN, COMMIT, COMPUTE, CONNECT, CONNECTION, CONSTRAINT, CONSTRAINTS, CONTAINS, CONTAINSTABLE, CONTINUE, CONVERT, CORRESPONDING, COUNT, CREATE, CROSS, CURRENT, CURRENT_DATE, CURRENT_TIME, CURRENT_TIMESTAMP, CURRENT_USER, CURSOR, DATABASE, DATE, DAY, DBCC, DEALLOCATE, DEC, DECIMAL, DECLARE, DEFAULT, DEFERRABLE, DEFERRED, DELETE, DENY, DESC, DESCRIBE, DESCRIPTOR, DIAGNOSTICS, DISCONNECT, DISK, DISTINCT, DISTURBED, DOMAIN, DOUBLE, DROP, DUMP, ELSE, END, END_EXEC, ERRLVL, ESCAPE, EXCEPT, EXCEPTION, EXEC, EXECUTE, EXISTS, EXIT, EXTERNAL, FETCH, EXTRACT, FALSE, FILE, FILLFACTOR, FIRST, FOR, FLOAT, FOREIGN, FREETEXT, FORTRAN, FOUND, FROM, FREETEXTTABLE, FULL, GET, GLOBAL, FUNCTION, GO, GOTO, GRANT, GROUP, HAVING, HOLDLOCK, HOUR, IDENTITY, IMMEDIATE, IN, INCLUDE, INDEX, INDICATOR, INITIALLY, INNER, IDENTITY_INSERT, INPUT, IDENTITYCOL, IF, INSENSITIVE, INSERT, INT, INTEGER, INTERSECT, INTERVAL, INTO, IS, ISOLATION, JOIN, KEY, KILL, LEFT, LANGUAGE, LAST, LEADING, LIKE, LINENO, LEVEL, LOAD, MERGE, LOCAL, NATIONAL, LOWER, NOCHECK, MATCH, NONCLUSTERED, MAX, NOT, MIN, NULL, MINUTE, MODULE, NULLIF, OF, MONTH, NAMES, OFF, NATURAL, OFFSES, NCHAR, NEXT, NO, ON, NONE, OPEN, OPENDATASOURCE, NUMERIC, OCTET_LENGTH, OPENQUERY, OPENROWSET, OPENXML, OPTION, ONLY, OR, ORDER, OUTER, OVER, PERCENT, PIVOT, PLAN, OUTPUT, PRECISION, PRIMARY, PRINT, PROC, OVERLAPS, PAD, PARTIAL, PROCEDURE, PASCAL, PUBLIC, POSITION, RAISERROR, PREPARE, READ, PRESERVE, READTEXT, PRIOR, RECONFIGURE, PRIVILEGES, REFERENCES, REPLICATION, REAL, RESTORE, RESTRICT, RELATIVE, RETURN, RETURNS, REVOKE, RIGHT, ROLLBACK, REVERT, ROWS, ROWCOUNT, SCHEMA, SCROLL, ROWGUIDCOL, SECOND, SECTION, SELECT, SESSION, SESSION_USER, SET, SIZE, RULE, SMALLINT, SAVE, SOME, SECURITYAUDIT, SPACE, SEMANTICKEYPHRASETABLE, SQL, SQLCA, SEMANTICSIMILARITYDETAILSTABLE, SQLCODE, SEMANTICSIMILARITYTABLE, SQLERROR, SQLSTATE, SQLWARNING, SUBSTRING, SUM, SETUSER, SHUTDOWN, SYSTEM_USER, STATISTICS, TABLE, TEMPORARY, THEN, TIME, TIMESTAMP, TABLESAMPLE, TIMEZONE_HOUR, TEXTSIZE, TIMEZONE_MINUTE, TO, TRAILING, TOP, TRANSACTION, TRAN, TRANSLATE, TRANSLATION, TRIM, TRIGGER, TRUNCATE, TRUE, UNION, UNIQUE, TRY_CONVERT, UNKNOWN, TSEQUAL, UPDATE, UPPER, USAGE, USER, UNPIVOT, USING, VALUE, VALUES, VARCHAR, VARYING, UPDATETEXT, VIEW, USE, WHEN, WHENEVER, WHERE, WITH, WAITFOR, WORK, WRITE, YEAR, WHILE, ZONE, WITHINGROUP, WRITETEXT, Entero, Boolean, Float, Cadena, ComentarioLinea, ComentarioMultiliena, Signomas, Signomenos, Signomult, Signodiv, Signoporcentaje, Signomayor, Signomayorigual, Signomenor, Signomenorigual, Signoigual, Signoigualigual, Signonotigual, Signoyy, Signoor, Signoadmiracion, Puntoycoma, Coma, Punto, Corcheteapertura, Corchetecerradura, Corchetes, Parentesisapertura, Parentesiscerradura, Parentesis, Llaveapertura, Llavecerradura, Llaves, Arroba, Sharp, Sharpsharp, Identificador, ERROR, DBit;
 
-non terminal TRUNCATEP, TRUNCATE1, TRUNCATE2, OBJECT,OBJECT1,OBJECT2,OBJECT3,SEXP,SEXP2,SEXP3,SEXP4,SEXP5,CONV,CONV1,CONV2,CONV3,CONV4,CONV5,AGG_FN,SEL_AVG,SEL_AVG1,SEL_AVG2,SEL_AVG3,SEL_COUNT,SEL_COUNT1,SEL_COUNT2,SEL_COUNT3,SEL_AGR,SEL_AGR1,SEL_AGR2,SEL_AGR3,EXPRESSION,EXPRESSION1,EXPRESSION2,EXPRESSION3,EXPRESSION4,AR_OPR,SUM_OPR,ASIG_OPR,BIT_OPR,NOT_OPR,COMPARE_OPR,LOGIC_OPR,CASEW,CASEW1,CASEW2,CASEW3,CONST_EXP,DATATYPE,DATATYPE1,DATATYPE2,DATATYPE3,DATATYPE4,DATATYPE5,SH_COND,SH_COND1,SH_COND2,PREDICATE,PREDICATE1,PREDICATE2,PREDICATE3,PREDICATE4,PREDICATE5,PREDICATE6,PREDICATE7,PREDICATE8,PREDICATE9,SH_CONDWM,SH_CONDWM1,SH_CONDWM2,SH_CONDWM3,GSP,GSP1,DT_FN,DT_FN1,DT_FN2,STR_FN,STR_FN1,STR_FN2,OTH_FN,OTH_FN1,OTH_FN2,OTH_FN3,ROWSET,SAM_CL,SAM_CL1,SAM_CL2,JOIN_TYPE,JOIN_TYPE1,JOIN_TYPE2,JOIN_TYPE3,JOINTB,JOINTB1,JOINTB2,JOINTB3,JOINTB4,TB_SOURCE,TB_SOURCE1,TB_SOURCE2,ORDERB,ORDERB1,ORDERB2,ORDERB3,ORDERB4,SELIST,SELIST1,SELIST2,SELIST3,SELIST4,SELIST5,SELIST7,DML,DML2,DML3,DML4,OUTCL,OUTCL1,OUTCL2,OUTCL3,COLST,COLST1,COLST2,EXPR_INSERT,COL_CST,COL_CST1,COL_CST2,COL_CST3,COL_CST4,COL_CST5,COL_CST6,COL_CST7,COL_CST8,COL_CST9,COL_CST10,COL_CST11,COL_CST12,COL_CST13,COL_CST14,COL_CST15,COL_CST16,COL_DEF,COL_DEF1,COL_DEF2,COL_DEF3,COL_DEF4,COL_DEF5,COL_DEF6,COL_DEF7,COL_DEF8,COL_DEF9,COL_DEF10,TB_CST,TB_CST1,TB_CST2,TB_CST3,TB_CST4,TB_CST5,TB_CST6,TB_CST7,TB_CST8,TB_CST9,TB_CST10,TB_CST11,TB_CST12,TB_CST13,TB_CST14,TB_CST15,TB_CST16,TB_CST17,TB_CST18,TB_CST19,TB_CST20,TB_CST21,TB_CST22,TB_CST23,SELECT1,SELECT2,SELECT3,SELECT4,SELECT5,SELECT6,SELECT7,SELECT8,SELECT9,SELECT11,SELECT12,SELECT13,SELECT14,SELECT15,SELECT17,SELECT18,SELECT19,INSERT0,INSERT1,INSERT2,INSERT3,INSERT4,INSERT5,INSERT6,INSERT7,INSERT8,INSERT9,INSERT10,INSERT11,INSERT12,UPDATE0,UPDATE1,UPDATE2,UPDATE3,UPDATE4,UPDATE5,UPDATE6,UPDATE7,UPDATE8,UPDATE9,UPDATE10,UPDATE11,UPDATE12,UPDATE13,UPDATE14,UPDATE15,UPDATE16,UPDATE17,DEL1,DEL2,DEL3,DEL4,DEL5,DEL6,DEL7,DEL8,DEL9,DEL10,BEGIN_T, DROP1, DROP2, DROP3, DROP4, DROP5, DROP6, DROP7, DROP8, DROP9, DROP10, DROP11, DROP12;
+non terminal INICIO,TRUNCATEP, TRUNCATE1, TRUNCATE2, OBJECT,OBJECT1,OBJECT2,OBJECT3,SEXP,SEXP2,SEXP3,SEXP4,SEXP5,CONV,CONV1,CONV2,CONV3,CONV4,CONV5,AGG_FN,SEL_AVG,SEL_AVG1,SEL_AVG2,SEL_AVG3,SEL_COUNT,SEL_COUNT1,SEL_COUNT2,SEL_COUNT3,SEL_AGR,SEL_AGR1,SEL_AGR2,SEL_AGR3,EXPRESSION,EXPRESSION1,EXPRESSION2,EXPRESSION3,EXPRESSION4,AR_OPR,SUM_OPR,ASIG_OPR,BIT_OPR,NOT_OPR,COMPARE_OPR,LOGIC_OPR,CASEW,CASEW1,CASEW2,CASEW3,CONST_EXP,DATATYPE,DATATYPE1,DATATYPE2,DATATYPE3,DATATYPE4,DATATYPE5,SH_COND,SH_COND1,SH_COND2,PREDICATE,PREDICATE1,PREDICATE2,PREDICATE3,PREDICATE4,PREDICATE5,PREDICATE6,PREDICATE7,PREDICATE8,PREDICATE9,SH_CONDWM,SH_CONDWM1,SH_CONDWM2,SH_CONDWM3, SH_CONDWM4,GSP,GSP1,DT_FN,DT_FN1,DT_FN2,STR_FN,STR_FN1,STR_FN2,OTH_FN,OTH_FN1,OTH_FN2,OTH_FN3,ROWSET,SAM_CL,SAM_CL1,SAM_CL2,JOIN_TYPE,JOIN_TYPE1,JOIN_TYPE2,JOIN_TYPE3,JOINTB,JOINTB1,JOINTB2,JOINTB3,JOINTB4,TB_SOURCE,TB_SOURCE1,TB_SOURCE2,ORDERB,ORDERB1,ORDERB2,ORDERB3,ORDERB4,SELIST,SELIST1,SELIST2,SELIST3,SELIST4,SELIST5,SELIST6,SELIST7,DML1,DML2,DML3,DML4,OUTCL,OUTCL1,OUTCL2,OUTCL3,COLST,COLST1,COLST2,EXPR_INSERT,COL_CST,COL_CST1,COL_CST2,COL_CST3,COL_CST4,COL_CST5,COL_CST6,COL_CST7,COL_CST8,COL_CST9,COL_CST10,COL_CST11,COL_CST12,COL_CST13,COL_CST14,COL_CST15,COL_CST16,COL_DEF,COL_DEF1,COL_DEF2,COL_DEF3,COL_DEF4,COL_DEF5,COL_DEF6,COL_DEF7,COL_DEF8,COL_DEF9,COL_DEF10,TB_CST,TB_CST1,TB_CST2,TB_CST3,TB_CST4,TB_CST5,TB_CST6,TB_CST7,TB_CST8,TB_CST9,TB_CST10,TB_CST11,TB_CST12,TB_CST13,TB_CST14,TB_CST15,TB_CST16,TB_CST17,TB_CST18,TB_CST19,TB_CST20,TB_CST21,TB_CST22,TB_CST23,SELECT1,SELECT2,SELECT3,SELECT4,SELECT5,SELECT6,SELECT7,SELECT8,SELECT9,SELECT11,SELECT12,SELECT13,SELECT14,SELECT15,SELECT17,SELECT18,SELECT19,SELECT20,INSERT1,INSERT2,INSERT3,INSERT4,INSERT5,INSERT6,INSERT7,INSERT8,INSERT9,INSERT10,INSERT11,INSERT12,INSERT13,UPDATE0,UPDATE1,UPDATE2,UPDATE3,UPDATE4,UPDATE5,UPDATE6,UPDATE7,UPDATE8,UPDATE9,UPDATE10,UPDATE11,UPDATE12,UPDATE13,UPDATE14,UPDATE15,UPDATE16,UPDATE17,DEL1,DEL2,DEL3,DEL4,DEL5,DEL6,DEL7,DEL8,DEL9,DEL10,BEGIN_T, DROP1, DROP2, DROP3, DROP4, DROP5, DROP6, DROP7, DROP8, DROP9, DROP10, DROP11, DROP12, ALTER1,ALTER2,ALTER3,ALTER4,ALTER5,ALTER6,ALTER7,ALTER8,ALTER9,ALTER10,ALTER11,ALTER12,ALTER13,ALTER14,ALTER15,ALTER16,ALTER17,ALTER18,ALTER19,ALTER20,ALTER21,ALTER22,ALTER23,ALTER24,ALTER25,COLNAME,COLNAME1, BIN_OPR,FUNCTION1,FUNCTION2,FUNCTION3,FUNCTION4,FUNCTION5,FUNCTION6,FUNCTION7,FUNCTION8,FUNCTION9,FIN_AN,TABLE1,TABLE2,TABLE3,TABLE4,TABLE5,DEFV,TB_IX,TB_IX1,TB_IX2,TB_IX3,TB_IX4, CRT,CRT1,CRT2,DATABASE1,DATABASE2,DATABASE3,DATABASE4,FLSPC,FLSPC1,PROCEDURE1,PROCEDURE2,PROCEDURE3,PROCEDURE4,PROCEDURE5,PROCEDURE6,PROCEDURE7,PROCEDURE8,PROCEDURE9,PROCEDURE10,PROCEDURE11,PROCEDURE12,PROCEDURE13,PROCEDURE14,PROCEDURE15,PROCEDURE16,PROCEDURE17,VIEW1,VIEW2,VIEW3,VIEW4,VIEW5,VIEW6;
 
-start with DROP1;
+precedence left Signomas, Signomenos;
+precedence left Signomult, Signodiv;
 
+
+start with INICIO;
+
+
+    INICIO ::= SELECT1
+            |   INSERT1
+            |   UPDATE0
+            |   DROP1
+            ;
     TRUNCATEP ::= TRUNCATE TABLE OBJECT TRUNCATE1 TRUNCATE2
                 ;
     TRUNCATE1 ::= Coma OBJECT
@@ -119,3 +129,895 @@ start with DROP1;
     DROP12 ::= Coma DROP8
                 | DROP11
                 ;
+
+    ALTER1 ::= ALTER ALTER2
+                ;
+    ALTER2 ::= VIEW ALTER2
+                | TABLE OBJECT ALTER7
+                | USER Identificador ALTER18
+                | DATABASE ALTER23 ALTER24
+                ;
+    ALTER3 ::= Identificador ALTER4
+                ;
+    ALTER4 ::= Punto Identificador ALTER5
+                | ALTER5
+                ;
+    ALTER5 ::= Parentesisapertura Identificador ALTER6
+                | AS SELECT ALTER25
+                ;
+    ALTER6 ::= Coma Identificador ALTER6
+                | Parentesiscerradura AS SELECT1 ALTER25
+                ;
+    ALTER7 ::= ALTER COLUMN Identificador ALTER8
+                | ADD ALTER16
+                | DROP ALTER19
+                ;
+    ALTER8 ::= Identificador ALTER9 ALTER10
+                | ADD ALTER15
+                | DROP ALTER15
+                ;
+    ALTER9 ::= Punto Identificador
+                | /* VACIO */
+                ;
+    ALTER10 ::= Parentesisapertura Entero ALTER11 Parentesiscerradura ALTER12
+                ;
+    ALTER11 ::= Coma INTEGER
+                | /* VACIO */
+                ;
+    ALTER12 ::= COLLATE Identificador ALTER13
+                | ALTER13
+                ;
+    ALTER13 ::= ALTER14
+                | /* VACIO */
+                ;
+    ALTER14 ::= NULL
+                | NOT NULL
+                ;
+    ALTER15 ::= ROWGUIDCOL
+                | NOT FOR REPLICATION
+                ;
+    ALTER16 ::= COL_DEF ALTER17
+                | TB_CST ALTER17
+                ;
+    ALTER17 ::= Coma ALTER16
+                | ALTER18
+                ;
+    ALTER18 ::= Puntoycoma
+                | GO
+                ;
+    ALTER19 ::= CONSTRAINT ALTER20
+                | COLUMN ALTER20
+                | ALTER20
+                ;
+    ALTER20 ::= IF EXISTS ALTER21
+                | ALTER21
+                ;
+    ALTER21 ::= Identificador ALTER22
+                ;
+    ALTER22 ::= Coma ALTER21
+                | ALTER18
+                ;
+    ALTER23 ::= Identificador
+                | CURRENT
+                ;
+    ALTER24 ::= COLLATE Identificador ALTER18
+                ;
+    ALTER25 ::= WITH CHECK OPTION
+                | /* VACIO */
+                ;
+
+    SH_COND ::= SH_COND1 SH_COND2
+                ;
+    SH_COND1 ::= MATCH Parentesisapertura GSP Parentesiscerradura 
+                | SH_CONDWM
+                ;
+    SH_COND2 ::= AND SH_COND
+                | /* VACIO */
+                ;
+    PREDICATE ::= PREDICATE1 PREDICATE2
+                | CONTAINS Parentesisapertura PREDICATE7 Coma PREDICATE8 Parentesiscerradura
+                | FREETEXT Parentesisapertura PREDICATE7 Coma PREDICATE9 Parentesiscerradura
+                ;
+    PREDICATE1 ::= Identificador
+                | OBJECT
+                | CASEW
+                | AGG_FN
+                | STR_FN
+                | DT_FN
+                | CONV
+                | OTH_FN
+                ;
+    PREDICATE2 ::= COMPARE_OPR PREDICATE1
+                | NOT PREDICATE3
+                | LIKE PREDICATE1 PREDICATE6
+                | BETWEEN PREDICATE1 AND PREDICATE1
+                | IS PREDICATE4 NULL
+                | IN PREDICATE1 PREDICATE5
+                ;
+    PREDICATE3 ::= LIKE PREDICATE1 PREDICATE6
+                | BETWEEN PREDICATE1 AND PREDICATE1
+                | IN PREDICATE1 PREDICATE5
+                ;
+    PREDICATE4 ::= NOT
+                | /* VACIO */
+                ;
+    PREDICATE5 ::= Coma PREDICATE1 PREDICATE5
+                | /* VACIO */
+                ;
+    PREDICATE6 ::= ESCAPE Cadena
+                | /* VACIO */
+                ;
+    PREDICATE7 ::= Signomult
+                | OBJECT
+                ;
+    PREDICATE8 ::= SH_COND
+                ;
+    PREDICATE9 ::= Cadena
+                | Arroba Identificador
+                ;
+    SH_CONDWM ::= SH_CONDWM4 PREDICATE SH_CONDWM1
+                | Parentesisapertura SH_CONDWM Parentesiscerradura SH_CONDWM1
+                ;
+    SH_CONDWM1 ::= OR SH_CONDWM2
+                | /* VACIO */
+                ;
+    SH_CONDWM2 ::= NOT SH_CONDWM3
+                | SH_CONDWM3
+                ;
+    SH_CONDWM3 ::= PREDICATE SH_CONDWM1
+                | Parentesisapertura SH_CONDWM Parentesiscerradura SH_CONDWM1
+                ;
+    SH_CONDWM4 ::= NOT
+                | /* VACIO */
+                ;
+    GSP ::= Identificador GSP1 Identificador
+                ;
+    GSP1 ::= Signomenor Signomenos Parentesisapertura Identificador Parentesiscerradura Signomenos
+                | Signomenos Parentesisapertura Identificador Parentesiscerradura Signomenos Signomayor
+                ;
+    AGG_FN ::= AVG Parentesisapertura SEL_AVG Parentesiscerradura
+                | COUNT Parentesisapertura SEL_COUNT Parentesiscerradura
+                | MAX Parentesisapertura SEL_AGR Parentesiscerradura
+                | MIN Parentesisapertura SEL_AGR Parentesiscerradura
+                | SUM Parentesisapertura SEL_AGR Parentesiscerradura
+                ;
+    SEL_AVG ::= SEL_AVG1 SEL_AVG2
+                ;
+    SEL_AVG1 ::= ALL
+                | DISTINCT
+                | /* VACIO */
+                ;
+    SEL_AVG2 ::= SEXP
+                | Identificador SEL_AVG3
+                ;
+    SEL_AVG3 ::= Punto Identificador
+                | /* VACIO */
+                ;
+    SEL_COUNT ::= SEL_COUNT1 SEL_COUNT2
+                ;
+    SEL_COUNT1 ::= ALL
+                | DISTINCT
+                | /* VACIO */
+                ;
+    SEL_COUNT2 ::= Signomult
+                | Identificador SEL_COUNT3
+                | SEXP 
+                ;
+    SEL_COUNT3 ::= Punto Identificador
+                | /* VACIO */
+                ;
+    SEL_AGR ::= SEL_AGR1 SEL_AGR2
+                ;
+    SEL_AGR1 ::= ALL
+                | DISTINCT
+                | /* VACIO */
+                ;
+    SEL_AGR2 ::= Identificador SEL_AGR3
+                | SEXP 
+                ;
+    SEL_AGR3 ::= Punto Identificador
+                | /* VACIO */
+                ;
+    EXPRESSION ::= SEXP EXPRESSION1 EXPRESSION3
+                | EXPRESSION2 SUM_OPR EXPRESSION2
+                | NOT_OPR EXPRESSION EXPRESSION4
+                ;
+    EXPRESSION1 ::= AR_OPR
+                | COMPARE_OPR
+                | SUM_OPR
+                ;
+    EXPRESSION2 ::= Cadena
+                | Identificador
+                ;
+    EXPRESSION3 ::= SEXP
+                | Identificador
+                | Cadena
+                ;
+    EXPRESSION4 ::= COMPARE_OPR
+                | LOGIC_OPR
+                ;
+    SEXP ::= SEXP3 SEXP2;
+    SEXP2 ::= Signomas SEXP3 SEXP2
+                | Signomenos SEXP3 SEXP2
+                | /* VACIO */
+                ;
+    SEXP3 ::= SEXP5 SEXP4;
+    SEXP4 ::= Signomult SEXP5 SEXP4
+                | Signodiv SEXP5 SEXP4
+                | /* VACIO */
+                ;
+    SEXP5 ::= Parentesisapertura SEXP Parentesiscerradura
+                | Entero
+                | Float
+                | Arroba Identificador
+                | AGG_FN
+                ;
+    CONV ::= CAST Parentesisapertura CONV1 
+                | CONVERT Parentesisapertura CONV2
+                ;
+    CONV1 ::= EXPRESSION AS DATATYPE CONV3 Parentesiscerradura
+                ;
+    CONV2 ::= DATATYPE CONV3 CONV4
+                ;
+    CONV3 ::= Parentesisapertura Entero Parentesiscerradura
+                | /* VACIO */
+                ;
+    CONV4 ::= EXPRESSION CONV5
+                ;
+    CONV5 ::= Coma SEXP
+                | Parentesiscerradura
+                ;
+    DATATYPE ::= Identificador DATATYPE2
+                |DATATYPE3
+                ;
+    DATATYPE2 ::= Punto Identificador
+                ;
+    DATATYPE3 ::= BIT DATATYPE4
+                |INT DATATYPE4
+                |INTEGER DATATYPE4
+                |FLOAT DATATYPE4
+                |VARCHAR DATATYPE4
+                |DATE DATATYPE4
+                |REAL DATATYPE4
+                |DECIMAL DATATYPE4
+                |NUMERIC DATATYPE4
+                |SMALLINT DATATYPE4
+                |TIME DATATYPE4
+                |CHAR DATATYPE4
+                |NCHAR DATATYPE4
+                ;
+    DATATYPE4 ::= Parentesisapertura Entero DATATYPE5
+                |/* VACIO */
+                ;
+    DATATYPE5 ::= Coma Entero Parentesiscerradura
+                | Parentesiscerradura
+                ;
+    TB_CST ::= TB_CST1 TB_CST2 
+                ;
+    TB_CST1 ::= CONSTRAINT Identificador
+                | /* VACIO */
+                ;
+    TB_CST2 ::= PRIMARY KEY TB_CST3
+                | UNIQUE TB_CST3
+                | TB_CST7
+                | CONNECTION TB_CST17
+                | DEFAULT TB_CST18
+                | CHECK TB_CST15
+                ;
+    TB_CST3 ::= CLUSTERED TB_CST4
+                | TB_CST4
+                ;
+    TB_CST4 ::= WITH TB_CST5 TB_CST6
+                | TB_CST6
+                ;
+    TB_CST5 ::= FILLFACTOR Signoigual Entero Parentesisapertura Entero Parentesiscerradura
+                | Parentesisapertura FILLFACTOR Signoigual INTEGER Parentesisapertura Entero Parentesiscerradura 
+                ;
+    TB_CST6 ::= ON Identificador Parentesisapertura Identificador Parentesiscerradura
+                ;
+    TB_CST7 ::= TB_CST8 REFERENCES Identificador TB_CST9
+                ;
+    TB_CST8 ::= FOREIGN KEY
+                | /* VACIO */
+                ;
+    TB_CST9 ::= Punto Identificador TB_CST10
+                | TB_CST10
+                ;
+    TB_CST10 ::= Parentesisapertura Identificador Parentesiscerradura TB_CST11
+                ;
+    TB_CST11 ::= ON TB_CST12 TB_CST13
+                | NOT FOR REPLICATION
+                | /* VACIO */
+                ;
+    TB_CST12 ::= DELETE
+                | UPDATE
+                ;
+    TB_CST13 ::= NO ACTION
+                | CASCADE
+                | SET TB_CST14
+                ;
+    TB_CST14 ::= NULL
+                | DEFAULT
+                ;
+    TB_CST15 ::= NOT FOR REPLICATION TB_CST16
+                | TB_CST16
+                ;
+    TB_CST16 ::= Parentesisapertura EXPRESSION Parentesiscerradura TB_CST21
+                ;
+    TB_CST17 ::= Parentesisapertura TB_CST19 Parentesiscerradura
+                ;
+    TB_CST18 ::= CONST_EXP FOR Identificador TB_CST23
+                ;
+    TB_CST19 ::= Identificador TO Identificador TB_CST20
+                ;
+    TB_CST20 ::= Coma TB_CST19
+                | /* VACIO */
+                ;
+    TB_CST21 ::= ON DELETE TB_CST22 
+                | /* VACIO */
+                ;
+    TB_CST22 ::= NO ACTION
+                | CASCADE
+                ;
+    TB_CST23 ::= WITH VALUES
+                | /* VACIO */
+                ;
+    COL_DEF ::= Identificador DATATYPE COL_DEF1
+                ;
+    COL_DEF1 ::= COLLATE Identificador COL_DEF2
+                | COL_DEF2
+                ;
+    COL_DEF2 ::= NULL COL_DEF3
+                | NOT NULL COL_DEF3
+                | COL_DEF3
+                | IDENTITY COL_DEF6
+                ;
+    COL_DEF3 ::= CONSTRAINT Identificador COL_DEF10
+                | COL_CST
+                | COL_DEF4
+                ;
+    COL_DEF4 ::= DEFAULT CONST_EXP COL_DEF5
+                ;
+    COL_DEF5 ::= WITH VALUES COL_DEF8
+                | COL_DEF8
+                ;
+    COL_DEF6 ::= Parentesisapertura SEXP Coma SEXP Parentesiscerradura COL_DEF7
+                | COL_DEF7
+                ;
+    COL_DEF7 ::= NOT FOR REPLICATION COL_DEF8
+                | COL_DEF8
+                ;
+    COL_DEF8 ::= ROWGUIDCOL COL_DEF9
+                | COL_DEF9
+                ;
+    COL_DEF10 ::= COL_DEF4
+                | COL_CST
+                ;
+    CONST_EXP ::= Arroba Identificador
+                | Identificador
+                | Cadena
+                | Entero
+                | Float
+                ;
+    COLST ::= Parentesisapertura COLST1
+                ;
+    COLST1 ::= Identificador COLST2
+                ;
+    COLST2 ::= Coma COLST1
+                | Parentesiscerradura
+                ;
+    EXPR_INSERT ::= SEXP
+                | Cadena
+                | BIT
+                ;
+    OUTCL ::= OUTPUT DML1 OUTCL1
+                | /* VACIO */
+                ;
+    OUTCL1 ::= INTO OUTCL2
+                | /* VACIO */
+                ;
+    OUTCL2 ::= Arroba Identificador OUTCL3
+                | Identificador OUTCL3
+                ;
+    OUTCL3 ::= COLST
+                | /* VACIO */
+                ;
+    DML1 ::= DML2 DML3
+                ;
+    DML2 ::= COLNAME
+                | SEXP
+                ;
+    DML3 ::= AS Identificador DML4
+                | /* VACIO */
+                ;
+    DML4 ::= Coma DML1
+                | /* VACIO */
+                ;
+    COLNAME ::= Identificador Punto COLNAME1
+                ;
+    COLNAME1 ::= Signomult
+                | Identificador
+                ;
+    SELIST ::= SELIST1
+                ;
+    SELIST1 ::= Signomult
+                | Identificador SELIST2
+                | EXPRESSION SELIST5
+                | AGG_FN SELIST5
+                | STR_FN SELIST5
+                | DT_FN SELIST5
+                | CONV SELIST5
+                | CASEW SELIST5
+                ;
+    SELIST2 ::= Punto SELIST3
+                | Signoigual SELIST6
+                | /* VACIO */
+                ;
+    SELIST3 ::= Signomult
+                | Identificador SELIST5
+                ;
+    SELIST5 ::= AS Identificador
+                | Identificador 
+                | /* VACIO */
+                ;
+    SELIST6 ::= EXPRESSION
+                ;
+    ORDERB ::= SELIST ORDERB1
+                ;
+    ORDERB1 ::= ORDERB2
+                | Coma ORDERB
+                ;
+    ORDERB2 ::= COLLATE ORDERB3
+                | ORDERB4
+                ;
+    ORDERB3 ::= Identificador ORDERB4
+                ;
+    ORDERB4 ::= ASC
+                | DESC
+                ;
+    TB_SOURCE ::= OBJECT TB_SOURCE1 TB_SOURCE2
+                | ROWSET TB_SOURCE1
+                | Arroba Identificador TB_SOURCE1
+                ;
+    TB_SOURCE1 ::= AS Identificador
+                | Identificador
+                | /* VACIO */
+                ;
+    TB_SOURCE2 ::= SAM_CL
+                | /* VACIO */
+                ;
+    JOINTB ::= TB_SOURCE JOINTB1
+                | Parentesisapertura JOIN Parentesiscerradura
+                ;
+    JOINTB1 ::= JOIN_TYPE JOINTB3
+                | CROSS JOIN JOINTB4
+                | /* VACIO */
+                ;
+    JOINTB2 ::= JOIN_TYPE JOINTB3
+                | CROSS JOIN JOINTB4
+                ;
+    JOINTB3 ::= TB_SOURCE ON SH_COND JOINTB4
+                ;
+    JOINTB4 ::= JOINTB2
+                | /* VACIO */ 
+                ;
+    JOIN_TYPE ::= JOIN_TYPE1 JOIN
+                ;
+    JOIN_TYPE1 ::= INNER
+                |JOIN_TYPE2 
+                ;
+    JOIN_TYPE2 ::= LEFT JOIN_TYPE3
+                | RIGHT JOIN_TYPE3
+                | FULL JOIN_TYPE3
+                | JOIN
+                ;
+    JOIN_TYPE3 ::= OUTER JOIN
+                | JOIN
+                ;
+    SAM_CL ::= TABLESAMPLE Parentesisapertura SAM_CL1 Parentesiscerradura
+                ;
+    SAM_CL1 ::= SEXP SAM_CL2
+                ;
+    SAM_CL2 ::= PERCENT
+                | ROWS
+                | /* VACIO */
+                ;
+    ROWSET ::= OPENDATASOURCE Parentesisapertura Cadena Coma Cadena Parentesiscerradura
+                | OPENQUERY Parentesisapertura Identificador Coma Cadena Parentesiscerradura
+                ;
+    CASEW ::= CASE CASEW1
+                ;
+    CASEW1 ::= EXPRESSION CASEW2
+                | CASEW2
+                ;
+    CASEW2 ::= WHEN EXPRESSION THEN EXPRESSION CASEW3
+                ;
+    CASEW3 ::= ELSE EXPRESSION END
+                | CASEW2
+                | END
+                ;
+    AR_OPR ::= Signomenos
+                | Signomult
+                | Signodiv
+                | Signoporcentaje
+                ;
+    SUM_OPR ::= Signomas
+                ;
+    ASIG_OPR ::= Signoigual
+                ;
+    BIT_OPR ::= AND
+                | OR
+                ;
+    NOT_OPR ::= NOT
+                ;
+    COMPARE_OPR ::= Signomayor
+                | Signomenor
+                | Signomayorigual
+                | Signomenorigual
+                | Signonotigual
+                ;
+    LOGIC_OPR ::= BETWEEN
+                | IN
+                | LIKE
+                ;
+    BIN_OPR ::= AR_OPR
+                | ASIG_OPR
+                | BIT_OPR
+                | COMPARE_OPR
+                | LOGIC_OPR
+                ;
+    OTH_FN ::= NEXT VALUE FOR OBJECT OTH_FN3
+                | SYSTEM_USER
+                | SESSION_USER
+                | NULLIF Parentesisapertura EXPRESSION Coma EXPRESSION Parentesiscerradura
+                ;
+    OTH_FN1 ::=  Punto Identificador OTH_FN2
+                | OTH_FN2
+                ;
+    OTH_FN2 ::= Punto Identificador OTH_FN3
+                | OTH_FN3
+                ;
+    OTH_FN3 ::= OVER ORDER BY ORDERB
+                ;
+    STR_FN ::= LOWER Parentesisapertura STR_FN1 Parentesiscerradura
+                | TRANSLATE Parentesisapertura STR_FN1 Coma STR_FN1 Coma STR_FN1 Parentesiscerradura
+                | UPPER Parentesisapertura STR_FN1 Parentesiscerradura
+                | CHAR Parentesisapertura SEXP Parentesiscerradura
+                | LEFT Parentesisapertura STR_FN1 Coma SEXP Parentesiscerradura
+                | TRIM Parentesisapertura STR_FN1 STR_FN2 Parentesiscerradura
+                | NCHAR Parentesisapertura SEXP Parentesiscerradura
+                | RIGHT Parentesisapertura STR_FN1 Coma SEXP Parentesiscerradura
+                | SPACE Parentesisapertura SEXP Parentesiscerradura 
+                | SUBSTRING Parentesisapertura STR_FN1 Coma SEXP Coma SEXP Parentesiscerradura
+                ;
+    STR_FN1 ::= Arroba Identificador
+                | Cadena
+                | Identificador
+                ;
+    STR_FN2 ::= FROM STR_FN1
+                | /* VACIO */
+                ;
+    DT_FN ::= CURRENT_TIMESTAMP
+                | DAY Parentesisapertura DT_FN1 Parentesiscerradura
+                | MONTH Parentesisapertura DT_FN1 Parentesiscerradura
+                | YEAR Parentesisapertura DT_FN1 Parentesiscerradura
+                | SET LANGUAGE DT_FN2
+                ;
+    DT_FN1 ::= Cadena
+                | Arroba Identificador
+                ;
+    DT_FN2 ::= Arroba Identificador
+                | Identificador
+                ;
+    UPDATE0 ::= UPDATE UPDATE1 UPDATE15 
+                ;
+    UPDATE1 ::= TOP Parentesisapertura SEXP Parentesiscerradura UPDATE2 UPDATE3
+                | UPDATE3 
+                ;
+    UPDATE2 ::= PERCENT
+                | /* VACIO */ 
+                ;
+    UPDATE3 ::= OBJECT UPDATE4
+                | Arroba Identificador UPDATE4 
+                ;
+    UPDATE4 ::= SET UPDATE5 
+                ;
+    UPDATE5 ::= UPDATE6 UPDATE11 
+                ;
+    UPDATE6 ::= OBJECT UPDATE7
+                | Arroba Identificador Signoigual UPDATE10 
+                ;
+    UPDATE7 ::= Signoigual UPDATE9 
+                ;
+    UPDATE9 ::= EXPRESSION
+                | SEXP
+                | DEFAULT
+                | NULL 
+                ;
+    UPDATE10 ::= EXPRESSION 
+                ;
+    UPDATE11 ::= Coma UPDATE5
+                | UPDATE12 
+                ;
+    UPDATE12 ::= OUTCL UPDATE16
+                | UPDATE16 
+                ;
+    UPDATE16 ::= FROM JOINTB UPDATE17
+                | UPDATE17 
+                ;
+    UPDATE17 ::= WHERE SH_COND
+                | /* VACIO */ 
+                ;
+    UPDATE15 ::= GO
+                | Puntoycoma 
+                ;
+    FUNCTION1 ::= Identificador FUNCTION2 Parentesisapertura FUNCTION3 Parentesiscerradura RETURNS DATATYPE FUNCTION6 
+                ;
+    FUNCTION2 ::= Punto Identificador
+		| /* VACIO */ 
+                ;
+    FUNCTION3 ::= Arroba Identificador FUNCTION4 DATATYPE FUNCTION5 FUNCTION3
+		| /* VACIO */ 
+                ;
+    FUNCTION4 ::= AS
+		| /* VACIO */ 
+                ;
+    FUNCTION5 ::= Signoigual DEFV
+		| /* VACIO */ 
+                ;
+    FUNCTION6 ::= WITH RETURNS NULL ON NULL INPUT FUNCTION7
+                | FUNCTION7 
+                ;
+    FUNCTION7 ::= FUNCTION4 BEGIN FUNCTION8 FUNCTION9 END FIN_AN 
+                ;
+    FUNCTION8 ::= SELECT1 FIN_AN
+                | INSERT1
+                | DEL1
+                | UPDATE0
+                ;
+    FUNCTION9 ::= FUNCTION8 FUNCTION9
+                | /* VACIO */ 
+                ;
+    TABLE1 ::= OBJECT Parentesisapertura TABLE2 TABLE3 Parentesiscerradura TABLE4 FIN_AN
+            ;
+    TABLE2 ::= COL_DEF
+            | TB_CST
+            | COL_CST ;
+    TABLE3 ::= Coma TABLE2 TABLE3
+            | /* VACIO */ 
+            ;
+    TABLE4 ::= ON TABLE5
+            | /* VACIO */ 
+            ;
+    TABLE5 ::= Identificador Parentesisapertura Identificador Parentesiscerradura
+            | PRIMARY 
+            ;
+    FIN_AN ::= Puntoycoma
+            | GO
+            ;
+    DEFV ::= Cadena 
+            | Float
+            | Entero
+            | DBit
+            | NULL 
+            ;
+    DEL1 ::= DELETE DEL2
+            ;
+    DEL2 ::= TOP Parentesisapertura SEXP Parentesiscerradura DEL3
+                | DEL4
+                ;
+    DEL3 ::= PERCENT DEL4
+                | DEL4
+                ;
+    DEL4 ::= FROM DEL5
+                | DEL5
+                ;
+    DEL5 ::= OBJECT DEL6
+                | Arroba Identificador DEL6
+                ;
+    DEL6 ::= OUTCL DEL7
+                | DEL7
+                ;
+    DEL7 ::= FROM JOINTB DEL8
+                | DEL9
+                ;
+    DEL8 ::= Coma JOINTB DEL8
+                | DEL9
+                ;
+    DEL9 ::= WHERE SH_COND DEL10
+                | DEL10
+                ;
+    DEL10 ::= Puntoycoma
+                | GO
+                ;
+    INSERT1::= INSERT INSERT2
+                ;
+    INSERT2 ::= TOP Parentesisapertura SEXP Parentesiscerradura INSERT3
+                    | INSERT4
+                    ;
+    INSERT3 ::= PERCENT INSERT4
+                    | INSERT4
+                    ;
+    INSERT4 ::= INTO INSERT5
+                    | INSERT5
+                    ;
+    INSERT5 ::= OBJECT INSERT6
+                    ;
+    INSERT6 ::= COLST INSERT7
+                    | INSERT7
+                    ;
+    INSERT7 ::= OUTCL INSERT8   
+                    | INSERT8
+                    ;
+    INSERT8 ::= VALUES Parentesisapertura INSERT9
+                    | SELECT1 INSERT10
+                    | DEFAULT VALUES INSERT10
+                    ;
+    INSERT9 ::= INSERT11 INSERT12
+                    ;
+    INSERT11 ::= DEFAULT
+                    | NULL
+                    | EXPRESSION
+                    ;
+    INSERT12 ::= Coma INSERT9
+                    | Parentesiscerradura INSERT13
+                    ;
+    INSERT13 ::= Coma VALUES Parentesisapertura INSERT9
+                    | INSERT10
+                    ;
+    INSERT10 ::= Puntoycoma
+                    | GO
+                    ;
+    SELECT1 ::= SELECT SELECT2
+                ;
+    SELECT2 ::= SELECT3 SELECT4 
+                ;
+    SELECT3 ::= ALL 
+                | DISTINCT 
+                | /* VACIO */
+                ;
+    SELECT4 ::= TOP SELECT5 
+                | SELECT7 
+                ;
+    SELECT5 ::= Parentesisapertura SEXP Parentesiscerradura SELECT6 
+                ;
+    SELECT6 ::= PERCENT SELECT7 
+                | SELECT7 
+                ;
+    SELECT7 ::= SELIST SELECT20
+                ;
+    SELECT20 ::= Coma SELECT7
+                | SELECT8 
+                ;
+    SELECT8 ::= INTO SELECT9 
+                | SELECT11 
+                ;
+    SELECT9 ::= OBJECT SELECT11 
+                ;
+    SELECT11 ::= FROM JOINTB SELECT12
+                | SELECT12
+                ;
+    SELECT12 ::= WHERE SH_COND SELECT13
+                | SELECT13 
+                ;
+    SELECT13 ::= GROUP BY EXPRESSION SELECT18 SELECT14 
+                | SELECT14 
+                ;
+    SELECT14 ::= HAVING SH_COND SELECT15 
+                | SELECT15
+                ; 
+    SELECT15 ::= ORDER BY ORDERB 
+                | /* VACIO */
+                ;
+    SELECT18 ::= Coma EXPRESSION SELECT18 
+                | /* VACIO */ 
+                ;
+    TB_IX ::= INDEX Identificador Parentesisapertura TB_IX1 Parentesiscerradura TB_IX4 
+            ;
+    TB_IX1 ::=  Identificador TB_IX2 TB_IX3 
+            ;
+    TB_IX2 ::= ASC
+            | DEC
+            | /* VACIO */ 
+            ; 
+    TB_IX3 ::= Coma TB_IX2
+            | /* VACIO */ 
+            ;
+    TB_IX4 ::= WITH FILLFACTOR Signoigual Entero 
+            | /* VACIO */ 
+            ;
+    CRT ::= CREATE CRT1
+            ;
+    CRT1 ::= DATABASE Identificador DATABASE1 FIN_AN
+            | OR ALTER CRT2
+            | CRT2
+            | USER Identificador FIN_AN
+            | TABLE TABLE1
+            ;
+    CRT2 ::= PROC PROCEDURE1
+            | PROCEDURE PROCEDURE1
+            | VIEW VIEW1
+            | FUNCTION FUNCTION1
+            ;
+    DATABASE1 ::= ON DATABASE2 DATABASE3
+            | /* VACIO */ 
+            ;
+    DATABASE2 ::= PRIMARY FLSPC 
+            ;
+    DATABASE3 ::= COLLATE Identificador 
+            | /* VACIO */ 
+            ;
+    DATABASE4 ::= Coma FLSPC DATABASE4
+            | /* VACIO */ 
+            ;
+    FLSPC ::= Parentesisapertura NAMES Signoigual Cadena Coma FILE Signoigual Cadena FLSPC1 Parentesiscerradura  
+            ;
+    FLSPC1 ::= Coma SIZE Signoigual Entero 
+            | /* VACIO */ 
+            ;
+    VIEW1 ::= Identificador VIEW2 VIEW3     
+            ;
+    VIEW2 ::= Punto Identificador
+            | /* VACIO */ 
+            ;
+    VIEW3 ::= Parentesisapertura VIEW4 Parentesiscerradura AS SELECT1 VIEW6 
+            | AS SELECT1 VIEW6
+            ;
+    VIEW4 ::= Identificador VIEW5
+            | /* VACIO */ 
+            ; 
+    VIEW5 ::= Coma Identificador VIEW5
+            | /* VACIO */ 
+            ;
+    VIEW6 ::= WITH CHECK OPTION FIN_AN
+            | FIN_AN 
+            ;
+    PROCEDURE1 ::= Identificador PROCEDURE2 
+                ;
+    PROCEDURE2 ::= Punto Identificador PROCEDURE3
+            | PROCEDURE3
+                ;
+    PROCEDURE3 ::= Puntoycoma Entero PROCEDURE4
+            | PROCEDURE4 
+                ;
+    PROCEDURE4 ::= Arroba Identificador PROCEDURE5 DATATYPE PROCEDURE6 
+                ;
+    PROCEDURE5 ::= AS
+            | /* VACIO */ 
+                ;
+    PROCEDURE6 ::= VARYING PROCEDURE7
+            | PROCEDURE7 
+                ;
+    PROCEDURE7 ::= Signoigual DEFV PROCEDURE8
+            | PROCEDURE8 
+                ;
+    PROCEDURE8 ::= OUTPUT PROCEDURE9
+            | PROCEDURE9
+                ;
+    PROCEDURE9 ::= Coma PROCEDURE4
+            | PROCEDURE10
+                ;
+    PROCEDURE10 ::= WITH PROCEDURE11 AS PROCEDURE12 PROCEDURE13
+            | PROCEDURE13
+                ;
+    PROCEDURE11 ::= EXECUTE
+            | EXEC 
+                ;
+    PROCEDURE12 ::= Cadena 
+                ;
+    PROCEDURE13 ::= FOR REPLICATION PROCEDURE14
+            | PROCEDURE14 
+                ;
+    PROCEDURE14 ::= AS PROCEDURE15 PROCEDURE16 PROCEDURE17 FIN_AN ;
+    PROCEDURE15 ::= BEGIN
+            | /* VACIO */ 
+                ;
+    PROCEDURE16 ::= SELECT1 FIN_AN
+            | INSERT1
+            | DEL1
+            | UPDATE0
+            ;
+    PROCEDURE17 ::= PROCEDURE16 PROCEDURE17
+            | END
+            | /* VACIO */ 
+            ;

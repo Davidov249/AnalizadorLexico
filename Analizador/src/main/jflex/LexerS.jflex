@@ -341,6 +341,7 @@ resZONE = ZONE
 resWITHINGROUP = WITHINGROUP 
 resWRITETEXT= WRITETEXT
 Entero = [0-9]+
+DBit = [0-1]
 Boolean = [01|NULL]
 Float = ([0-9]+\.[0-9]*)|([0-9]+\.[0-9]*[eE][0-9]*)|([0-9]+\.[0-9]*[eE][\+-][0-9]*)
 Cadena = \'[^\'\n]*\'
@@ -1056,6 +1057,10 @@ Espacio = \s+
 	//TOKENS.add(new MyTOKEN(yytext(), "Boolean", yycolumn, yyline));
     return new Symbol(Simbolos.Boolean, yycolumn, yyline, yytext());
 	}
+
+{DBit} {
+	return new Symbol(Simbolos.boolean, yycolumnm, yyline, yytext());
+}
 
 {Float} {
 	//TOKENS.add(new MyTOKEN(yytext(), "Float", yycolumn, yyline));

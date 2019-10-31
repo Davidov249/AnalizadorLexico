@@ -353,6 +353,7 @@ resWHILE = WHILE
 resZONE = ZONE 
 resWITHINGROUP = WITHINGROUP 
 resWRITETEXT= WRITETEXT
+DBit = [01]
 Entero = [0-9]+
 Boolean = [01|NULL]
 Float = ([0-9]+\.[0-9]*)|([0-9]+\.[0-9]*[eE][0-9]*)|([0-9]+\.[0-9]*[eE][\+-][0-9]*)
@@ -1062,6 +1063,10 @@ Espacio = \s+
 
 
 //FIN RESERVADAS
+{DBit} {
+    return symbol(sym.DBit);
+}
+
 {Entero} {
 	//TOKENS.add(new MyTOKEN(yytext(), "Entero", yycolumn, yyline)) ;
     return symbol(sym.Entero);

@@ -252,6 +252,7 @@ public class sym {
   public static final int UPPER = 291;
   public static final int ADD = 5;
   public static final int ADA = 4;
+  public static final int DBit = 353;
   public static final int Signomayorigual = 327;
   public static final int COMMIT = 45;
   public static final int CLUSTERED = 40;
@@ -714,7 +715,8 @@ public class sym {
   "Sharp",
   "Sharpsharp",
   "Identificador",
-  "ERROR"
+  "ERROR",
+  "DBit"
   };
 }
 

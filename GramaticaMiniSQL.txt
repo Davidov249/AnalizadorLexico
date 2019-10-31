@@ -34,7 +34,7 @@ SELECT
 
 <insert>
     INSERT1::= INSERT INSERT2
-    INSERT2 ::= TOP Parentesisapertura MC.SEXP Parentesiscerradura INSERT3
+    INSERT2 ::= TOP Parentesisapertura SEXP Parentesiscerradura INSERT3
                     | INSERT4
     INSERT3 ::= PERCENT INSERT4
                     | INSERT4
@@ -66,11 +66,11 @@ SELECT
     UPDATE3 ::= PERCENT
                 | /* VACIO */
     UPDATE4 ::= OBJECT UPDATE5
-                | @ Identificador UPDATE5
+                | Arroba Identificador UPDATE5
     UPDATE5 ::= SET UPDATE6
     UPDATE6 ::= UPDATE7 UPDATE12
     UPDATE7 ::= Identificador UPDATE8
-                | @ Identificador Signoigual UPDATE11
+                | Arroba Identificador Signoigual UPDATE11
     UPDATE8 ::= Punto UPDATE9
                 | Signoigual UPDATE10
     UPDATE9 ::= Identificador Signoigual UPDATE11
@@ -93,50 +93,48 @@ SELECT
 
 <delete>
     DEL1 ::= DELETE DEL2
-    DEL2 ::= TOP Parentesisapertura MC.SEXP Parentesiscerradura DEL3
+    DEL2 ::= TOP Parentesisapertura SEXP Parentesiscerradura DEL3
                 | DEL4
     DEL3 ::= PERCENT DEL4
                 | DEL4
     DEL4 ::= FROM DEL5
                 | DEL5
     DEL5 ::= OBJECT DEL6
-                | @ Identificador DEL6
+                | Arroba Identificador DEL6
     DEL6 ::= OUTCL DEL7
                 | DEL7
     DEL7 ::= FROM JOINTB DEL8
                 | DEL9
     DEL8 ::= Coma JOINTB DEL8
                 | DEL9
-    DEL9 ::= WHERE EXPRESSION DEL10
+    DEL9 ::= WHERE SH_COND DEL10
                 | DEL10
     DEL10 ::= Puntoycoma
                 | GO
 
 <drop>
-    DROP1::= DROP DROP3 DROP2  DROP11
+    DROP1::= DROP DROP3 DROP2 
     DROP2  ::= TABLE DROP4 
-                | DATABASE DROP4
+                | DATABASE DROP6
                 | USER Identificador
                 | VIEW DROP4
                 | INDEX DROP8
     DROP3 ::= IF EXISTS
                 | /* VACIO */
     DROP4 ::= OBJECT DROP5
-    DROP5 ::= Coma DROP12
-                | /* VACIO */
-    //DROP6 ::= Identificador DROP7
-    //DROP7 ::= Coma DROP6
-                | /* VACIO */
+    DROP5 ::= Coma DROP4
+                | DROP11
+    DROP6 ::= Identificador DROP7
+    DROP7 ::= Coma DROP6
+                | DROP11
     DROP8 ::= Identificador DROP9
-    DROP9 ::= ON OBJECT
+    DROP9 ::= ON OBJECT 
                 | Punto Identificador DROP10
     DROP10 ::= Punto Identificador
                 | /* VACIO */
     DROP11 ::= Puntoycoma
                 | GO
-                | Coma DROP
-    DROP12 ::= DROP4
-                | DROP1
+
 
 <truncate>
     TRUNCATE1::= TRUNCATE TABLE OBJECT TRUNCATE2 TRUNCATE3
@@ -152,7 +150,7 @@ SELECT
                 | TABLE CREATE12
                 | USER Identificador
                 | CREATE15 CREATE16
-	   | STORED_PROCEDURE1
+	            | STORED_PROCEDURE1
     CREATE3 ::= UNIQUE CREATE4
                 | CREATE4
     CREATE4 ::= CLUSTERED
@@ -192,12 +190,13 @@ SELECT
 
 ALTER
 <alter>
-    ALTER1 ::= ALTER ALTER1
+    ALTER1 ::= ALTER ALTER2
     ALTER2 ::= VIEW ALTER2
                 | TABLE OBJECT ALTER7
                 | USER Identificador ALTER18
                 | DATABASE ALTER23 ALTER24
-	     | STORED_PROCEDURE1
+	            | STORED_PROCEDURE1
+                | FUNCTION FUNCTION1
     ALTER3 ::= Identificador ALTER4
     ALTER4 ::= Punto Identificador ALTER5
                 | ALTER5
@@ -258,7 +257,7 @@ Aquí se encuentran todos los métodos en común para todas las sentencias, dife
     SEXP5 ::= Parentesisapertura SEXP Parentesiscerradura
                 | INTEGER
                 | Float
-                | @ Identificador
+                | Arroba Identificador
                 | AGG_FN
 
 
@@ -279,6 +278,7 @@ Aquí se encuentran todos los métodos en común para todas las sentencias, dife
     SH_COND1 ::= MATCH Parentesisapertura GSP Parentesiscerradura 
                 | SH_CONDWM
     SH_COND2 ::= AND SH_COND
+                | /* VACIO */
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -287,7 +287,7 @@ Aquí se encuentran todos los métodos en común para todas las sentencias, dife
                 | CONTAINS Parentesisapertura PREDICATE7 Coma PREDICATE8 Parentesiscerradura
                 | FREETEXT Parentesisapertura PREDICATE7 Coma PREDICATE9 Parentesiscerradura
     PREDICATE1 ::= Identificador
-                | SEXP
+                | OBJECT
                 | CASEW
                 | AGG_FN
                 | STR_FN
@@ -313,12 +313,12 @@ Aquí se encuentran todos los métodos en común para todas las sentencias, dife
                 | OBJECT
     PREDICATE8 ::= SH_COND
     PREDICATE9 ::= STRING
-                | @ Identificador
+                | Arroba Identificador
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <search_condition_without_match>
-    SH_CONDWM ::= NOT PREDICATE SH_CONDWM1
+    SH_CONDWM ::= SH_CONDWM4 PREDICATE SH_CONDWM1
                 | Parentesisapertura SH_CONDWM Parentesiscerradura SH_CONDWM1
     SH_CONDWM1 ::= OR SH_CONDWM2
                 | /* VACIO */
@@ -326,6 +326,8 @@ Aquí se encuentran todos los métodos en común para todas las sentencias, dife
                 | SH_CONDWM3
     SH_CONDWM3 ::= PREDICATE SH_CONDWM1
                 | Parentesisapertura SH_CONDWM Parentesiscerradura SH_CONDWM1
+    SH_CONDWM4 ::= NOT
+                | /* VACIO */ ;
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -355,8 +357,8 @@ Aquí se encuentran todos los métodos en común para todas las sentencias, dife
                 | YEAR Parentesisapertura DT_FN1 Parentesiscerradura
                 | SET LANGUAGE DT_FN2
     DT_FN1 ::= STRING
-                | @ Identificador
-    DT_FN2 ::= @ Identificador
+                | Arroba Identificador
+    DT_FN2 ::= Arroba Identificador
                 | Identificador
 
 
@@ -372,7 +374,7 @@ Aquí se encuentran todos los métodos en común para todas las sentencias, dife
                 | RIGHT Parentesisapertura STR_FN1 Coma MC.SEXP Parentesiscerradura
                 | SPACE Parentesisapertura MC.SEXP Parentesiscerradura 
                 | SUBSTRING Parentesisapertura STR_FN1 Coma MC.SEXP Coma MC.SEXP Parentesiscerradura
-    STR_FN1 ::= @ Identificador
+    STR_FN1 ::= Arroba Identificador
                 | STRING
                 | Identificador
     STR_FN2 ::= FROM STR_FN1
@@ -538,7 +540,7 @@ Aquí se encuentran todos los métodos en común para todas las sentencias, dife
 <table_source>
     TB_SOURCE ::= OBJECT TB_SOURCE1 TB_SOURCE2
                 | ROWSET TB_SOURCE1
-                | @ Identificador TB_SOURCE1
+                | Arroba Identificador TB_SOURCE1
     TB_SOURCE1 ::= AS Identificador
                 | Identificador
                 | /* VACIO */
@@ -604,7 +606,7 @@ Aquí se encuentran todos los métodos en común para todas las sentencias, dife
                 | /* VACIO */
     OUTCL1 ::= INTO OUTCL2
                 | /* VACIO */
-    OUTCL2 ::= @ Identificador OUTCL3
+    OUTCL2 ::= Arroba Identificador OUTCL3
                 | Identificador OUTCL3
     OUTCL3 ::= COLST
                 | /* VACIO */
@@ -667,7 +669,7 @@ Aquí se encuentran todos los métodos en común para todas las sentencias, dife
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <constant_expression>
-    CONST_EXP ::= @ Identificador
+    CONST_EXP ::= Arroba Identificador
                 | Identificador
                 | STRING
                 | INTEGER
@@ -790,7 +792,7 @@ FUNCTION4 ::= Punto Identificador  FUNCTION5
 
 FUNCTION5 ::=  Parentesisapertura FUNCTION6 Parentesiscerradura FUNCTION9
 
-FUNCTION6 ::= @ Identificador FUNCTION7 DATA_TYPE FUNCTION8
+FUNCTION6 ::= Arroba Identificador FUNCTION7 DATA_TYPE FUNCTION8
 
 FUNCTION7 ::= AS 
 		| /* VACIO */
@@ -820,3 +822,6 @@ FUNCTION16 ::= <SELECT_STMT>
 			
 FUNCTIONEND1 ::= Puntoycoma
 | GO
+
+FIN_AN ::= Puntoycoma
+            | GO;
