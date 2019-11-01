@@ -80,10 +80,10 @@ start with INICIO;
 
     INICIO ::= SELECT1
             |   INSERT1
-            |   UPDATE0
+            |   UPDATE0 INICIO
             | CRT
             | DEL1
-            |   DROP1
+            | DROP1 INICIO
             | ALTER1
             | TRUNCATEP
             | error INICIO
@@ -791,7 +791,7 @@ start with INICIO;
     FUNCTION9 ::= FUNCTION8 FUNCTION9
                 | /* VACIO */ 
                 ;
-    TABLE1 ::= OBJECT Parentesisapertura TABLE2 TABLE3 Parentesiscerradura TABLE4 FIN_AN
+    TABLE1 ::= OBJECT Parentesisapertura TABLE2 TABLE3 Parentesiscerradura TABLE4 FIN_AN INICIO
             ;
     TABLE2 ::= COL_DEF
             | TB_CST
@@ -941,10 +941,10 @@ start with INICIO;
             ;
     CRT ::= CREATE CRT1
             ;
-    CRT1 ::= DATABASE Identificador DATABASE1 FIN_AN
-            | OR ALTER CRT2
-            | CRT2
-            | USER Identificador FIN_AN
+    CRT1 ::= DATABASE Identificador DATABASE1 FIN_AN INICIO
+            | OR ALTER CRT2 INICIO
+            | CRT2 INICIO
+            | USER Identificador FIN_AN INICIO
             | TABLE TABLE1
             ;
     CRT2 ::= PROC PROCEDURE1
