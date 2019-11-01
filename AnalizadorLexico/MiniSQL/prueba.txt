@@ -1,1 +1,9 @@
-ALTER TABLE dbo.doc_exy ALTER COLUMN column_a DECIMAL (5, 2) ;
+DROP INDEX IX_ProductVendor_BusinessEntityID   
+    ON Purchasing.ProductVendor;  
+
+SELECT LastName, FirstName, JobTitle, Department  
+    FROM HumanResources.vEmployeeDepartment; 
+
+INSERT INTO test.cqf.DEXTask(TaskId,StartDate,EndDate,IsProcessed,ProcessedDate,IsHorizontal)
+VALUES(12345,'2019-10-01','2019-10-03',1,'2019-10-02',1)
+GO

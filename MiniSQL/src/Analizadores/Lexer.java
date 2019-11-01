@@ -2333,7 +2333,7 @@ public class Lexer implements java_cup.runtime.Scanner {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
             { //TOKENS.add(new MyTOKEN(yytext(), "ERROR", yycolumn, yyline));
-    return symbol(sym.ERROR);
+    return symbol(sym.ERROR,"ERROR");
 	//ArchivoEscribir = ArchivoEscribir + "Error en la col: " + yycolumn + " fila: " + yyline + " Caracter no Reconocido" + "\n";
             } 
             // fall through
@@ -2342,54 +2342,54 @@ public class Lexer implements java_cup.runtime.Scanner {
             { if(yylength() < 31)
 	{
 		//TOKENS.add(new MyTOKEN(yytext(), "Identificador", yycolumn, yyline));
-        return symbol(sym.Identificador);
+        return symbol(sym.Identificador,"Identificador");
 	}else{
 		Advertencia(yyline, yycolumn);
 		//TOKENS.add(new MyTOKEN(yytext(), "Identificador", yycolumn, yyline)) ;
-        return symbol(sym.Identificador);
+        return symbol(sym.Identificador,"Identificador");
 	}
             } 
             // fall through
           case 356: break;
           case 3: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Boolean", yycolumn, yyline));
-    return symbol(sym.Boolean);
+    return symbol(sym.Boolean,"Boolean");
             } 
             // fall through
           case 357: break;
           case 4: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signomenos);
+    return symbol(sym.Signomenos,"Signomenos");
             } 
             // fall through
           case 358: break;
           case 5: 
-            { return symbol(sym.DBit);
+            { return symbol(sym.DBit,"DBit");
             } 
             // fall through
           case 359: break;
           case 6: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Entero", yycolumn, yyline)) ;
-    return symbol(sym.Entero);
+    return symbol(sym.Entero,"Entero");
             } 
             // fall through
           case 360: break;
           case 7: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Punto);
+    return symbol(sym.Punto,"Punto");
             } 
             // fall through
           case 361: break;
           case 8: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signomas);
+    return symbol(sym.Signomas,"Signomas");
             } 
             // fall through
           case 362: break;
           case 9: 
             { //ArchivoEscribir = ArchivoEscribir + "Error en la col: " + yycolumn + " fila: " + yyline + " Cadena sin cerrar"+ "\n";
 	//TOKENS.add(new MyTOKEN(yytext(), "ERROR", yycolumn, yyline));
-    return symbol(sym.ERROR);
+    return symbol(sym.ERROR,"ERROR");
             } 
             // fall through
           case 363: break;
@@ -2400,1753 +2400,1753 @@ public class Lexer implements java_cup.runtime.Scanner {
           case 364: break;
           case 11: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signodiv);
+    return symbol(sym.Signodiv,"Signodiv");
             } 
             // fall through
           case 365: break;
           case 12: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signomult);
+    return symbol(sym.Signomult,"Signomult");
             } 
             // fall through
           case 366: break;
           case 13: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signoporcentaje);
+    return symbol(sym.Signoporcentaje,"Signoporcentaje");
             } 
             // fall through
           case 367: break;
           case 14: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signomayor);
+    return symbol(sym.Signomayor,"Signomayor");
             } 
             // fall through
           case 368: break;
           case 15: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signoigual);
+    return symbol(sym.Signoigual,"Signoigual");
             } 
             // fall through
           case 369: break;
           case 16: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signomenor);
+    return symbol(sym.Signomenor,"Signomenor");
             } 
             // fall through
           case 370: break;
           case 17: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signoadmiracion);
+    return symbol(sym.Signoadmiracion,"Signoadmiracion");
             } 
             // fall through
           case 371: break;
           case 18: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Puntoycoma);
+    return symbol(sym.Puntoycoma,"Puntoycoma");
             } 
             // fall through
           case 372: break;
           case 19: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Coma);
+    return symbol(sym.Coma,"Coma");
             } 
             // fall through
           case 373: break;
           case 20: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Corcheteapertura);
+    return symbol(sym.Corcheteapertura,"Corcheteapertura");
             } 
             // fall through
           case 374: break;
           case 21: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Corchetecerradura);
+    return symbol(sym.Corchetecerradura,"Corchetecerradura");
             } 
             // fall through
           case 375: break;
           case 22: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Parentesisapertura);
+    return symbol(sym.Parentesisapertura,"Parentesisapertura");
             } 
             // fall through
           case 376: break;
           case 23: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Parentesiscerradura);
+    return symbol(sym.Parentesiscerradura,"Parentesiscerradura");
             } 
             // fall through
           case 377: break;
           case 24: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Llaveapertura);
+    return symbol(sym.Llaveapertura,"Llaveapertura");
             } 
             // fall through
           case 378: break;
           case 25: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Llavecerradura);
+    return symbol(sym.Llavecerradura,"Llavecerradura");
             } 
             // fall through
           case 379: break;
           case 26: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Arroba);
+    return symbol(sym.Arroba,"Arroba");
             } 
             // fall through
           case 380: break;
           case 27: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Sharp);
+    return symbol(sym.Sharp,"Sharp");
             } 
             // fall through
           case 381: break;
           case 28: 
-            { return symbol(sym.AS);
+            { return symbol(sym.AS,"AS");
             } 
             // fall through
           case 382: break;
           case 29: 
-            { return symbol(sym.AT);
+            { return symbol(sym.AT,"AT");
             } 
             // fall through
           case 383: break;
           case 30: 
-            { return symbol(sym.BY);
+            { return symbol(sym.BY,"BY");
             } 
             // fall through
           case 384: break;
           case 31: 
-            { return symbol(sym.ON);
+            { return symbol(sym.ON,"ON");
             } 
             // fall through
           case 385: break;
           case 32: 
-            { return symbol(sym.OR);
+            { return symbol(sym.OR,"OR");
             } 
             // fall through
           case 386: break;
           case 33: 
-            { return symbol(sym.OF);
+            { return symbol(sym.OF,"OF");
             } 
             // fall through
           case 387: break;
           case 34: 
-            { return symbol(sym.TO);
+            { return symbol(sym.TO,"TO");
             } 
             // fall through
           case 388: break;
           case 35: 
-            { return symbol(sym.IS);
+            { return symbol(sym.IS,"IS");
             } 
             // fall through
           case 389: break;
           case 36: 
-            { return symbol(sym.IN);
+            { return symbol(sym.IN,"IN");
             } 
             // fall through
           case 390: break;
           case 37: 
-            { return symbol(sym.IF);
+            { return symbol(sym.IF,"IF");
             } 
             // fall through
           case 391: break;
           case 38: 
-            { return symbol(sym.NO);
+            { return symbol(sym.NO,"NO");
             } 
             // fall through
           case 392: break;
           case 39: 
-            { return symbol(sym.GO);
+            { return symbol(sym.GO,"GO");
             } 
             // fall through
           case 393: break;
           case 40: 
             { ////TOKENS.add(new MyTOKEN(yytext(), "Comentario.Linea", yycolumn, yyline));
-    //return symbol(sym.ComentarioLinea);
+    //return symbol(sym.ComentarioLinea,"ComentarioLinea");
             } 
             // fall through
           case 394: break;
           case 41: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Float", yycolumn, yyline));
-    return symbol(sym.Float);
+    return symbol(sym.Float,"Float");
             } 
             // fall through
           case 395: break;
           case 42: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signoor);
+    return symbol(sym.Signoor,"Signoor");
             } 
             // fall through
           case 396: break;
           case 43: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Cadena", yycolumn, yyline));
-    return symbol(sym.Cadena);
+    return symbol(sym.Cadena,"Cadena");
             } 
             // fall through
           case 397: break;
           case 44: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signomayorigual);
+    return symbol(sym.Signomayorigual,"Signomayorigual");
             } 
             // fall through
           case 398: break;
           case 45: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signoigualigual);
+    return symbol(sym.Signoigualigual,"Signoigualigual");
             } 
             // fall through
           case 399: break;
           case 46: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signomenorigual);
+    return symbol(sym.Signomenorigual,"Signomenorigual");
             } 
             // fall through
           case 400: break;
           case 47: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signonotigual);
+    return symbol(sym.Signonotigual,"Signonotigual");
             } 
             // fall through
           case 401: break;
           case 48: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Operador", yycolumn, yyline));
-    return symbol(sym.Signoyy);
+    return symbol(sym.Signoyy,"Signoyy");
             } 
             // fall through
           case 402: break;
           case 49: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Corchetes);
+    return symbol(sym.Corchetes,"Corchetes");
             } 
             // fall through
           case 403: break;
           case 50: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Parentesis);
+    return symbol(sym.Parentesis,"Parentesis");
             } 
             // fall through
           case 404: break;
           case 51: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Llaves);
+    return symbol(sym.Llaves,"Llaves");
             } 
             // fall through
           case 405: break;
           case 52: 
             { //TOKENS.add(new MyTOKEN(yytext(), "Simbolo", yycolumn, yyline));
-    return symbol(sym.Sharpsharp);
+    return symbol(sym.Sharpsharp,"Sharpsharp");
             } 
             // fall through
           case 406: break;
           case 53: 
-            { return symbol(sym.ASC);
+            { return symbol(sym.ASC,"ASC");
             } 
             // fall through
           case 407: break;
           case 54: 
-            { return symbol(sym.ALL);
+            { return symbol(sym.ALL,"ALL");
             } 
             // fall through
           case 408: break;
           case 55: 
-            { return symbol(sym.AND);
+            { return symbol(sym.AND,"AND");
             } 
             // fall through
           case 409: break;
           case 56: 
-            { return symbol(sym.ANY);
+            { return symbol(sym.ANY,"ANY");
             } 
             // fall through
           case 410: break;
           case 57: 
-            { return symbol(sym.ADA);
+            { return symbol(sym.ADA,"ADA");
             } 
             // fall through
           case 411: break;
           case 58: 
-            { return symbol(sym.ADD);
+            { return symbol(sym.ADD,"ADD");
             } 
             // fall through
           case 412: break;
           case 59: 
-            { return symbol(sym.ARE);
+            { return symbol(sym.ARE,"ARE");
             } 
             // fall through
           case 413: break;
           case 60: 
-            { return symbol(sym.AVG);
+            { return symbol(sym.AVG,"AVG");
             } 
             // fall through
           case 414: break;
           case 61: 
-            { return symbol(sym.BIT);
+            { return symbol(sym.BIT,"BIT");
             } 
             // fall through
           case 415: break;
           case 62: 
-            { return symbol(sym.SUM);
+            { return symbol(sym.SUM,"SUM");
             } 
             // fall through
           case 416: break;
           case 63: 
-            { return symbol(sym.SET);
+            { return symbol(sym.SET,"SET");
             } 
             // fall through
           case 417: break;
           case 64: 
-            { return symbol(sym.SQL);
+            { return symbol(sym.SQL,"SQL");
             } 
             // fall through
           case 418: break;
           case 65: 
-            { return symbol(sym.OFF);
+            { return symbol(sym.OFF,"OFF");
             } 
             // fall through
           case 419: break;
           case 66: 
-            { return symbol(sym.USE);
+            { return symbol(sym.USE,"USE");
             } 
             // fall through
           case 420: break;
           case 67: 
-            { return symbol(sym.TOP);
+            { return symbol(sym.TOP,"TOP");
             } 
             // fall through
           case 421: break;
           case 68: 
-            { return symbol(sym.END);
+            { return symbol(sym.END,"END");
             } 
             // fall through
           case 422: break;
           case 69: 
-            { return symbol(sym.INT);
+            { return symbol(sym.INT,"INT");
             } 
             // fall through
           case 423: break;
           case 70: 
-            { return symbol(sym.NOT);
+            { return symbol(sym.NOT,"NOT");
             } 
             // fall through
           case 424: break;
           case 71: 
-            { return symbol(sym.DAY);
+            { return symbol(sym.DAY,"DAY");
             } 
             // fall through
           case 425: break;
           case 72: 
-            { return symbol(sym.DEC);
+            { return symbol(sym.DEC,"DEC");
             } 
             // fall through
           case 426: break;
           case 73: 
-            { return symbol(sym.GET);
+            { return symbol(sym.GET,"GET");
             } 
             // fall through
           case 427: break;
           case 74: 
-            { return symbol(sym.KEY);
+            { return symbol(sym.KEY,"KEY");
             } 
             // fall through
           case 428: break;
           case 75: 
-            { return symbol(sym.PAD);
+            { return symbol(sym.PAD,"PAD");
             } 
             // fall through
           case 429: break;
           case 76: 
-            { return symbol(sym.MAX);
+            { return symbol(sym.MAX,"MAX");
             } 
             // fall through
           case 430: break;
           case 77: 
-            { return symbol(sym.MIN);
+            { return symbol(sym.MIN,"MIN");
             } 
             // fall through
           case 431: break;
           case 78: 
-            { return symbol(sym.FOR);
+            { return symbol(sym.FOR,"FOR");
             } 
             // fall through
           case 432: break;
           case 79: 
-            { return symbol(sym.BOTH);
+            { return symbol(sym.BOTH,"BOTH");
             } 
             // fall through
           case 433: break;
           case 80: 
-            { return symbol(sym.BULK);
+            { return symbol(sym.BULK,"BULK");
             } 
             // fall through
           case 434: break;
           case 81: 
-            { return symbol(sym.SAVE);
+            { return symbol(sym.SAVE,"SAVE");
             } 
             // fall through
           case 435: break;
           case 82: 
-            { return symbol(sym.SOME);
+            { return symbol(sym.SOME,"SOME");
             } 
             // fall through
           case 436: break;
           case 83: 
-            { return symbol(sym.SIZE);
+            { return symbol(sym.SIZE,"SIZE");
             } 
             // fall through
           case 437: break;
           case 84: 
-            { return symbol(sym.ONLY);
+            { return symbol(sym.ONLY,"ONLY");
             } 
             // fall through
           case 438: break;
           case 85: 
-            { return symbol(sym.OVER);
+            { return symbol(sym.OVER,"OVER");
             } 
             // fall through
           case 439: break;
           case 86: 
-            { return symbol(sym.OPEN);
+            { return symbol(sym.OPEN,"OPEN");
             } 
             // fall through
           case 440: break;
           case 87: 
-            { return symbol(sym.LAST);
+            { return symbol(sym.LAST,"LAST");
             } 
             // fall through
           case 441: break;
           case 88: 
-            { return symbol(sym.LOAD);
+            { return symbol(sym.LOAD,"LOAD");
             } 
             // fall through
           case 442: break;
           case 89: 
-            { return symbol(sym.LEFT);
+            { return symbol(sym.LEFT,"LEFT");
             } 
             // fall through
           case 443: break;
           case 90: 
-            { return symbol(sym.LIKE);
+            { return symbol(sym.LIKE,"LIKE");
             } 
             // fall through
           case 444: break;
           case 91: 
-            { return symbol(sym.USER);
+            { return symbol(sym.USER,"USER");
             } 
             // fall through
           case 445: break;
           case 92: 
-            { return symbol(sym.TIME);
+            { return symbol(sym.TIME,"TIME");
             } 
             // fall through
           case 446: break;
           case 93: 
-            { return symbol(sym.TRAN);
+            { return symbol(sym.TRAN,"TRAN");
             } 
             // fall through
           case 447: break;
           case 94: 
-            { return symbol(sym.TRUE);
+            { return symbol(sym.TRUE,"TRUE");
             } 
             // fall through
           case 448: break;
           case 95: 
-            { return symbol(sym.TRIM);
+            { return symbol(sym.TRIM,"TRIM");
             } 
             // fall through
           case 449: break;
           case 96: 
-            { return symbol(sym.THEN);
+            { return symbol(sym.THEN,"THEN");
             } 
             // fall through
           case 450: break;
           case 97: 
-            { return symbol(sym.ELSE);
+            { return symbol(sym.ELSE,"ELSE");
             } 
             // fall through
           case 451: break;
           case 98: 
-            { return symbol(sym.EXEC);
+            { return symbol(sym.EXEC,"EXEC");
             } 
             // fall through
           case 452: break;
           case 99: 
-            { return symbol(sym.EXIT);
+            { return symbol(sym.EXIT,"EXIT");
             } 
             // fall through
           case 453: break;
           case 100: 
-            { return symbol(sym.CAST);
+            { return symbol(sym.CAST,"CAST");
             } 
             // fall through
           case 454: break;
           case 101: 
-            { return symbol(sym.CASE);
+            { return symbol(sym.CASE,"CASE");
             } 
             // fall through
           case 455: break;
           case 102: 
-            { return symbol(sym.CHAR);
+            { return symbol(sym.CHAR,"CHAR");
             } 
             // fall through
           case 456: break;
           case 103: 
-            { return symbol(sym.INTO);
+            { return symbol(sym.INTO,"INTO");
             } 
             // fall through
           case 457: break;
           case 104: 
-            { return symbol(sym.NONE);
+            { return symbol(sym.NONE,"NONE");
             } 
             // fall through
           case 458: break;
           case 105: 
-            { return symbol(sym.NULL);
+            { return symbol(sym.NULL,"NULL");
             } 
             // fall through
           case 459: break;
           case 106: 
-            { return symbol(sym.NEXT);
+            { return symbol(sym.NEXT,"NEXT");
             } 
             // fall through
           case 460: break;
           case 107: 
-            { return symbol(sym.DATE);
+            { return symbol(sym.DATE,"DATE");
             } 
             // fall through
           case 461: break;
           case 108: 
-            { return symbol(sym.DBCC);
+            { return symbol(sym.DBCC,"DBCC");
             } 
             // fall through
           case 462: break;
           case 109: 
-            { return symbol(sym.DUMP);
+            { return symbol(sym.DUMP,"DUMP");
             } 
             // fall through
           case 463: break;
           case 110: 
-            { return symbol(sym.DESC);
+            { return symbol(sym.DESC,"DESC");
             } 
             // fall through
           case 464: break;
           case 111: 
-            { return symbol(sym.DENY);
+            { return symbol(sym.DENY,"DENY");
             } 
             // fall through
           case 465: break;
           case 112: 
-            { return symbol(sym.DISK);
+            { return symbol(sym.DISK,"DISK");
             } 
             // fall through
           case 466: break;
           case 113: 
-            { return symbol(sym.DROP);
+            { return symbol(sym.DROP,"DROP");
             } 
             // fall through
           case 467: break;
           case 114: 
-            { return symbol(sym.ROWS);
+            { return symbol(sym.ROWS,"ROWS");
             } 
             // fall through
           case 468: break;
           case 115: 
-            { return symbol(sym.RULE);
+            { return symbol(sym.RULE,"RULE");
             } 
             // fall through
           case 469: break;
           case 116: 
-            { return symbol(sym.REAL);
+            { return symbol(sym.REAL,"REAL");
             } 
             // fall through
           case 470: break;
           case 117: 
-            { return symbol(sym.READ);
+            { return symbol(sym.READ,"READ");
             } 
             // fall through
           case 471: break;
           case 118: 
-            { return symbol(sym.YEAR);
+            { return symbol(sym.YEAR,"YEAR");
             } 
             // fall through
           case 472: break;
           case 119: 
-            { return symbol(sym.HOUR);
+            { return symbol(sym.HOUR,"HOUR");
             } 
             // fall through
           case 473: break;
           case 120: 
-            { return symbol(sym.ZONE);
+            { return symbol(sym.ZONE,"ZONE");
             } 
             // fall through
           case 474: break;
           case 121: 
-            { return symbol(sym.VIEW);
+            { return symbol(sym.VIEW,"VIEW");
             } 
             // fall through
           case 475: break;
           case 122: 
-            { return symbol(sym.GOTO);
+            { return symbol(sym.GOTO,"GOTO");
             } 
             // fall through
           case 476: break;
           case 123: 
-            { return symbol(sym.KILL);
+            { return symbol(sym.KILL,"KILL");
             } 
             // fall through
           case 477: break;
           case 124: 
-            { return symbol(sym.PLAN);
+            { return symbol(sym.PLAN,"PLAN");
             } 
             // fall through
           case 478: break;
           case 125: 
-            { return symbol(sym.PROC);
+            { return symbol(sym.PROC,"PROC");
             } 
             // fall through
           case 479: break;
           case 126: 
-            { return symbol(sym.WORK);
+            { return symbol(sym.WORK,"WORK");
             } 
             // fall through
           case 480: break;
           case 127: 
-            { return symbol(sym.WITH);
+            { return symbol(sym.WITH,"WITH");
             } 
             // fall through
           case 481: break;
           case 128: 
-            { return symbol(sym.WHEN);
+            { return symbol(sym.WHEN,"WHEN");
             } 
             // fall through
           case 482: break;
           case 129: 
-            { return symbol(sym.FULL);
+            { return symbol(sym.FULL,"FULL");
             } 
             // fall through
           case 483: break;
           case 130: 
-            { return symbol(sym.FILE);
+            { return symbol(sym.FILE,"FILE");
             } 
             // fall through
           case 484: break;
           case 131: 
-            { return symbol(sym.FROM);
+            { return symbol(sym.FROM,"FROM");
             } 
             // fall through
           case 485: break;
           case 132: 
-            { return symbol(sym.JOIN);
+            { return symbol(sym.JOIN,"JOIN");
             } 
             // fall through
           case 486: break;
           case 133: 
             { ////TOKENS.add(new MyTOKEN(yytext(), "Comentario.Multilinea", yycolumn, yyline));
-    //return symbol(sym.ComentarioMultiliena);
+    //return symbol(sym.ComentarioMultiliena,"ComentarioMultiliena");
 	//System.out.println(yytext());
             } 
             // fall through
           case 487: break;
           case 134: 
-            { return symbol(sym.ALTER);
+            { return symbol(sym.ALTER,"ALTER");
             } 
             // fall through
           case 488: break;
           case 135: 
-            { return symbol(sym.BEGIN);
+            { return symbol(sym.BEGIN,"BEGIN");
             } 
             // fall through
           case 489: break;
           case 136: 
-            { return symbol(sym.BREAK);
+            { return symbol(sym.BREAK,"BREAK");
             } 
             // fall through
           case 490: break;
           case 137: 
-            { return symbol(sym.SPACE);
+            { return symbol(sym.SPACE,"SPACE");
             } 
             // fall through
           case 491: break;
           case 138: 
-            { return symbol(sym.SQLCA);
+            { return symbol(sym.SQLCA,"SQLCA");
             } 
             // fall through
           case 492: break;
           case 139: 
-            { return symbol(sym.OUTER);
+            { return symbol(sym.OUTER,"OUTER");
             } 
             // fall through
           case 493: break;
           case 140: 
-            { return symbol(sym.ORDER);
+            { return symbol(sym.ORDER,"ORDER");
             } 
             // fall through
           case 494: break;
           case 141: 
-            { return symbol(sym.LOCAL);
+            { return symbol(sym.LOCAL,"LOCAL");
             } 
             // fall through
           case 495: break;
           case 142: 
-            { return symbol(sym.LOWER);
+            { return symbol(sym.LOWER,"LOWER");
             } 
             // fall through
           case 496: break;
           case 143: 
-            { return symbol(sym.LEVEL);
+            { return symbol(sym.LEVEL,"LEVEL");
             } 
             // fall through
           case 497: break;
           case 144: 
-            { return symbol(sym.USAGE);
+            { return symbol(sym.USAGE,"USAGE");
             } 
             // fall through
           case 498: break;
           case 145: 
-            { return symbol(sym.USING);
+            { return symbol(sym.USING,"USING");
             } 
             // fall through
           case 499: break;
           case 146: 
-            { return symbol(sym.UNION);
+            { return symbol(sym.UNION,"UNION");
             } 
             // fall through
           case 500: break;
           case 147: 
-            { return symbol(sym.UPPER);
+            { return symbol(sym.UPPER,"UPPER");
             } 
             // fall through
           case 501: break;
           case 148: 
-            { return symbol(sym.TABLE);
+            { return symbol(sym.TABLE,"TABLE");
             } 
             // fall through
           case 502: break;
           case 149: 
-            { return symbol(sym.COUNT);
+            { return symbol(sym.COUNT,"COUNT");
             } 
             // fall through
           case 503: break;
           case 150: 
-            { return symbol(sym.CLOSE);
+            { return symbol(sym.CLOSE,"CLOSE");
             } 
             // fall through
           case 504: break;
           case 151: 
-            { return symbol(sym.CROSS);
+            { return symbol(sym.CROSS,"CROSS");
             } 
             // fall through
           case 505: break;
           case 152: 
-            { return symbol(sym.CHECK);
+            { return symbol(sym.CHECK,"CHECK");
             } 
             // fall through
           case 506: break;
           case 153: 
-            { return symbol(sym.INNER);
+            { return symbol(sym.INNER,"INNER");
             } 
             // fall through
           case 507: break;
           case 154: 
-            { return symbol(sym.INDEX);
+            { return symbol(sym.INDEX,"INDEX");
             } 
             // fall through
           case 508: break;
           case 155: 
-            { return symbol(sym.INPUT);
+            { return symbol(sym.INPUT,"INPUT");
             } 
             // fall through
           case 509: break;
           case 156: 
-            { return symbol(sym.NAMES);
+            { return symbol(sym.NAMES,"NAMES");
             } 
             // fall through
           case 510: break;
           case 157: 
-            { return symbol(sym.NCHAR);
+            { return symbol(sym.NCHAR,"NCHAR");
             } 
             // fall through
           case 511: break;
           case 158: 
-            { return symbol(sym.RIGHT);
+            { return symbol(sym.RIGHT,"RIGHT");
             } 
             // fall through
           case 512: break;
           case 159: 
-            { return symbol(sym.VALUE);
+            { return symbol(sym.VALUE,"VALUE");
             } 
             // fall through
           case 513: break;
           case 160: 
-            { return symbol(sym.GRANT);
+            { return symbol(sym.GRANT,"GRANT");
             } 
             // fall through
           case 514: break;
           case 161: 
-            { return symbol(sym.GROUP);
+            { return symbol(sym.GROUP,"GROUP");
             } 
             // fall through
           case 515: break;
           case 162: 
-            { return symbol(sym.PIVOT);
+            { return symbol(sym.PIVOT,"PIVOT");
             } 
             // fall through
           case 516: break;
           case 163: 
-            { return symbol(sym.PRIOR);
+            { return symbol(sym.PRIOR,"PRIOR");
             } 
             // fall through
           case 517: break;
           case 164: 
-            { return symbol(sym.PRINT);
+            { return symbol(sym.PRINT,"PRINT");
             } 
             // fall through
           case 518: break;
           case 165: 
-            { return symbol(sym.WRITE);
+            { return symbol(sym.WRITE,"WRITE");
             } 
             // fall through
           case 519: break;
           case 166: 
-            { return symbol(sym.WHERE);
+            { return symbol(sym.WHERE,"WHERE");
             } 
             // fall through
           case 520: break;
           case 167: 
-            { return symbol(sym.WHILE);
+            { return symbol(sym.WHILE,"WHILE");
             } 
             // fall through
           case 521: break;
           case 168: 
-            { return symbol(sym.MATCH);
+            { return symbol(sym.MATCH,"MATCH");
             } 
             // fall through
           case 522: break;
           case 169: 
-            { return symbol(sym.MONTH);
+            { return symbol(sym.MONTH,"MONTH");
             } 
             // fall through
           case 523: break;
           case 170: 
-            { return symbol(sym.MERGE);
+            { return symbol(sym.MERGE,"MERGE");
             } 
             // fall through
           case 524: break;
           case 171: 
-            { return symbol(sym.FALSE);
+            { return symbol(sym.FALSE,"FALSE");
             } 
             // fall through
           case 525: break;
           case 172: 
-            { return symbol(sym.FOUND);
+            { return symbol(sym.FOUND,"FOUND");
             } 
             // fall through
           case 526: break;
           case 173: 
-            { return symbol(sym.FLOAT);
+            { return symbol(sym.FLOAT,"FLOAT");
             } 
             // fall through
           case 527: break;
           case 174: 
-            { return symbol(sym.FETCH);
+            { return symbol(sym.FETCH,"FETCH");
             } 
             // fall through
           case 528: break;
           case 175: 
-            { return symbol(sym.FIRST);
+            { return symbol(sym.FIRST,"FIRST");
             } 
             // fall through
           case 529: break;
           case 176: 
-            { return symbol(sym.ACTION);
+            { return symbol(sym.ACTION,"ACTION");
             } 
             // fall through
           case 530: break;
           case 177: 
-            { return symbol(sym.BACKUP);
+            { return symbol(sym.BACKUP,"BACKUP");
             } 
             // fall through
           case 531: break;
           case 178: 
-            { return symbol(sym.BROWSE);
+            { return symbol(sym.BROWSE,"BROWSE");
             } 
             // fall through
           case 532: break;
           case 179: 
-            { return symbol(sym.SELECT);
+            { return symbol(sym.SELECT,"SELECT");
             } 
             // fall through
           case 533: break;
           case 180: 
-            { return symbol(sym.SECOND);
+            { return symbol(sym.SECOND,"SECOND");
             } 
             // fall through
           case 534: break;
           case 181: 
-            { return symbol(sym.SCROLL);
+            { return symbol(sym.SCROLL,"SCROLL");
             } 
             // fall through
           case 535: break;
           case 182: 
-            { return symbol(sym.SCHEMA);
+            { return symbol(sym.SCHEMA,"SCHEMA");
             } 
             // fall through
           case 536: break;
           case 183: 
-            { return symbol(sym.OUTPUT);
+            { return symbol(sym.OUTPUT,"OUTPUT");
             } 
             // fall through
           case 537: break;
           case 184: 
-            { return symbol(sym.OPTION);
+            { return symbol(sym.OPTION,"OPTION");
             } 
             // fall through
           case 538: break;
           case 185: 
-            { return symbol(sym.OFFSES);
+            { return symbol(sym.OFFSES,"OFFSES");
             } 
             // fall through
           case 539: break;
           case 186: 
-            { return symbol(sym.LINENO);
+            { return symbol(sym.LINENO,"LINENO");
             } 
             // fall through
           case 540: break;
           case 187: 
-            { return symbol(sym.UNIQUE);
+            { return symbol(sym.UNIQUE,"UNIQUE");
             } 
             // fall through
           case 541: break;
           case 188: 
-            { return symbol(sym.UPDATE);
+            { return symbol(sym.UPDATE,"UPDATE");
             } 
             // fall through
           case 542: break;
           case 189: 
-            { return symbol(sym.ESCAPE);
+            { return symbol(sym.ESCAPE,"ESCAPE");
             } 
             // fall through
           case 543: break;
           case 190: 
-            { return symbol(sym.ERRLVL);
+            { return symbol(sym.ERRLVL,"ERRLVL");
             } 
             // fall through
           case 544: break;
           case 191: 
-            { return symbol(sym.EXCEPT);
+            { return symbol(sym.EXCEPT,"EXCEPT");
             } 
             // fall through
           case 545: break;
           case 192: 
-            { return symbol(sym.EXISTS);
+            { return symbol(sym.EXISTS,"EXISTS");
             } 
             // fall through
           case 546: break;
           case 193: 
-            { return symbol(sym.COLUMN);
+            { return symbol(sym.COLUMN,"COLUMN");
             } 
             // fall through
           case 547: break;
           case 194: 
-            { return symbol(sym.COMMIT);
+            { return symbol(sym.COMMIT,"COMMIT");
             } 
             // fall through
           case 548: break;
           case 195: 
-            { return symbol(sym.CURSOR);
+            { return symbol(sym.CURSOR,"CURSOR");
             } 
             // fall through
           case 549: break;
           case 196: 
-            { return symbol(sym.CREATE);
+            { return symbol(sym.CREATE,"CREATE");
             } 
             // fall through
           case 550: break;
           case 197: 
-            { return symbol(sym.INSERT);
+            { return symbol(sym.INSERT,"INSERT");
             } 
             // fall through
           case 551: break;
           case 198: 
-            { return symbol(sym.NULLIF);
+            { return symbol(sym.NULLIF,"NULLIF");
             } 
             // fall through
           case 552: break;
           case 199: 
-            { return symbol(sym.DOUBLE);
+            { return symbol(sym.DOUBLE,"DOUBLE");
             } 
             // fall through
           case 553: break;
           case 200: 
-            { return symbol(sym.DOMAIN);
+            { return symbol(sym.DOMAIN,"DOMAIN");
             } 
             // fall through
           case 554: break;
           case 201: 
-            { return symbol(sym.DELETE);
+            { return symbol(sym.DELETE,"DELETE");
             } 
             // fall through
           case 555: break;
           case 202: 
-            { return symbol(sym.RETURN);
+            { return symbol(sym.RETURN,"RETURN");
             } 
             // fall through
           case 556: break;
           case 203: 
-            { return symbol(sym.REVOKE);
+            { return symbol(sym.REVOKE,"REVOKE");
             } 
             // fall through
           case 557: break;
           case 204: 
-            { return symbol(sym.REVERT);
+            { return symbol(sym.REVERT,"REVERT");
             } 
             // fall through
           case 558: break;
           case 205: 
-            { return symbol(sym.HAVING);
+            { return symbol(sym.HAVING,"HAVING");
             } 
             // fall through
           case 559: break;
           case 206: 
-            { return symbol(sym.VALUES);
+            { return symbol(sym.VALUES,"VALUES");
             } 
             // fall through
           case 560: break;
           case 207: 
-            { return symbol(sym.GLOBAL);
+            { return symbol(sym.GLOBAL,"GLOBAL");
             } 
             // fall through
           case 561: break;
           case 208: 
-            { return symbol(sym.PASCAL);
+            { return symbol(sym.PASCAL,"PASCAL");
             } 
             // fall through
           case 562: break;
           case 209: 
-            { return symbol(sym.PUBLIC);
+            { return symbol(sym.PUBLIC,"PUBLIC");
             } 
             // fall through
           case 563: break;
           case 210: 
-            { return symbol(sym.MODULE);
+            { return symbol(sym.MODULE,"MODULE");
             } 
             // fall through
           case 564: break;
           case 211: 
-            { return symbol(sym.MINUTE);
+            { return symbol(sym.MINUTE,"MINUTE");
             } 
             // fall through
           case 565: break;
           case 212: 
-            { return symbol(sym.BETWEEN);
+            { return symbol(sym.BETWEEN,"BETWEEN");
             } 
             // fall through
           case 566: break;
           case 213: 
-            { return symbol(sym.SESSION);
+            { return symbol(sym.SESSION,"SESSION");
             } 
             // fall through
           case 567: break;
           case 214: 
-            { return symbol(sym.SETUSER);
+            { return symbol(sym.SETUSER,"SETUSER");
             } 
             // fall through
           case 568: break;
           case 215: 
-            { return symbol(sym.SECTION);
+            { return symbol(sym.SECTION,"SECTION");
             } 
             // fall through
           case 569: break;
           case 216: 
-            { return symbol(sym.SQLCODE);
+            { return symbol(sym.SQLCODE,"SQLCODE");
             } 
             // fall through
           case 570: break;
           case 217: 
-            { return symbol(sym.OPENXML);
+            { return symbol(sym.OPENXML,"OPENXML");
             } 
             // fall through
           case 571: break;
           case 218: 
-            { return symbol(sym.LEADING);
+            { return symbol(sym.LEADING,"LEADING");
             } 
             // fall through
           case 572: break;
           case 219: 
-            { return symbol(sym.UNKNOWN);
+            { return symbol(sym.UNKNOWN,"UNKNOWN");
             } 
             // fall through
           case 573: break;
           case 220: 
-            { return symbol(sym.UNPIVOT);
+            { return symbol(sym.UNPIVOT,"UNPIVOT");
             } 
             // fall through
           case 574: break;
           case 221: 
-            { return symbol(sym.TSEQUAL);
+            { return symbol(sym.TSEQUAL,"TSEQUAL");
             } 
             // fall through
           case 575: break;
           case 222: 
-            { return symbol(sym.TRIGGER);
+            { return symbol(sym.TRIGGER,"TRIGGER");
             } 
             // fall through
           case 576: break;
           case 223: 
-            { return symbol(sym.EXTRACT);
+            { return symbol(sym.EXTRACT,"EXTRACT");
             } 
             // fall through
           case 577: break;
           case 224: 
-            { return symbol(sym.EXECUTE);
+            { return symbol(sym.EXECUTE,"EXECUTE");
             } 
             // fall through
           case 578: break;
           case 225: 
-            { return symbol(sym.CASCADE);
+            { return symbol(sym.CASCADE,"CASCADE");
             } 
             // fall through
           case 579: break;
           case 226: 
-            { return symbol(sym.CATALOG);
+            { return symbol(sym.CATALOG,"CATALOG");
             } 
             // fall through
           case 580: break;
           case 227: 
-            { return symbol(sym.COLLATE);
+            { return symbol(sym.COLLATE,"COLLATE");
             } 
             // fall through
           case 581: break;
           case 228: 
-            { return symbol(sym.CONNECT);
+            { return symbol(sym.CONNECT,"CONNECT");
             } 
             // fall through
           case 582: break;
           case 229: 
-            { return symbol(sym.CONVERT);
+            { return symbol(sym.CONVERT,"CONVERT");
             } 
             // fall through
           case 583: break;
           case 230: 
-            { return symbol(sym.COMPUTE);
+            { return symbol(sym.COMPUTE,"COMPUTE");
             } 
             // fall through
           case 584: break;
           case 231: 
-            { return symbol(sym.CURRENT);
+            { return symbol(sym.CURRENT,"CURRENT");
             } 
             // fall through
           case 585: break;
           case 232: 
-            { return symbol(sym.INTEGER);
+            { return symbol(sym.INTEGER,"INTEGER");
             } 
             // fall through
           case 586: break;
           case 233: 
-            { return symbol(sym.INCLUDE);
+            { return symbol(sym.INCLUDE,"INCLUDE");
             } 
             // fall through
           case 587: break;
           case 234: 
-            { return symbol(sym.NATURAL);
+            { return symbol(sym.NATURAL,"NATURAL");
             } 
             // fall through
           case 588: break;
           case 235: 
-            { return symbol(sym.NOCHECK);
+            { return symbol(sym.NOCHECK,"NOCHECK");
             } 
             // fall through
           case 589: break;
           case 236: 
-            { return symbol(sym.NUMERIC);
+            { return symbol(sym.NUMERIC,"NUMERIC");
             } 
             // fall through
           case 590: break;
           case 237: 
-            { return symbol(sym.DECLARE);
+            { return symbol(sym.DECLARE,"DECLARE");
             } 
             // fall through
           case 591: break;
           case 238: 
-            { return symbol(sym.DECIMAL);
+            { return symbol(sym.DECIMAL,"DECIMAL");
             } 
             // fall through
           case 592: break;
           case 239: 
-            { return symbol(sym.DEFAULT);
+            { return symbol(sym.DEFAULT,"DEFAULT");
             } 
             // fall through
           case 593: break;
           case 240: 
-            { return symbol(sym.RESTORE);
+            { return symbol(sym.RESTORE,"RESTORE");
             } 
             // fall through
           case 594: break;
           case 241: 
-            { return symbol(sym.RETURNS);
+            { return symbol(sym.RETURNS,"RETURNS");
             } 
             // fall through
           case 595: break;
           case 242: 
-            { return symbol(sym.VARCHAR);
+            { return symbol(sym.VARCHAR,"VARCHAR");
             } 
             // fall through
           case 596: break;
           case 243: 
-            { return symbol(sym.VARYING);
+            { return symbol(sym.VARYING,"VARYING");
             } 
             // fall through
           case 597: break;
           case 244: 
-            { return symbol(sym.PARTIAL);
+            { return symbol(sym.PARTIAL,"PARTIAL");
             } 
             // fall through
           case 598: break;
           case 245: 
-            { return symbol(sym.PERCENT);
+            { return symbol(sym.PERCENT,"PERCENT");
             } 
             // fall through
           case 599: break;
           case 246: 
-            { return symbol(sym.PREPARE);
+            { return symbol(sym.PREPARE,"PREPARE");
             } 
             // fall through
           case 600: break;
           case 247: 
-            { return symbol(sym.PRIMARY);
+            { return symbol(sym.PRIMARY,"PRIMARY");
             } 
             // fall through
           case 601: break;
           case 248: 
-            { return symbol(sym.WAITFOR);
+            { return symbol(sym.WAITFOR,"WAITFOR");
             } 
             // fall through
           case 602: break;
           case 249: 
-            { return symbol(sym.FORTRAN);
+            { return symbol(sym.FORTRAN,"FORTRAN");
             } 
             // fall through
           case 603: break;
           case 250: 
-            { return symbol(sym.FOREIGN);
+            { return symbol(sym.FOREIGN,"FOREIGN");
             } 
             // fall through
           case 604: break;
           case 251: 
-            { return symbol(sym.ABSOLUTE);
+            { return symbol(sym.ABSOLUTE,"ABSOLUTE");
             } 
             // fall through
           case 605: break;
           case 252: 
-            { return symbol(sym.ALLOCATE);
+            { return symbol(sym.ALLOCATE,"ALLOCATE");
             } 
             // fall through
           case 606: break;
           case 253: 
-            { return symbol(sym.SHUTDOWN);
+            { return symbol(sym.SHUTDOWN,"SHUTDOWN");
             } 
             // fall through
           case 607: break;
           case 254: 
-            { return symbol(sym.SMALLINT);
+            { return symbol(sym.SMALLINT,"SMALLINT");
             } 
             // fall through
           case 608: break;
           case 255: 
-            { return symbol(sym.SQLSTATE);
+            { return symbol(sym.SQLSTATE,"SQLSTATE");
             } 
             // fall through
           case 609: break;
           case 256: 
-            { return symbol(sym.SQLERROR);
+            { return symbol(sym.SQLERROR,"SQLERROR");
             } 
             // fall through
           case 610: break;
           case 257: 
-            { return symbol(sym.OVERLAPS);
+            { return symbol(sym.OVERLAPS,"OVERLAPS");
             } 
             // fall through
           case 611: break;
           case 258: 
-            { return symbol(sym.LANGUAGE);
+            { return symbol(sym.LANGUAGE,"LANGUAGE");
             } 
             // fall through
           case 612: break;
           case 259: 
-            { return symbol(sym.TEXTSIZE);
+            { return symbol(sym.TEXTSIZE,"TEXTSIZE");
             } 
             // fall through
           case 613: break;
           case 260: 
-            { return symbol(sym.TRAILING);
+            { return symbol(sym.TRAILING,"TRAILING");
             } 
             // fall through
           case 614: break;
           case 261: 
-            { return symbol(sym.TRUNCATE);
+            { return symbol(sym.TRUNCATE,"TRUNCATE");
             } 
             // fall through
           case 615: break;
           case 262: 
-            { return symbol(sym.END_EXEC);
+            { return symbol(sym.END_EXEC,"END_EXEC");
             } 
             // fall through
           case 616: break;
           case 263: 
-            { return symbol(sym.EXTERNAL);
+            { return symbol(sym.EXTERNAL,"EXTERNAL");
             } 
             // fall through
           case 617: break;
           case 264: 
-            { return symbol(sym.CASCADED);
+            { return symbol(sym.CASCADED,"CASCADED");
             } 
             // fall through
           case 618: break;
           case 265: 
-            { return symbol(sym.COALESCE);
+            { return symbol(sym.COALESCE,"COALESCE");
             } 
             // fall through
           case 619: break;
           case 266: 
-            { return symbol(sym.CONTAINS);
+            { return symbol(sym.CONTAINS,"CONTAINS");
             } 
             // fall through
           case 620: break;
           case 267: 
-            { return symbol(sym.CONTINUE);
+            { return symbol(sym.CONTINUE,"CONTINUE");
             } 
             // fall through
           case 621: break;
           case 268: 
-            { return symbol(sym.INTERVAL);
+            { return symbol(sym.INTERVAL,"INTERVAL");
             } 
             // fall through
           case 622: break;
           case 269: 
-            { return symbol(sym.IDENTITY);
+            { return symbol(sym.IDENTITY,"IDENTITY");
             } 
             // fall through
           case 623: break;
           case 270: 
-            { return symbol(sym.NATIONAL);
+            { return symbol(sym.NATIONAL,"NATIONAL");
             } 
             // fall through
           case 624: break;
           case 271: 
-            { return symbol(sym.DATABASE);
+            { return symbol(sym.DATABASE,"DATABASE");
             } 
             // fall through
           case 625: break;
           case 272: 
-            { return symbol(sym.DESCRIBE);
+            { return symbol(sym.DESCRIBE,"DESCRIBE");
             } 
             // fall through
           case 626: break;
           case 273: 
-            { return symbol(sym.DEFERRED);
+            { return symbol(sym.DEFERRED,"DEFERRED");
             } 
             // fall through
           case 627: break;
           case 274: 
-            { return symbol(sym.DISTINCT);
+            { return symbol(sym.DISTINCT,"DISTINCT");
             } 
             // fall through
           case 628: break;
           case 275: 
-            { return symbol(sym.ROLLBACK);
+            { return symbol(sym.ROLLBACK,"ROLLBACK");
             } 
             // fall through
           case 629: break;
           case 276: 
-            { return symbol(sym.ROWCOUNT);
+            { return symbol(sym.ROWCOUNT,"ROWCOUNT");
             } 
             // fall through
           case 630: break;
           case 277: 
-            { return symbol(sym.READTEXT);
+            { return symbol(sym.READTEXT,"READTEXT");
             } 
             // fall through
           case 631: break;
           case 278: 
-            { return symbol(sym.RESTRICT);
+            { return symbol(sym.RESTRICT,"RESTRICT");
             } 
             // fall through
           case 632: break;
           case 279: 
-            { return symbol(sym.RELATIVE);
+            { return symbol(sym.RELATIVE,"RELATIVE");
             } 
             // fall through
           case 633: break;
           case 280: 
-            { return symbol(sym.HOLDLOCK);
+            { return symbol(sym.HOLDLOCK,"HOLDLOCK");
             } 
             // fall through
           case 634: break;
           case 281: 
-            { return symbol(sym.POSITION);
+            { return symbol(sym.POSITION,"POSITION");
             } 
             // fall through
           case 635: break;
           case 282: 
-            { return symbol(sym.PRESERVE);
+            { return symbol(sym.PRESERVE,"PRESERVE");
             } 
             // fall through
           case 636: break;
           case 283: 
-            { return symbol(sym.WHENEVER);
+            { return symbol(sym.WHENEVER,"WHENEVER");
             } 
             // fall through
           case 637: break;
           case 284: 
-            { return symbol(sym.FUNCTION);
+            { return symbol(sym.FUNCTION,"FUNCTION");
             } 
             // fall through
           case 638: break;
           case 285: 
-            { return symbol(sym.FREETEXT);
+            { return symbol(sym.FREETEXT,"FREETEXT");
             } 
             // fall through
           case 639: break;
           case 286: 
-            { return symbol(sym.ASSERTION);
+            { return symbol(sym.ASSERTION,"ASSERTION");
             } 
             // fall through
           case 640: break;
           case 287: 
-            { return symbol(sym.SUBSTRING);
+            { return symbol(sym.SUBSTRING,"SUBSTRING");
             } 
             // fall through
           case 641: break;
           case 288: 
-            { return symbol(sym.OPENQUERY);
+            { return symbol(sym.OPENQUERY,"OPENQUERY");
             } 
             // fall through
           case 642: break;
           case 289: 
-            { return symbol(sym.TEMPORARY);
+            { return symbol(sym.TEMPORARY,"TEMPORARY");
             } 
             // fall through
           case 643: break;
           case 290: 
-            { return symbol(sym.TIMESTAMP);
+            { return symbol(sym.TIMESTAMP,"TIMESTAMP");
             } 
             // fall through
           case 644: break;
           case 291: 
-            { return symbol(sym.TRANSLATE);
+            { return symbol(sym.TRANSLATE,"TRANSLATE");
             } 
             // fall through
           case 645: break;
           case 292: 
-            { return symbol(sym.EXCEPTION);
+            { return symbol(sym.EXCEPTION,"EXCEPTION");
             } 
             // fall through
           case 646: break;
           case 293: 
-            { return symbol(sym.CLUSTERED);
+            { return symbol(sym.CLUSTERED,"CLUSTERED");
             } 
             // fall through
           case 647: break;
           case 294: 
-            { return symbol(sym.CHARACTER);
+            { return symbol(sym.CHARACTER,"CHARACTER");
             } 
             // fall through
           case 648: break;
           case 295: 
-            { return symbol(sym.ISOLATION);
+            { return symbol(sym.ISOLATION,"ISOLATION");
             } 
             // fall through
           case 649: break;
           case 296: 
-            { return symbol(sym.INTERSECT);
+            { return symbol(sym.INTERSECT,"INTERSECT");
             } 
             // fall through
           case 650: break;
           case 297: 
-            { return symbol(sym.INITIALLY);
+            { return symbol(sym.INITIALLY,"INITIALLY");
             } 
             // fall through
           case 651: break;
           case 298: 
-            { return symbol(sym.INDICATOR);
+            { return symbol(sym.INDICATOR,"INDICATOR");
             } 
             // fall through
           case 652: break;
           case 299: 
-            { return symbol(sym.IMMEDIATE);
+            { return symbol(sym.IMMEDIATE,"IMMEDIATE");
             } 
             // fall through
           case 653: break;
           case 300: 
-            { return symbol(sym.DISTURBED);
+            { return symbol(sym.DISTURBED,"DISTURBED");
             } 
             // fall through
           case 654: break;
           case 301: 
-            { return symbol(sym.RAISERROR);
+            { return symbol(sym.RAISERROR,"RAISERROR");
             } 
             // fall through
           case 655: break;
           case 302: 
-            { return symbol(sym.PROCEDURE);
+            { return symbol(sym.PROCEDURE,"PROCEDURE");
             } 
             // fall through
           case 656: break;
           case 303: 
-            { return symbol(sym.PRECISION);
+            { return symbol(sym.PRECISION,"PRECISION");
             } 
             // fall through
           case 657: break;
           case 304: 
-            { return symbol(sym.WRITETEXT);
+            { return symbol(sym.WRITETEXT,"WRITETEXT");
             } 
             // fall through
           case 658: break;
           case 305: 
-            { return symbol(sym.BIT_LENGTH);
+            { return symbol(sym.BIT_LENGTH,"BIT_LENGTH");
             } 
             // fall through
           case 659: break;
           case 306: 
-            { return symbol(sym.STATISTICS);
+            { return symbol(sym.STATISTICS,"STATISTICS");
             } 
             // fall through
           case 660: break;
           case 307: 
-            { return symbol(sym.SQLWARNING);
+            { return symbol(sym.SQLWARNING,"SQLWARNING");
             } 
             // fall through
           case 661: break;
           case 308: 
-            { return symbol(sym.OPENROWSET);
+            { return symbol(sym.OPENROWSET,"OPENROWSET");
             } 
             // fall through
           case 662: break;
           case 309: 
-            { return symbol(sym.UPDATETEXT);
+            { return symbol(sym.UPDATETEXT,"UPDATETEXT");
             } 
             // fall through
           case 663: break;
           case 310: 
-            { return symbol(sym.COALLITION);
+            { return symbol(sym.COALLITION,"COALLITION");
             } 
             // fall through
           case 664: break;
           case 311: 
-            { return symbol(sym.CONSTRAINT);
+            { return symbol(sym.CONSTRAINT,"CONSTRAINT");
             } 
             // fall through
           case 665: break;
           case 312: 
-            { return symbol(sym.CONNECTION);
+            { return symbol(sym.CONNECTION,"CONNECTION");
             } 
             // fall through
           case 666: break;
           case 313: 
-            { return symbol(sym.CHECKPOINT);
+            { return symbol(sym.CHECKPOINT,"CHECKPOINT");
             } 
             // fall through
           case 667: break;
           case 314: 
-            { return symbol(sym.DEALLOCATE);
+            { return symbol(sym.DEALLOCATE,"DEALLOCATE");
             } 
             // fall through
           case 668: break;
           case 315: 
-            { return symbol(sym.DESCRIPTOR);
+            { return symbol(sym.DESCRIPTOR,"DESCRIPTOR");
             } 
             // fall through
           case 669: break;
           case 316: 
-            { return symbol(sym.DEFERRABLE);
+            { return symbol(sym.DEFERRABLE,"DEFERRABLE");
             } 
             // fall through
           case 670: break;
           case 317: 
-            { return symbol(sym.DISCONNECT);
+            { return symbol(sym.DISCONNECT,"DISCONNECT");
             } 
             // fall through
           case 671: break;
           case 318: 
-            { return symbol(sym.ROWGUIDCOL);
+            { return symbol(sym.ROWGUIDCOL,"ROWGUIDCOL");
             } 
             // fall through
           case 672: break;
           case 319: 
-            { return symbol(sym.REFERENCES);
+            { return symbol(sym.REFERENCES,"REFERENCES");
             } 
             // fall through
           case 673: break;
           case 320: 
-            { return symbol(sym.PRIVILEGES);
+            { return symbol(sym.PRIVILEGES,"PRIVILEGES");
             } 
             // fall through
           case 674: break;
           case 321: 
-            { return symbol(sym.FILLFACTOR);
+            { return symbol(sym.FILLFACTOR,"FILLFACTOR");
             } 
             // fall through
           case 675: break;
           case 322: 
-            { return symbol(sym.SYSTEM_USER);
+            { return symbol(sym.SYSTEM_USER,"SYSTEM_USER");
             } 
             // fall through
           case 676: break;
           case 323: 
-            { return symbol(sym.TABLESAMPLE);
+            { return symbol(sym.TABLESAMPLE,"TABLESAMPLE");
             } 
             // fall through
           case 677: break;
           case 324: 
-            { return symbol(sym.TRANSACTION);
+            { return symbol(sym.TRANSACTION,"TRANSACTION");
             } 
             // fall through
           case 678: break;
           case 325: 
-            { return symbol(sym.TRANSLATION);
+            { return symbol(sym.TRANSLATION,"TRANSLATION");
             } 
             // fall through
           case 679: break;
           case 326: 
-            { return symbol(sym.TRY_CONVERT);
+            { return symbol(sym.TRY_CONVERT,"TRY_CONVERT");
             } 
             // fall through
           case 680: break;
           case 327: 
-            { return symbol(sym.CONSTRAINTS);
+            { return symbol(sym.CONSTRAINTS,"CONSTRAINTS");
             } 
             // fall through
           case 681: break;
           case 328: 
-            { return symbol(sym.CHAR_LENGTH);
+            { return symbol(sym.CHAR_LENGTH,"CHAR_LENGTH");
             } 
             // fall through
           case 682: break;
           case 329: 
-            { return symbol(sym.INSENSITIVE);
+            { return symbol(sym.INSENSITIVE,"INSENSITIVE");
             } 
             // fall through
           case 683: break;
           case 330: 
-            { return symbol(sym.IDENTITYCOL);
+            { return symbol(sym.IDENTITYCOL,"IDENTITYCOL");
             } 
             // fall through
           case 684: break;
           case 331: 
-            { return symbol(sym.DIAGNOSTICS);
+            { return symbol(sym.DIAGNOSTICS,"DIAGNOSTICS");
             } 
             // fall through
           case 685: break;
           case 332: 
-            { return symbol(sym.RECONFIGURE);
+            { return symbol(sym.RECONFIGURE,"RECONFIGURE");
             } 
             // fall through
           case 686: break;
           case 333: 
-            { return symbol(sym.REPLICATION);
+            { return symbol(sym.REPLICATION,"REPLICATION");
             } 
             // fall through
           case 687: break;
           case 334: 
-            { return symbol(sym.WITHINGROUP);
+            { return symbol(sym.WITHINGROUP,"WITHINGROUP");
             } 
             // fall through
           case 688: break;
           case 335: 
-            { return symbol(sym.SESSION_USER);
+            { return symbol(sym.SESSION_USER,"SESSION_USER");
             } 
             // fall through
           case 689: break;
           case 336: 
-            { return symbol(sym.OCTET_LENGTH);
+            { return symbol(sym.OCTET_LENGTH,"OCTET_LENGTH");
             } 
             // fall through
           case 690: break;
           case 337: 
-            { return symbol(sym.CURRENT_USER);
+            { return symbol(sym.CURRENT_USER,"CURRENT_USER");
             } 
             // fall through
           case 691: break;
           case 338: 
-            { return symbol(sym.CURRENT_TIME);
+            { return symbol(sym.CURRENT_TIME,"CURRENT_TIME");
             } 
             // fall through
           case 692: break;
           case 339: 
-            { return symbol(sym.CURRENT_DATE);
+            { return symbol(sym.CURRENT_DATE,"CURRENT_DATE");
             } 
             // fall through
           case 693: break;
           case 340: 
-            { return symbol(sym.NONCLUSTERED);
+            { return symbol(sym.NONCLUSTERED,"NONCLUSTERED");
             } 
             // fall through
           case 694: break;
           case 341: 
-            { return symbol(sym.AUTHORIZATION);
+            { return symbol(sym.AUTHORIZATION,"AUTHORIZATION");
             } 
             // fall through
           case 695: break;
           case 342: 
-            { return symbol(sym.SECURITYAUDIT);
+            { return symbol(sym.SECURITYAUDIT,"SECURITYAUDIT");
             } 
             // fall through
           case 696: break;
           case 343: 
-            { return symbol(sym.TIMEZONE_HOUR);
+            { return symbol(sym.TIMEZONE_HOUR,"TIMEZONE_HOUR");
             } 
             // fall through
           case 697: break;
           case 344: 
-            { return symbol(sym.CONTAINSTABLE);
+            { return symbol(sym.CONTAINSTABLE,"CONTAINSTABLE");
             } 
             // fall through
           case 698: break;
           case 345: 
-            { return symbol(sym.CORRESPONDING);
+            { return symbol(sym.CORRESPONDING,"CORRESPONDING");
             } 
             // fall through
           case 699: break;
           case 346: 
-            { return symbol(sym.FREETEXTTABLE);
+            { return symbol(sym.FREETEXTTABLE,"FREETEXTTABLE");
             } 
             // fall through
           case 700: break;
           case 347: 
-            { return symbol(sym.OPENDATASOURCE);
+            { return symbol(sym.OPENDATASOURCE,"OPENDATASOURCE");
             } 
             // fall through
           case 701: break;
           case 348: 
-            { return symbol(sym.TIMEZONE_MINUTE);
+            { return symbol(sym.TIMEZONE_MINUTE,"TIMEZONE_MINUTE");
             } 
             // fall through
           case 702: break;
           case 349: 
-            { return symbol(sym.IDENTITY_INSERT);
+            { return symbol(sym.IDENTITY_INSERT,"IDENTITY_INSERT");
             } 
             // fall through
           case 703: break;
           case 350: 
-            { return symbol(sym.CURRENT_TIMESTAMP);
+            { return symbol(sym.CURRENT_TIMESTAMP,"CURRENT_TIMESTAMP");
             } 
             // fall through
           case 704: break;
           case 351: 
-            { return symbol(sym.CHARACHTER_LENGTH);
+            { return symbol(sym.CHARACHTER_LENGTH,"CHARACHTER_LENGTH");
             } 
             // fall through
           case 705: break;
           case 352: 
-            { return symbol(sym.SEMANTICKEYPHRASETABLE);
+            { return symbol(sym.SEMANTICKEYPHRASETABLE,"SEMANTICKEYPHRASETABLE");
             } 
             // fall through
           case 706: break;
           case 353: 
-            { return symbol(sym.SEMANTICSIMILARITYTABLE);
+            { return symbol(sym.SEMANTICSIMILARITYTABLE,"SEMANTICSIMILARITYTABLE");
             } 
             // fall through
           case 707: break;
           case 354: 
-            { return symbol(sym.SEMANTICSIMILARITYDETAILSTABLE);
+            { return symbol(sym.SEMANTICSIMILARITYDETAILSTABLE,"SEMANTICSIMILARITYDETAILSTABLE");
             } 
             // fall through
           case 708: break;

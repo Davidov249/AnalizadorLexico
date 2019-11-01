@@ -4,6 +4,9 @@ import java_cup.runtime.*;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.*;
+import java.text.*;
+import java.util.LinkedList;
 //import Lexer;
 
 /*
@@ -34,9 +37,13 @@ parser code
             }
         }
         m.append (" : "+message);
-        System.err.println (m);
+        System.err.println(m);
     }
-   
+
+    /*public void syntax_error(cur_token){
+        //holi;
+    }*/
+  
     /* Cuando se encuentra un error de donde el sistema no puede
         recuperarse, se lanza un error fatal. Se despliega el mensaje
         de error y se finaliza la ejecucion. */
@@ -74,7 +81,13 @@ start with INICIO;
     INICIO ::= SELECT1
             |   INSERT1
             |   UPDATE0
+            | CRT
+            | DEL1
             |   DROP1
+            | ALTER1
+            | TRUNCATEP
+            | error INICIO
+            | error
             ;
     TRUNCATEP ::= TRUNCATE TABLE OBJECT TRUNCATE1 TRUNCATE2
                 ;
