@@ -845,7 +845,7 @@ start with INICIO;
                 ;
     INSERT1::= INSERT INSERT2
                 ;
-    INSERT2 ::= TOP Parentesisapertura SEXP Parentesiscerradura INSERT3
+    INSERT2 ::= TOP INSERT3 Parentesisapertura SEXP Parentesiscerradura INSERT3
                     | INSERT4
                     ;
     INSERT3 ::= PERCENT INSERT4
